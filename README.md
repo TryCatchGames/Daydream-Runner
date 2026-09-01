@@ -4,7 +4,7 @@
 ### `Try Catch Games`
 ***
 
-![Página Uninca](One-Sheet_ Daydream Runner - V2.2.png)
+![Página Unica](One-Sheet_ Daydream Runner - V2.2.png)
 
 ### _Integrantes_
 _Carlos Henrique Goebel Teixeira Furtado_
