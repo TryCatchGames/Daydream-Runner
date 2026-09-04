@@ -1,3 +1,5 @@
+<div align="center">
+  
 ### _Daydream Runner: That Guy Who Runs Next To The Car_
 
 ***
@@ -13,3 +15,5 @@ _Carlos Henrique Goebel Teixeira Furtado_
 _Gerson Farias Clara_
 
 _Gustavo Domenech De Souza_
+
+</div>
