@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8675tglhumfc"
-path.s3tc="res://.godot/imported/04.png-de3f88882dcdb2de81a9eded2cd536ce.s3tc.ctex"
+path.s3tc="res://.godot/imported/04.png-1c19376b79201ffa9c2350aec1337ac4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/frames/Idle/04.png"
-dest_files=["res://.godot/imported/04.png-de3f88882dcdb2de81a9eded2cd536ce.s3tc.ctex"]
+source_file="res://Sprites/frames/Idle-Mode 2/04.png"
+dest_files=["res://.godot/imported/04.png-1c19376b79201ffa9c2350aec1337ac4.s3tc.ctex"]
 
 [params]
 

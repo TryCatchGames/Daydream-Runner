@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ec2k2wjl1kdv"
-path.s3tc="res://.godot/imported/03.png-f3810d82a0ebea8dd07e588dc68b6411.s3tc.ctex"
+path.s3tc="res://.godot/imported/03.png-12df131e33997b4ab3963c0f67174bfb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/frames/Move/03.png"
-dest_files=["res://.godot/imported/03.png-f3810d82a0ebea8dd07e588dc68b6411.s3tc.ctex"]
+source_file="res://Sprites/frames/Move-Mode 2/03.png"
+dest_files=["res://.godot/imported/03.png-12df131e33997b4ab3963c0f67174bfb.s3tc.ctex"]
 
 [params]
 

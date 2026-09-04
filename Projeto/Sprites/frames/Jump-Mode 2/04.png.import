@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c51fnacjcnjkk"
-path.s3tc="res://.godot/imported/04.png-718234ead04639a0468ac57164636473.s3tc.ctex"
+path.s3tc="res://.godot/imported/04.png-57f24792dc5d52d33b44522ac8b96afb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/frames/Jump/04.png"
-dest_files=["res://.godot/imported/04.png-718234ead04639a0468ac57164636473.s3tc.ctex"]
+source_file="res://Sprites/frames/Jump-Mode 2/04.png"
+dest_files=["res://.godot/imported/04.png-57f24792dc5d52d33b44522ac8b96afb.s3tc.ctex"]
 
 [params]
 
