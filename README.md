@@ -1,10 +1,7 @@
 ### _Daydream Runner: That Guy Who Runs Next To The Car_
 
 ***
-<p align="center">
-### `Try Catch Games`
-</p>
-***
+<h3 align="center"><code>Try Catch Games</code></h3>
 
 <p align="center">
 <img width="595" height="842" alt="Logo" src= "https://github.com/TryCatchGames/Daydream-Runner/blob/main/GDD/Try%20Catch%20Games%20(melhor).png" />
