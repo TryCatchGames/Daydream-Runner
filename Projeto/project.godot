@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Daydream Runner"
-run/main_scene="res://level_teste.tscn"
+run/main_scene="uid://bwd7hj03fl25n"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

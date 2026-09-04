@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwd7hj03fl25n"]
 
-[ext_resource type="Script" uid="uid://bjivbsd0p14ny" path="res://player.gd" id="1_0f8t0"]
+[ext_resource type="Script" uid="uid://bjivbsd0p14ny" path="res://Scripts/player.gd" id="1_0f8t0"]
 [ext_resource type="Script" uid="uid://45ar74fyloer" path="res://Scripts/camera_3d.gd" id="1_t7cam"]
 [ext_resource type="Texture2D" uid="uid://dnpgjren4w5b7" path="res://Sprites/frames/Move/02.png" id="4_65ux4"]
 [ext_resource type="Script" uid="uid://p7n5m81sobae" path="res://Scripts/esteira.gd" id="4_d3dw0"]
@@ -43,7 +43,7 @@ sky = SubResource("Sky_wcvsc")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r60fy"]
 radius = 0.12
-height = 0.4
+height = 0.39921874
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r60fy"]
 animations = [{
@@ -171,16 +171,20 @@ environment = SubResource("Environment_r60fy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1910977804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0920378, 1.9457337, 6.4911575)
+shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=869599083]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -243.75719, 0.5223384, 69.761566)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -243.8781, 0.9944234, 69.761566)
 script = ExtResource("1_0f8t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1200786378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099998474, -0.049609363, 0)
 shape = SubResource("CapsuleShape3D_r60fy")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Player" unique_id=360675924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020690918, -0.015675545, 0)
+alpha_cut = 1
+texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_r60fy")
 animation = &"parado"
 frame_progress = 0.16597006
@@ -203,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.075756, 0.51190376, 1.468
 shape = SubResource("BoxShape3D_xpnpj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Esteira/StaticBody3D" unique_id=1600514493]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.028, -5.9, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.028, -5.97, 2)
 shape = SubResource("BoxShape3D_wcvsc")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Esteira" unique_id=1212119508]
