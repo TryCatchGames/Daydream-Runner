@@ -4,6 +4,7 @@
 
 ***
 ### `Try Catch Games`
+<img width="595" height="842" alt="Logo" src= "https://github.com/TryCatchGames/Daydream-Runner/blob/main/GDD/Try%20Catch%20Games%20(melhor).png" />
 ***
 
 <img width="595" height="842" alt="One-Sheet_ Daydream Runner - V2 2" src="https://github.com/user-attachments/assets/172aed51-1690-4d83-9bc5-381348ce1b3a" />
