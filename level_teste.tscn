@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://bwd7hj03fl25n"]
+
+[ext_resource type="Script" uid="uid://bjivbsd0p14ny" path="res://player.gd" id="1_0f8t0"]
+[ext_resource type="Script" uid="uid://45ar74fyloer" path="res://Scripts/camera_3d.gd" id="1_t7cam"]
+[ext_resource type="Texture2D" uid="uid://dnpgjren4w5b7" path="res://Sprites/frames/Move/02.png" id="4_65ux4"]
+[ext_resource type="Script" uid="uid://p7n5m81sobae" path="res://Scripts/esteira.gd" id="4_d3dw0"]
+[ext_resource type="Texture2D" uid="uid://ec2k2wjl1kdv" path="res://Sprites/frames/Move/03.png" id="5_g1l73"]
+[ext_resource type="Texture2D" uid="uid://c7hw61ol0osy1" path="res://Sprites/frames/Move/04.png" id="6_w0las"]
+[ext_resource type="Texture2D" uid="uid://d264r8vkpelyw" path="res://Sprites/frames/Move/05.png" id="7_xip45"]
+[ext_resource type="Texture2D" uid="uid://chgqacdwfduhu" path="res://Sprites/frames/Move/06.png" id="8_xfc33"]
+[ext_resource type="Texture2D" uid="uid://blpe1331vgkd2" path="res://Sprites/frames/Move/07.png" id="9_ivy0r"]
+[ext_resource type="Texture2D" uid="uid://cf2kjc41e0yj2" path="res://Sprites/frames/Move/08.png" id="10_p3u8v"]
+[ext_resource type="Texture2D" uid="uid://b1a6r4t6w8lk" path="res://Sprites/frames/Idle/01.png" id="11_4kk7d"]
+[ext_resource type="Texture2D" uid="uid://dbs732422pfsp" path="res://Sprites/frames/Idle/02.png" id="12_nf6cc"]
+[ext_resource type="Texture2D" uid="uid://cd2ud8p54bosi" path="res://Sprites/frames/Idle/03.png" id="13_308ik"]
+[ext_resource type="Texture2D" uid="uid://c8675tglhumfc" path="res://Sprites/frames/Idle/04.png" id="14_qbiq4"]
+[ext_resource type="Texture2D" uid="uid://cedw2xf4655rq" path="res://Sprites/frames/Idle/05.png" id="15_2ahwp"]
+[ext_resource type="Texture2D" uid="uid://cs0rgg76bi7k2" path="res://Sprites/frames/Idle/06.png" id="16_g67nl"]
+[ext_resource type="Texture2D" uid="uid://cmgepnuy6k1v6" path="res://Sprites/frames/Idle/07.png" id="17_s1mk2"]
+[ext_resource type="Texture2D" uid="uid://c2yh2c84olckx" path="res://Sprites/frames/Jump/01.png" id="18_qbiq4"]
+[ext_resource type="Texture2D" uid="uid://cefueq6qcj7e1" path="res://Sprites/frames/Idle/08.png" id="18_qqb8b"]
+[ext_resource type="Texture2D" uid="uid://froviaefeqmb" path="res://Sprites/frames/Jump/02.png" id="19_2ahwp"]
+[ext_resource type="Texture2D" uid="uid://5qi8gibm3ohh" path="res://Sprites/frames/Jump/03.png" id="20_g67nl"]
+[ext_resource type="Texture2D" uid="uid://c51fnacjcnjkk" path="res://Sprites/frames/Jump/04.png" id="21_s1mk2"]
+[ext_resource type="Texture2D" uid="uid://chrxewtcmuja1" path="res://Sprites/frames/Jump/05.png" id="22_qqb8b"]
+[ext_resource type="Texture2D" uid="uid://c7q3aykh7pb7" path="res://Sprites/frames/Jump/06.png" id="23_a5tu7"]
+[ext_resource type="Texture2D" uid="uid://dxibb8j7r2lra" path="res://Sprites/frames/Jump/07.png" id="24_s7hd4"]
+[ext_resource type="Texture2D" uid="uid://bqwamos753gqg" path="res://Sprites/frames/Jump/08.png" id="25_o8kng"]
+[ext_resource type="Texture2D" uid="uid://crvo0u5hllf5t" path="res://Sprites/frames/Jump/09.png" id="26_vnk4d"]
+[ext_resource type="Texture2D" uid="uid://d1n8milsu50li" path="res://Sprites/frames/Jump/10.png" id="27_i3ee7"]
+[ext_resource type="Texture2D" uid="uid://dilwelp53hee" path="res://Sprites/frames/Jump/11.png" id="28_8x8wo"]
+[ext_resource type="Texture2D" uid="uid://cudbpi6gul3qo" path="res://Sprites/frames/Jump/12.png" id="29_jq04k"]
+[ext_resource type="PackedScene" uid="uid://cch20yoy3wnq" path="res://Models/LowPoly_City_01Ready.fbx" id="31_2ahwp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpnpj"]
+
+[sub_resource type="Sky" id="Sky_wcvsc"]
+sky_material = SubResource("ProceduralSkyMaterial_xpnpj")
+
+[sub_resource type="Environment" id="Environment_r60fy"]
+background_mode = 2
+sky = SubResource("Sky_wcvsc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r60fy"]
+radius = 0.12
+height = 0.4
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r60fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_65ux4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g1l73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w0las")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xip45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xfc33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ivy0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p3u8v")
+}],
+"loop": 1,
+"name": &"correr",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4kk7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nf6cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_308ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qbiq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2ahwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_g67nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s1mk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qqb8b")
+}],
+"loop": 1,
+"name": &"parado",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_qbiq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2ahwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_g67nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s1mk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qqb8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a5tu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_s7hd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o8kng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vnk4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i3ee7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8x8wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jq04k")
+}],
+"loop": 1,
+"name": &"pulo",
+"speed": 12.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2201f"]
+size = Vector3(40, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xpnpj"]
+size = Vector3(90, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcvsc"]
+size = Vector3(1034.5737, 1, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g67nl"]
+points = PackedVector3Array(-0.008071608, -0.005142797, -0.048965078, 0.01334762, -0.003612788, -0.016823357, 0.01334762, -0.009732824, -0.016823357, -0.011132224, -0.0020805323, 0.048965078, 0.008756694, 0.011687302, 0.029064627, -0.009601916, 0.0070950286, -0.048965078, 0.011817311, -0.0112650795, 0.041305896, -0.01266508, -0.0112650795, -0.04589757, 0.010287003, 0.0070950286, -0.048965078, -0.008071608, 0.011687302, 0.029064627, 0.01334762, -0.0112650795, -0.04589757, -0.011132224, -0.0112650795, 0.041305896, 0.010287003, 0.0025027548, 0.048965078, -0.01266508, 0.0040350105, 0.032132134, -0.008071608, 0.011687302, 0.012241269, 0.011817311, 0.0040350105, 0.032132134, 0.010287003, -0.006672806, 0.048965078, -0.01266508, -0.0020805323, -0.04589757, -0.009601916, 0.0025027548, 0.048965078, 0.008756694, 0.011687302, 0.012241269, 0.01334762, -0.0020805323, -0.04589757, -0.011132224, -0.006672806, 0.048965078, 0.01334762, -0.009732824, -0.047431324, -0.01266508, -0.0112650795, -0.018357111, 0.011817311, -0.0020805323, 0.044373404, 0.008756694, -0.005142797, -0.048965078, -0.01266508, 0.0009749924, 0.032132134, -0.01266508, -0.009732824, -0.047431324, 0.01334762, -0.0020805323, -0.018357111, 0.01334762, -0.0112650795, -0.018357111, 0.011817311, -0.008202815, 0.044373404, -0.01266508, 0.0040350105, 0.03059838)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2ahwp"]
+points = PackedVector3Array(-0.010974269, -0.006669263, -0.020413717, 0.011996826, 0.00353593, 0.011059651, 0.011996826, 0.001834343, 0.011059651, -0.010123142, -0.0058184694, 0.027225396, -0.007569762, 0.011193072, -0.0008474624, 0.0111457, -0.010072437, -0.018713463, 0.009441114, 0.0026851364, -0.02467235, 0.01029224, -0.010923231, 0.019566255, 0.008951308, 0.001745369, 0.025799999, -0.010974269, -0.010923231, -0.017007878, 0.0077388603, 0.011193072, 0.0076538115, -0.010123142, 0.0026851364, 0.026372604, -0.010123142, 0.0026851364, -0.02467235, -0.010974269, -0.010923231, 0.019566255, -0.00076307973, -0.0075200563, -0.025514482, -0.011825396, 0.00353593, 0.011059651, 0.0077388603, 0.011193072, -0.0008474624, -0.007569762, 0.011193072, 0.0076538115, 0.0111457, -0.009221643, 0.02126118, 0.0111457, -0.010923231, -0.017007878, 0.01029224, -0.006669263, -0.025514482, -0.010123142, -0.006669263, -0.025514482, 0.0111457, -0.000713708, -0.018713463, 0.0094, -0.005298032, 0.024845388, 0.01029224, 0.0009835494, 0.025514482, -0.008418557, 0.0103422785, -0.0017002547, 0.0111457, -0.010923231, 0.018713463, -0.010974269, -0.002415295, 0.022119302, 0.011996826, 0.00353593, 0.009354066, -0.008418557, 0.0103422785, 0.0076538115, -0.011825396, 0.001834343, 0.011059651, -0.011825396, 0.00353593, 0.009354066)
+
+[node name="Level_Teste" type="Node3D" unique_id=344174178]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1969764537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -241.11539, 0.86931896, 77.46923)
+fov = 77.47574
+script = ExtResource("1_t7cam")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1004323707]
+environment = SubResource("Environment_r60fy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1910977804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0920378, 1.9457337, 6.4911575)
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=869599083]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -243.75719, 0.5223384, 69.761566)
+script = ExtResource("1_0f8t0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1200786378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -0.05, 0)
+shape = SubResource("CapsuleShape3D_r60fy")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Player" unique_id=360675924]
+sprite_frames = SubResource("SpriteFrames_r60fy")
+animation = &"parado"
+frame_progress = 0.16597006
+
+[node name="Esteira" type="Node3D" parent="." unique_id=307509254]
+script = ExtResource("4_d3dw0")
+
+[node name="LowPoly_City_01Ready" parent="Esteira" unique_id=889299551 instance=ExtResource("31_2ahwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1904602, -0.56975365, 0.06109619)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Esteira" unique_id=731508492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 5, 69)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Esteira/StaticBody3D" unique_id=1660712434]
+transform = Transform3D(0.98857194, -0.15075, 0, 0.15075, 0.98857194, 0, 0, 0, 1, -81.06236, -2.7393713, 2.2698593)
+shape = SubResource("BoxShape3D_2201f")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Esteira/StaticBody3D" unique_id=1452613000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.075756, 0.51190376, 1.4689484)
+shape = SubResource("BoxShape3D_xpnpj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Esteira/StaticBody3D" unique_id=1600514493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.028, -5.9, 2)
+shape = SubResource("BoxShape3D_wcvsc")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Esteira" unique_id=1212119508]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Esteira/StaticBody3D2" unique_id=936016974]
+transform = Transform3D(5.364418e-05, -1.6292066e-05, -99.99999, -7.1054274e-13, 100, -1.6292066e-05, 99.99999, 9.2370556e-12, 5.364418e-05, -185.8222, 0.4493389, 69.09444)
+shape = SubResource("ConvexPolygonShape3D_g67nl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Esteira/StaticBody3D2" unique_id=1098650577]
+transform = Transform3D(5.364418e-05, -1.6292066e-05, -99.99999, -7.1054274e-13, 100, -1.6292066e-05, 99.99999, 9.2370556e-12, 5.364418e-05, -237.74486, 0.5451251, 68.86842)
+shape = SubResource("ConvexPolygonShape3D_2ahwp")

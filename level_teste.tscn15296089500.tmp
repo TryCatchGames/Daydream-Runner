@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bwd7hj03fl25n"]
+
+[ext_resource type="Script" uid="uid://mdxtku3y83a7" path="res://player.gd" id="1_0f8t0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpnpj"]
+
+[sub_resource type="Sky" id="Sky_wcvsc"]
+sky_material = SubResource("ProceduralSkyMaterial_xpnpj")
+
+[sub_resource type="Environment" id="Environment_r60fy"]
+background_mode = 2
+sky = SubResource("Sky_wcvsc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64gcy"]
+size = Vector3(50, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_64gcy"]
+lightmap_size_hint = Vector2i(279, 266)
+size = Vector3(50, 1, 5)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_64gcy"]
+radius = 0.20263672
+height = 1.0827026
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_23gcr"]
+points = PackedVector3Array(0.18748488, 0.3996142, 0.04359183, -0.19355886, -0.3628229, -0.051560927, -0.19528508, -0.36599883, 0.0434108, 0.17329013, -0.43620828, -0.0367265, -0.051560927, 0.3628229, -0.19355886, -0.06756012, 0.38006413, 0.18579526, 0.074863575, -0.36432797, 0.18581624, -0.18164831, 0.41893685, -0.036613528, 0.058758646, -0.3463963, -0.19321047, 0.15464158, 0.39740086, -0.11552127, -0.054304928, -0.52994084, -0.037729684, 0.044921536, 0.52861655, -0.054160107, -0.067559265, -0.38005954, 0.18579307, -0.11449361, -0.37817538, -0.16181952, 0.0910413, 0.3972737, 0.1705007, 0.18183757, -0.32540315, 0.08885571, -0.16028441, 0.35911286, 0.12069282, -0.14726263, 0.38125354, -0.1313978, 0.18309504, -0.3588857, -0.08216177, -0.05384287, 0.50924844, 0.09398408, 0.06087555, -0.50692254, 0.09357149, 0.090751454, 0.36429948, -0.17850675, 0.20167856, 0.3326796, -0.0200401, 0.04449443, -0.50675964, -0.102610074, -0.14585575, -0.3620193, 0.13743408, 0.027204186, 0.33083746, 0.20058201, 0.15054329, 0.34020144, 0.13510051, -0.10173195, -0.4863204, 0.09279969, -0.19528985, 0.3660076, 0.043411754, -0.06935352, 0.4870961, -0.11807395, 0.13742357, -0.3619909, -0.14584403, 0.1261458, 0.49020386, 0.044480346)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r60fy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0f8t0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Level_Teste" type="Node3D" unique_id=344174178]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1969764537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.037195, 2.4823308)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1004323707]
+environment = SubResource("Environment_r60fy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1910977804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0920378, 1.9457337, 2.3170497)
+
+[node name="Chao" type="StaticBody3D" parent="." unique_id=1379228487]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chao" unique_id=511659822]
+shape = SubResource("BoxShape3D_64gcy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chao" unique_id=10312490]
+mesh = SubResource("BoxMesh_64gcy")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=869599083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6159848, 0)
+script = ExtResource("1_0f8t0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1079303327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2931347, 0)
+mesh = SubResource("CapsuleMesh_64gcy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=764460639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2931347, 0)
+shape = SubResource("ConvexPolygonShape3D_23gcr")
+
+[node name="obstaculo" type="StaticBody3D" parent="." unique_id=1185503996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.990389, 1.3200524, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="obstaculo" unique_id=1882202622]
+mesh = SubResource("BoxMesh_r60fy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="obstaculo" unique_id=815219988]
+shape = SubResource("ConvexPolygonShape3D_0f8t0")
