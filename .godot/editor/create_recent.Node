@@ -1,0 +1,13 @@
+StaticBody3D
+CollisionShape3D
+AnimatedSprite3D
+AnimationPlayer
+MeshInstance3D
+Sprite3D
+SoftBody3D
+Node3D
+TextureRect
+CharacterBody3D
+DirectionalLight3D
+WorldEnvironment
+Camera3D
