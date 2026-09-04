@@ -4,7 +4,8 @@
 <p align="center">
 ### `Try Catch Games`
 </p>
-  
+
+***
 <p align="center">
 <img width="595" height="842" alt="Logo" src= "https://github.com/TryCatchGames/Daydream-Runner/blob/main/GDD/Try%20Catch%20Games%20(melhor).png" />
 </p>
