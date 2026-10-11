@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const IDLE_FLIP_FIX = 50.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -24,7 +25,7 @@ func update_collision() -> void:
 	var offset: Vector2 = COLLISIONS_OFFSETS[anim]
 	
 	if animated_sprite.flip_h and anim == "Idle":
-		offset.x = (-offset.x + 50)
+		offset.x = (-offset.x + IDLE_FLIP_FIX)
 		
 	collision.position = offset
 		
