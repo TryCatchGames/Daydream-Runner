@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://divxcqpmcim38"]
+
+[ext_resource type="Script" uid="uid://d3pcqw0qoopa7" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3swl"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_xh1x7"]
+font_size = 100
+
+[node name="HUD" type="Control" unique_id=580722759]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahhtf")
+
+[node name="LeftScore" type="Label" parent="." unique_id=1343770645]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_right = -150.0
+offset_bottom = 150.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_d3swl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightScore" type="Label" parent="." unique_id=698234067]
+layout_mode = 1
+offset_left = 150.0
+offset_right = 450.0
+offset_bottom = 150.0
+text = "0"
+label_settings = SubResource("LabelSettings_d3swl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryOverlay" type="Control" parent="." unique_id=781158276]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VictoryLabel" type="Label" parent="VictoryOverlay" unique_id=1082246531]
+z_index = 1
+layout_mode = 0
+offset_left = 240.0
+offset_top = 290.0
+offset_right = 1040.0
+offset_bottom = 430.0
+text = "Player 1 venceu!"
+label_settings = SubResource("LabelSettings_xh1x7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryBackground" type="ColorRect" parent="VictoryOverlay" unique_id=531872644]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)

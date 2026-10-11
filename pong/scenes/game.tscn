@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ch0pjwbc18waa"]
+
+[ext_resource type="Script" uid="uid://dgjrbx6rfyhcb" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://balfc6uk0giis" path="res://scenes/paddle.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dhabs3fxf4gxp" path="res://scenes/ball.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cn5obh3nvtcu5" path="res://scenes/wall.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cwnbhfq3d40yh" path="res://scenes/detector.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://divxcqpmcim38" path="res://scenes/hud.tscn" id="6_p57ef"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_d3swl"]
+
+[node name="Game" type="Node2D" unique_id=1686402097]
+script = ExtResource("1_uwrxv")
+final_score = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=846900700]
+
+[node name="HUD" parent="CanvasLayer" unique_id=580722759 instance=ExtResource("6_p57ef")]
+
+[node name="Background" type="MeshInstance2D" parent="." unique_id=610774717]
+modulate = Color(0, 0, 0, 1)
+z_index = -10
+position = Vector2(639.99994, 362.00003)
+scale = Vector2(1299.4999, 742.49994)
+mesh = SubResource("QuadMesh_d3swl")
+metadata/_edit_lock_ = true
+
+[node name="PaddleOne" parent="." unique_id=114311432 instance=ExtResource("2_yqjtg")]
+position = Vector2(50, 360)
+is_player_one = true
+
+[node name="PaddleTwo" parent="." unique_id=882834956 instance=ExtResource("2_yqjtg")]
+position = Vector2(1230, 360)
+is_ai = true
+
+[node name="Ball" parent="." unique_id=360890411 instance=ExtResource("3_lnu2h")]
+position = Vector2(640, 360)
+
+[node name="WallUp" parent="." unique_id=1246424794 instance=ExtResource("4_lbhrr")]
+position = Vector2(640, -10)
+
+[node name="WallDown" parent="." unique_id=913597112 instance=ExtResource("4_lbhrr")]
+position = Vector2(640, 730)
+
+[node name="DetectorLeft" parent="." unique_id=1919431278 instance=ExtResource("5_iywne")]
+position = Vector2(-10, 360)
+is_left = true
+
+[node name="DetectorRight" parent="." unique_id=1368514387 instance=ExtResource("5_iywne")]
+position = Vector2(1290, 360)
+
+[node name="StartDelay" type="Timer" parent="." unique_id=1825278619]
+one_shot = true
+
+[node name="BallMovement" type="Line2D" parent="." unique_id=1285343239]
+visible = false
+width = 4.0
+default_color = Color(1, 0, 0, 1)
