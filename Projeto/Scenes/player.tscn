@@ -49,7 +49,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgwyo"]
 radius = 9.0
-height = 38.0
+height = 40.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vi3pc"]
 animations = [{
@@ -234,5 +234,4 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1839376061]
 position = Vector2(25, -23)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Jump"
-frame_progress = 0.43995014
+animation = &"Idle"
