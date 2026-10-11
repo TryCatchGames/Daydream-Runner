@@ -13,12 +13,13 @@ config_version=5
 config/name="Daydream Runner"
 run/main_scene="uid://c4il6a1gbg8je"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dacm5nw2eovmy"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=540
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
