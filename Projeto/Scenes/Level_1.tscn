@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c4il6a1gbg8je"]
+
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_oiua3"]
+[ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scenes/esteira.gd" id="2_i63mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
+size = Vector2(2436.5, 40)
+
+[node name="Node2D" type="Node2D" unique_id=902791670]
+
+[node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
+position = Vector2(4, 487)
+
+[node name="Esteira" type="Node2D" parent="." unique_id=1897819963]
+position = Vector2(5, -186)
+script = ExtResource("2_i63mn")
+
+[node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
+position = Vector2(12, 712)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
+position = Vector2(1201, -5)
+shape = SubResource("RectangleShape2D_64gcy")
+
+[node name="ColorRect" type="ColorRect" parent="Esteira/Chao" unique_id=1664664732]
+offset_left = -16.0
+offset_top = -27.0
+offset_right = 2409.0
+offset_bottom = 16.0
+color = Color(0.09019608, 0.09019608, 0.09411765, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Esteira" unique_id=347932069]
+offset_left = 417.0
+offset_top = 627.0
+offset_right = 457.0
+offset_bottom = 693.0
+color = Color(1, 0.078431375, 0.60784316, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Esteira" unique_id=42125863]
+offset_left = 642.0
+offset_top = 627.0
+offset_right = 682.0
+offset_bottom = 693.0
+color = Color(1, 0.078431375, 0.60784316, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Esteira" unique_id=814429023]
+offset_left = 1114.0
+offset_top = 627.0
+offset_right = 1154.0
+offset_bottom = 693.0
+color = Color(1, 0.078431375, 0.60784316, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Esteira" unique_id=9614967]
+offset_left = 2252.0
+offset_top = 620.0
+offset_right = 2292.0
+offset_bottom = 686.0
+color = Color(1, 0.078431375, 0.60784316, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Esteira" unique_id=2016423318]
+offset_left = 1894.0
+offset_top = 632.0
+offset_right = 1934.0
+offset_bottom = 698.0
+color = Color(1, 0.078431375, 0.60784316, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Esteira" unique_id=1726357374]
+offset_left = 1503.0
+offset_top = 625.0
+offset_right = 1543.0
+offset_bottom = 691.0
+color = Color(1, 0.078431375, 0.60784316, 1)
