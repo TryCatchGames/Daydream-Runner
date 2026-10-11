@@ -10,6 +10,34 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l2vh"]
 size = Vector2(80, 70)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fokg4"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(395, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb7r5"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(316, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmfak"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(237, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hquc0"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(158, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77tmc"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(79, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1a2k"]
+atlas = ExtResource("4_lmfak")
+region = Rect2(0, 0, 79, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar8p1"]
+atlas = ExtResource("5_hquc0")
+region = Rect2(0, 0, 81, 71)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fvpw"]
 atlas = ExtResource("2_fokg4")
 region = Rect2(0, 0, 81, 71)
@@ -116,6 +144,32 @@ region = Rect2(243, 0, 81, 71)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v1a2k"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fokg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb7r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmfak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hquc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77tmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1a2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar8p1")
+}],
+"loop": 1,
+"name": &"Aparecendo",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1fvpw")
@@ -230,4 +284,5 @@ shape = SubResource("RectangleShape2D_3l2vh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349340607]
 position = Vector2(14, -2)
 sprite_frames = SubResource("SpriteFrames_v1a2k")
-animation = &"Voando"
+animation = &"Dano"
+frame_progress = 0.86395663
