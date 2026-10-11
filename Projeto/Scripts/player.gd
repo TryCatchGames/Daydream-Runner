@@ -8,6 +8,7 @@ const FRICTION = 6.0
 const JUMP_VELOCITY = -400.0
 
 const FLIP_FIX = 17.0
+const SWORD_FLIP_FIX = 26.0
 const ATTACK1_OFFSET_LEFT = Vector2(-32, 0)
 const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 
@@ -15,7 +16,6 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var sword_hitbox: Area2D = $SwordHitBox
 @onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
-
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -30,7 +30,7 @@ var facing_direction = 1
 var attacking := false
 var combo_request := false
 var attack_held := false
-
+var sword_hitbox_shape_origin: Vector2
 
 func update_collision() -> void:
 	var anim: String = animated_sprite.animation
@@ -117,16 +117,26 @@ func update_sword_hitbox() -> void:
 		enable_sword_hitbox()
 	else:
 		disable_sword_hitbox()
+		
+func update_sword_hitbox_direction() -> void:
+	var shape_position := sword_hitbox_shape_origin
+	if animated_sprite.flip_h:
+		shape_position.x = -SWORD_FLIP_FIX
+	else:
+		shape_position.x = abs(shape_position.x)
+	sword_hitbox_shape.position = shape_position
 
 func _ready() -> void:
 	animated_sprite.animation_changed.connect(update_collision)
 	animated_sprite.animation_changed.connect(update_sprite_offset)
 	animated_sprite.animation_changed.connect(update_sword_hitbox)
 	animated_sprite.animation_finished.connect(_on_animation_finished)
+	sword_hitbox_shape_origin = sword_hitbox_shape.position
 
 	update_collision()
 	update_sprite_offset()
 	update_sword_hitbox()
+	update_sword_hitbox_direction()
 
 
 func _physics_process(delta: float) -> void:
@@ -148,20 +158,21 @@ func _physics_process(delta: float) -> void:
 	# 4. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
 	
-	 ## 5. Lógica de Movimento Assimétrico e Inércia
-	#if direction:
-		 ##Se vai pra direita (>0), usa SPEED_RIGHT. Se esquerda, usa SPEED_LEFT.
-		#var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
-		#velocity.x = direction * target_speed
-	#else:
-		 ##Quando não aperta nada, desliza suavemente até o DRAG_SPEED (para a esquerda/negativo)
-		#velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
+	 #5. Lógica de Movimento Assimétrico e Inércia
+	if direction:
+		 #Se vai pra direita (>0), usa SPEED_RIGHT. Se esquerda, usa SPEED_LEFT.
+		var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
+		velocity.x = direction * target_speed
+	else:
+		 #Quando não aperta nada, desliza suavemente até o DRAG_SPEED (para a esquerda/negativo)
+		velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
 
 	# 6. Flip do sprite
 	if direction != 0:
 		animated_sprite.flip_h = direction < 0
 		update_collision()
 		update_sprite_offset()
+		update_sword_hitbox_direction()
 
 	move_and_slide()
 
