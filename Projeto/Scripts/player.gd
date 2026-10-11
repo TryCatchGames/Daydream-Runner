@@ -125,8 +125,17 @@ func _physics_process(delta: float) -> void:
 
 	# 4. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
+	
+	 # 5. Lógica de Movimento Assimétrico e Inércia
+	if direction:
+		 #Se vai pra direita (>0), usa SPEED_RIGHT. Se esquerda, usa SPEED_LEFT.
+		var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
+		velocity.x = direction * target_speed
+	else:
+		 #Quando não aperta nada, desliza suavemente até o DRAG_SPEED (para a esquerda/negativo)
+		velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
 
-	# 5. Flip do sprite
+	# 6. Flip do sprite
 	if direction != 0:
 		animated_sprite.flip_h = direction < 0
 		update_collision()
@@ -134,7 +143,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# 6. Máquina de estados da animação
+	# 7. Máquina de estados da animação
 	if not attacking:
 		if not is_on_floor():
 			if velocity.y < 0:
