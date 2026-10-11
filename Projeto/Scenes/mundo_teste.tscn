@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://lasyrtfvp3te"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
+
+[node name="MundoTeste" type="Node2D" unique_id=1113362285]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=598778466]
+position = Vector2(640, 680)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=598946978]
+position = Vector2(1280, 40)
+shape = SubResource("RectangleShape2D_d3swl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1544812306]
+offset_right = 40.0
+offset_bottom = 40.0
