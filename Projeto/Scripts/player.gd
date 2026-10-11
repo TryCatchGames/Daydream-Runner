@@ -6,6 +6,7 @@ const SPEED_LEFT = 450.0 # Mais rápido para a esquerda (aceleração assimétri
 const DRAG_SPEED = 400.0 # Força que puxa o ninjinha para trás quando parado
 const FRICTION = 6.0 # Quão suave o ninjinha "escorrega" até ser puxado
 const JUMP_VELOCITY = -400.0
+const IDLE_FLIP_FIX = 50.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -28,7 +29,7 @@ func update_collision() -> void:
 	var offset: Vector2 = COLLISIONS_OFFSETS[anim]
 	
 	if animated_sprite.flip_h and anim == "Idle":
-		offset.x = (-offset.x + 50)
+		offset.x = (-offset.x + IDLE_FLIP_FIX)
 		
 	collision.position = offset
 		
