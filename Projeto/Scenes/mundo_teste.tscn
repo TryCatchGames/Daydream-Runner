@@ -231,6 +231,7 @@ script = ExtResource("1_o0lqk")
 position = Vector2(320, 400)
 
 [node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1175538661]
+position = Vector2(903, 425)
 script = ExtResource("3_bmojv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo" unique_id=1281099891]
