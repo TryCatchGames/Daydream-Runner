@@ -13,6 +13,9 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var sword_hitbox: Area2D = $SwordHitBox
+@onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
+
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -88,6 +91,7 @@ func _on_animation_finished() -> void:
 			animated_sprite.play("Attack2Sword")
 		else:
 			attacking = false
+			update_sword_hitbox()
 
 	elif animated_sprite.animation == "Attack2Sword":
 		if attack_held:
@@ -96,15 +100,33 @@ func _on_animation_finished() -> void:
 		else:
 			attacking = false
 			combo_request = false
+			update_sword_hitbox()
 
+func enable_sword_hitbox() -> void:
+	sword_hitbox.monitoring = true
+	sword_hitbox_shape.set_deferred("disabled", false)
+	
+func disable_sword_hitbox() -> void:
+	sword_hitbox.monitoring = false
+	sword_hitbox_shape.set_deferred("disabled", true)
+
+func update_sword_hitbox() -> void:
+	var anim := animated_sprite.animation
+	var attack_animation := anim == "Attack1Sword" or anim == "Attack2Sword" or anim == "Attack3Sword"
+	if attacking and attack_animation:
+		enable_sword_hitbox()
+	else:
+		disable_sword_hitbox()
 
 func _ready() -> void:
 	animated_sprite.animation_changed.connect(update_collision)
 	animated_sprite.animation_changed.connect(update_sprite_offset)
+	animated_sprite.animation_changed.connect(update_sword_hitbox)
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 	update_collision()
 	update_sprite_offset()
+	update_sword_hitbox()
 
 
 func _physics_process(delta: float) -> void:
@@ -126,14 +148,14 @@ func _physics_process(delta: float) -> void:
 	# 4. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
 	
-	 # 5. Lógica de Movimento Assimétrico e Inércia
-	if direction:
-		 #Se vai pra direita (>0), usa SPEED_RIGHT. Se esquerda, usa SPEED_LEFT.
-		var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
-		velocity.x = direction * target_speed
-	else:
-		 #Quando não aperta nada, desliza suavemente até o DRAG_SPEED (para a esquerda/negativo)
-		velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
+	 ## 5. Lógica de Movimento Assimétrico e Inércia
+	#if direction:
+		 ##Se vai pra direita (>0), usa SPEED_RIGHT. Se esquerda, usa SPEED_LEFT.
+		#var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
+		#velocity.x = direction * target_speed
+	#else:
+		 ##Quando não aperta nada, desliza suavemente até o DRAG_SPEED (para a esquerda/negativo)
+		#velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
 
 	# 6. Flip do sprite
 	if direction != 0:

@@ -17,12 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://c720uv4jafrun" path="res://Sprites/frames/Move-Mode 1/08.png" id="9_11gg7"]
 [ext_resource type="Texture2D" uid="uid://cgkbx5k7quqfk" path="res://Sprites/frames/Attack2-Mode 2/02.png" id="9_36dho"]
 [ext_resource type="Texture2D" uid="uid://dl31f4awa1g1p" path="res://Sprites/frames/Attack2-Mode 2/03.png" id="10_yh6i2"]
-[ext_resource type="Texture2D" uid="uid://blg28hkfhxlry" path="res://Sprites/frames/Attack2-Mode 1/04.png" id="11_nv4vc"]
-[ext_resource type="Texture2D" uid="uid://e7775t8ahmck" path="res://Sprites/frames/Attack2-Mode 1/05.png" id="12_8gxox"]
-[ext_resource type="Texture2D" uid="uid://b72q5d8e7buqi" path="res://Sprites/frames/Attack2-Mode 1/06.png" id="13_11gg7"]
+[ext_resource type="Texture2D" uid="uid://blg28hkfhxlry" path="res://Sprites/frames/Attack2-Mode 2/04.png" id="11_nv4vc"]
+[ext_resource type="Texture2D" uid="uid://e7775t8ahmck" path="res://Sprites/frames/Attack2-Mode 2/05.png" id="12_8gxox"]
+[ext_resource type="Texture2D" uid="uid://b72q5d8e7buqi" path="res://Sprites/frames/Attack2-Mode 2/06.png" id="13_11gg7"]
 [ext_resource type="Texture2D" uid="uid://by5wt635omy4a" path="res://Sprites/frames/Attack3-Mode 2/01.png" id="14_qpa8y"]
 [ext_resource type="Texture2D" uid="uid://cxj4rsmv6g80" path="res://Sprites/frames/Attack3-Mode 2/02.png" id="15_sbwqj"]
-[ext_resource type="Texture2D" uid="uid://de4fnccpl3tm0" path="res://Sprites/frames/Attack3-Mode 1/03.png" id="16_xwi16"]
+[ext_resource type="Texture2D" uid="uid://de4fnccpl3tm0" path="res://Sprites/frames/Attack3-Mode 2/03.png" id="16_xwi16"]
 [ext_resource type="Texture2D" uid="uid://dlyhc7de3dw2s" path="res://Sprites/frames/Attack3-Mode 2/04.png" id="17_sweqm"]
 [ext_resource type="Texture2D" uid="uid://dtu4mlrqobgr2" path="res://Sprites/frames/Attack3-Mode 2/05.png" id="18_ph33w"]
 [ext_resource type="Texture2D" uid="uid://dyxjx55irrcdx" path="res://Sprites/frames/Attack3-Mode 2/06.png" id="19_7ldla"]
@@ -224,6 +224,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
+size = Vector2(48, 27)
+
 [node name="Player" type="CharacterBody2D" unique_id=362024797]
 script = ExtResource("1_83xs0")
 
@@ -234,5 +237,13 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1839376061]
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Idle"
+animation = &"Attack1Sword"
 centered = false
+
+[node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitBox" unique_id=1619038287]
+position = Vector2(44, -27.5)
+disabled = true
+shape = SubResource("RectangleShape2D_d3swl")
