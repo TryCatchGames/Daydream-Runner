@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjvgwra6m4cxu"
-path.s3tc="res://.godot/imported/04.png-cace5ba445a178b47bf285c79f895c3c.s3tc.ctex"
+path.s3tc="res://.godot/imported/04kunai.png-8d5dcdd045f6a7e7fa3888a35ffd4764.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/frames/Attack1-Mode 1/04.png"
-dest_files=["res://.godot/imported/04.png-cace5ba445a178b47bf285c79f895c3c.s3tc.ctex"]
+source_file="res://Sprites/frames/Attack1-Mode 1/04kunai.png"
+dest_files=["res://.godot/imported/04kunai.png-8d5dcdd045f6a7e7fa3888a35ffd4764.s3tc.ctex"]
 
 [params]
 

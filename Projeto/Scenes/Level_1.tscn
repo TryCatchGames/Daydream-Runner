@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c4il6a1gbg8je"]
 
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_oiua3"]
-[ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scenes/esteira.gd" id="2_i63mn"]
+[ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scripts/esteira.gd" id="2_i63mn"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="2_vnunq"]
+[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
 size = Vector2(99969, 119.25)
@@ -35,3 +36,6 @@ shape = SubResource("RectangleShape2D_64gcy")
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
 position = Vector2(56, 353)
 scale = Vector2(2.4, 2.4)
+
+[node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
+position = Vector2(969, 106)

@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://c3a2iju5ghrs6"]
 
 [ext_resource type="Script" uid="uid://dhwn6rly2x7ra" path="res://Scripts/player.gd" id="1_83xs0"]
-[ext_resource type="Texture2D" uid="uid://dspiqtrounswe" path="res://Sprites/frames/Attack1-Mode 2/01.png" id="2_0gysh"]
-[ext_resource type="Texture2D" uid="uid://cekknwsw37lvv" path="res://Sprites/frames/Attack1-Mode 2/02.png" id="3_vfarp"]
+[ext_resource type="Texture2D" uid="uid://dspiqtrounswe" path="res://Sprites/frames/Attack1-Mode 2/01katana.png" id="2_0gysh"]
+[ext_resource type="Texture2D" uid="uid://cekknwsw37lvv" path="res://Sprites/frames/Attack1-Mode 2/02katana.png" id="3_vfarp"]
 [ext_resource type="Texture2D" uid="uid://dx12yq1ekixgp" path="res://Sprites/frames/Move-Mode 1/02.png" id="3_xuaoq"]
 [ext_resource type="Texture2D" uid="uid://bjomd803lrxtu" path="res://Sprites/frames/Move-Mode 1/03.png" id="4_wohnl"]
-[ext_resource type="Texture2D" uid="uid://dn4n111uf6o3k" path="res://Sprites/frames/Attack1-Mode 2/03.png" id="4_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://dn4n111uf6o3k" path="res://Sprites/frames/Attack1-Mode 2/03katana.png" id="4_y6uwr"]
 [ext_resource type="Texture2D" uid="uid://cn5yvevoufa2q" path="res://Sprites/frames/Move-Mode 1/04.png" id="5_36dho"]
-[ext_resource type="Texture2D" uid="uid://cjvgwra6m4cxu" path="res://Sprites/frames/Attack1-Mode 2/04.png" id="5_83xs0"]
+[ext_resource type="Texture2D" uid="uid://cjvgwra6m4cxu" path="res://Sprites/frames/Attack1-Mode 2/04katana.png" id="5_83xs0"]
 [ext_resource type="Texture2D" uid="uid://chmdp2pyxgmen" path="res://Sprites/frames/Move-Mode 1/05.png" id="6_yh6i2"]
-[ext_resource type="Texture2D" uid="uid://b2raiosc55uac" path="res://Sprites/frames/Attack1-Mode 2/05.png" id="6_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://b2raiosc55uac" path="res://Sprites/frames/Attack1-Mode 2/05katana.png" id="6_ypfnu"]
 [ext_resource type="Texture2D" uid="uid://bjdked8xrqk86" path="res://Sprites/frames/Move-Mode 1/06.png" id="7_nv4vc"]
-[ext_resource type="Texture2D" uid="uid://br3gbuk1uke2g" path="res://Sprites/frames/Attack1-Mode 2/06.png" id="7_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://br3gbuk1uke2g" path="res://Sprites/frames/Attack1-Mode 2/06katana.png" id="7_xuaoq"]
 [ext_resource type="Texture2D" uid="uid://y8s4ksyv2fji" path="res://Sprites/frames/Move-Mode 1/07.png" id="8_8gxox"]
 [ext_resource type="Texture2D" uid="uid://dxawbsod0n6r0" path="res://Sprites/frames/Attack2-Mode 2/01.png" id="8_wohnl"]
 [ext_resource type="Texture2D" uid="uid://c720uv4jafrun" path="res://Sprites/frames/Move-Mode 1/08.png" id="9_11gg7"]
@@ -245,5 +245,5 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitBox" unique_id=1619038287]
 position = Vector2(44, -27.5)
-disabled = true
 shape = SubResource("RectangleShape2D_d3swl")
+disabled = true

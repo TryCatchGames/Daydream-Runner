@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4v1jnr5ohckj"]
 
-[ext_resource type="Script" uid="uid://yw5mtqkrs1dl" path="res://inimigo.gd" id="1_nj8y5"]
+[ext_resource type="Script" uid="uid://blmrtdh7j317y" path="res://Scripts/inimigo.gd" id="1_fokg4"]
 [ext_resource type="Texture2D" uid="uid://vgeq4kjs8f6p" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/ATTACK.png" id="2_fokg4"]
 [ext_resource type="Texture2D" uid="uid://dkccja2ivbejg" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/HURT.png" id="3_gb7r5"]
 [ext_resource type="Texture2D" uid="uid://2guufp4xutyc" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/DEATH.png" id="4_lmfak"]
@@ -221,7 +221,7 @@ animations = [{
 }]
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=41493064]
-script = ExtResource("1_nj8y5")
+script = ExtResource("1_fokg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=212097908]
 position = Vector2(13, -2)
@@ -230,4 +230,4 @@ shape = SubResource("RectangleShape2D_3l2vh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349340607]
 position = Vector2(14, -2)
 sprite_frames = SubResource("SpriteFrames_v1a2k")
-animation = &"Dano"
+animation = &"Voando"
