@@ -17,12 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://c720uv4jafrun" path="res://Sprites/frames/Move-Mode 1/08.png" id="9_11gg7"]
 [ext_resource type="Texture2D" uid="uid://cgkbx5k7quqfk" path="res://Sprites/frames/Attack2-Mode 2/02.png" id="9_36dho"]
 [ext_resource type="Texture2D" uid="uid://dl31f4awa1g1p" path="res://Sprites/frames/Attack2-Mode 2/03.png" id="10_yh6i2"]
-[ext_resource type="Texture2D" uid="uid://blg28hkfhxlry" path="res://Sprites/frames/Attack2-Mode 2/04.png" id="11_nv4vc"]
-[ext_resource type="Texture2D" uid="uid://e7775t8ahmck" path="res://Sprites/frames/Attack2-Mode 2/05.png" id="12_8gxox"]
-[ext_resource type="Texture2D" uid="uid://b72q5d8e7buqi" path="res://Sprites/frames/Attack2-Mode 2/06.png" id="13_11gg7"]
+[ext_resource type="Texture2D" uid="uid://blg28hkfhxlry" path="res://Sprites/frames/Attack2-Mode 1/04.png" id="11_nv4vc"]
+[ext_resource type="Texture2D" uid="uid://e7775t8ahmck" path="res://Sprites/frames/Attack2-Mode 1/05.png" id="12_8gxox"]
+[ext_resource type="Texture2D" uid="uid://b72q5d8e7buqi" path="res://Sprites/frames/Attack2-Mode 1/06.png" id="13_11gg7"]
 [ext_resource type="Texture2D" uid="uid://by5wt635omy4a" path="res://Sprites/frames/Attack3-Mode 2/01.png" id="14_qpa8y"]
 [ext_resource type="Texture2D" uid="uid://cxj4rsmv6g80" path="res://Sprites/frames/Attack3-Mode 2/02.png" id="15_sbwqj"]
-[ext_resource type="Texture2D" uid="uid://de4fnccpl3tm0" path="res://Sprites/frames/Attack3-Mode 2/03.png" id="16_xwi16"]
+[ext_resource type="Texture2D" uid="uid://de4fnccpl3tm0" path="res://Sprites/frames/Attack3-Mode 1/03.png" id="16_xwi16"]
 [ext_resource type="Texture2D" uid="uid://dlyhc7de3dw2s" path="res://Sprites/frames/Attack3-Mode 2/04.png" id="17_sweqm"]
 [ext_resource type="Texture2D" uid="uid://dtu4mlrqobgr2" path="res://Sprites/frames/Attack3-Mode 2/05.png" id="18_ph33w"]
 [ext_resource type="Texture2D" uid="uid://dyxjx55irrcdx" path="res://Sprites/frames/Attack3-Mode 2/06.png" id="19_7ldla"]
@@ -72,9 +72,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_xuaoq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack1Sword",
-"speed": 12.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,9 +95,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_11gg7")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack2Sword",
-"speed": 12.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -228,10 +228,11 @@ animations = [{
 script = ExtResource("1_83xs0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424208590]
-position = Vector2(17, -19)
+position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_tgwyo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1839376061]
-position = Vector2(25, -23)
+position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
 animation = &"Idle"
+centered = false
