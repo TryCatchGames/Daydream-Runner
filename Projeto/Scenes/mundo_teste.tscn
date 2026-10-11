@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://lasyrtfvp3te"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_ebs18"]
+[ext_resource type="Script" uid="uid://dxq7ovuedf3rt" path="res://Scripts/mundo_teste.gd" id="1_o0lqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
+size = Vector2(1149.5, 146)
 
 [node name="MundoTeste" type="Node2D" unique_id=1113362285]
+script = ExtResource("1_o0lqk")
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=598778466]
+[node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_ebs18")]
+position = Vector2(320, 400)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=295013120]
 position = Vector2(640, 680)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=598946978]
-position = Vector2(1280, 40)
-shape = SubResource("RectangleShape2D_d3swl")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1544812306]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1789183994]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_vi3pc")
