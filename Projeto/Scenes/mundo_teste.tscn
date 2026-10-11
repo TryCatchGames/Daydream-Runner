@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_ebs18"]
 [ext_resource type="Script" uid="uid://dxq7ovuedf3rt" path="res://Scripts/mundo_teste.gd" id="1_o0lqk"]
+[ext_resource type="Script" uid="uid://cfj6xs6cyxwy7" path="res://Scenes/inimigo.gd" id="3_bmojv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3l2vh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
 size = Vector2(1149.5, 146)
@@ -11,6 +14,12 @@ script = ExtResource("1_o0lqk")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_ebs18")]
 position = Vector2(320, 400)
+
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=1175538661]
+script = ExtResource("3_bmojv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo" unique_id=1281099891]
+shape = SubResource("CapsuleShape2D_3l2vh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=295013120]
 position = Vector2(640, 680)
