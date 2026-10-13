@@ -6,9 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://2guufp4xutyc" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/DEATH.png" id="4_lmfak"]
 [ext_resource type="Texture2D" uid="uid://de4vxodr2pcev" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="5_hquc0"]
 [ext_resource type="Texture2D" uid="uid://dk117o63gplr" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/FLYING.png" id="6_77tmc"]
+[ext_resource type="Shader" path="res://Shaders/hit_flash.gdshader" id="7_hit_flash"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l2vh"]
 size = Vector2(80, 70)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hit_flash"]
+resource_local_to_scene = true
+shader = ExtResource("7_hit_flash")
+shader_parameter/flash_amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fokg4"]
 atlas = ExtResource("4_lmfak")
@@ -283,6 +289,7 @@ position = Vector2(13, -2)
 shape = SubResource("RectangleShape2D_3l2vh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349340607]
+material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(14, -2)
 sprite_frames = SubResource("SpriteFrames_v1a2k")
 animation = &"Voando"

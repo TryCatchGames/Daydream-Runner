@@ -4,6 +4,7 @@ enum State { SPAWN, IDLE, CHASE, ATTACK, HURT, DEAD }
 
 const MAX_HEALTH := 2
 const DAMAGE := 1
+const DAMAGE_FLASH_DURATION := 0.2
 const KNOCKBACK_STRENGTH := 400.0
 const KNOCKBACK_DECAY := 500.0
 
@@ -14,6 +15,7 @@ var health := MAX_HEALTH
 var player: Node2D = null
 var knockback_velocity := Vector2.ZERO
 var attack_targets: Dictionary = {}
+var damage_flash_tween: Tween
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -145,11 +147,29 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	_apply_knockback_away_from(source_position)
 
 	if health == 0:
+		_flash_white()
 		change_state(State.DEAD)
 	elif current_state == State.HURT:
 		animated_sprite.play("Dano")
 	else:
 		change_state(State.HURT)
+
+func _flash_white() -> void:
+	var flash_material := animated_sprite.material as ShaderMaterial
+	if flash_material == null:
+		return
+
+	if damage_flash_tween and damage_flash_tween.is_running():
+		damage_flash_tween.kill()
+
+	flash_material.set_shader_parameter("flash_amount", 1.0)
+	damage_flash_tween = create_tween()
+	damage_flash_tween.tween_method(_set_damage_flash, 1.0, 0.0, DAMAGE_FLASH_DURATION)
+
+func _set_damage_flash(amount: float) -> void:
+	var flash_material := animated_sprite.material as ShaderMaterial
+	if flash_material != null:
+		flash_material.set_shader_parameter("flash_amount", amount)
 
 func _apply_knockback_away_from(source_position: Vector2) -> void:
 	var direction := global_position - source_position

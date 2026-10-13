@@ -13,6 +13,7 @@
 size = Vector2(99969, 119.25)
 
 [node name="Node2D" type="Node2D" unique_id=902791670]
+position = Vector2(-53, 37)
 
 [node name="Esteira" type="Node2D" parent="." unique_id=1897819963]
 position = Vector2(-4, -204)
