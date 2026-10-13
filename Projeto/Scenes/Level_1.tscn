@@ -71,8 +71,20 @@ position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
-position = Vector2(460, 494)
+position = Vector2(55, 604)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
-position = Vector2(960, 88)
+position = Vector2(965, 93)
+
+[node name="Inimigo2" parent="." unique_id=633860018 instance=ExtResource("4_nw7js")]
+position = Vector2(329, 78)
+
+[node name="Inimigo3" parent="." unique_id=1822995797 instance=ExtResource("4_nw7js")]
+position = Vector2(733, 312)
+
+[node name="Inimigo4" parent="." unique_id=291789769 instance=ExtResource("4_nw7js")]
+position = Vector2(1021, 337)
+
+[node name="Inimigo5" parent="." unique_id=66001111 instance=ExtResource("4_nw7js")]
+position = Vector2(104, 57)

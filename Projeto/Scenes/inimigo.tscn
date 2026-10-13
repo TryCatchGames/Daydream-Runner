@@ -166,9 +166,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ar8p1")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Aparecendo",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -195,9 +195,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jwj35")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Ataque",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -212,9 +212,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ejebm")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Dano",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,9 +235,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5urpn")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Morte",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -254,7 +254,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Parado",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,10 +271,11 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Voando",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=41493064]
+collision_layer = 2
 script = ExtResource("1_fokg4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=212097908]
@@ -284,5 +285,4 @@ shape = SubResource("RectangleShape2D_3l2vh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349340607]
 position = Vector2(14, -2)
 sprite_frames = SubResource("SpriteFrames_v1a2k")
-animation = &"Dano"
-frame_progress = 0.86395663
+animation = &"Voando"

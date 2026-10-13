@@ -56,10 +56,16 @@
 [ext_resource type="Texture2D" uid="uid://bitu1wplged0g" path="res://Sprites/frames/Jump-Mode 1/06.png" id="37_pukcj"]
 [ext_resource type="Texture2D" uid="uid://cbo3poghtmple" path="res://Sprites/frames/Jump-Mode 1/07.png" id="38_1htnp"]
 [ext_resource type="Texture2D" uid="uid://wl0wnl3g72fk" path="res://Sprites/frames/Jump-Mode 1/08.png" id="39_m376e"]
+[ext_resource type="Shader" uid="uid://llmwnh3fxds3" path="res://Shaders/hit_flash.gdshader" id="40_hit_flash"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgwyo"]
 radius = 9.0
 height = 40.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hit_flash"]
+resource_local_to_scene = true
+shader = ExtResource("40_hit_flash")
+shader_parameter/flash_amount = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vi3pc"]
 animations = [{
@@ -94,9 +100,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_nuaet")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Aparecendo",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -163,9 +169,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_7ldla")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack3Sword",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -273,6 +279,7 @@ animations = [{
 size = Vector2(48, 27)
 
 [node name="Player" type="CharacterBody2D" unique_id=362024797]
+collision_mask = 3
 script = ExtResource("1_83xs0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424208590]
@@ -280,13 +287,14 @@ position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_tgwyo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1839376061]
+material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Aparecendo"
-frame_progress = 0.41666523
+animation = &"Attack1Sword"
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]
+collision_mask = 3
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHitBox" unique_id=1619038287]
