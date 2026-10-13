@@ -13,7 +13,6 @@
 size = Vector2(99969, 119.25)
 
 [node name="Node2D" type="Node2D" unique_id=902791670]
-position = Vector2(-53, 37)
 
 [node name="Esteira" type="Node2D" parent="." unique_id=1897819963]
 position = Vector2(-4, -204)
@@ -22,7 +21,7 @@ script = ExtResource("2_i63mn")
 [node name="Fundo" type="Sprite2D" parent="Esteira" unique_id=548395148]
 
 [node name="Prédio4" type="Sprite2D" parent="Esteira" unique_id=295634081]
-position = Vector2(3117.0002, 328)
+position = Vector2(3118, 287)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("2_j0k67")
 
@@ -47,7 +46,7 @@ scale = Vector2(0.6909941, 0.69099414)
 texture = ExtResource("4_5r5j8")
 
 [node name="Prédio2" type="Sprite2D" parent="Esteira" unique_id=407389850]
-position = Vector2(887, 324)
+position = Vector2(885, 287.00003)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("2_j0k67")
 
