@@ -78,23 +78,18 @@ position = Vector2(59, 649)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
-visible = false
 position = Vector2(965, 93)
 
 [node name="Inimigo2" parent="." unique_id=633860018 instance=ExtResource("4_nw7js")]
-visible = false
 position = Vector2(329, 78)
 
 [node name="Inimigo3" parent="." unique_id=1822995797 instance=ExtResource("4_nw7js")]
-visible = false
 position = Vector2(733, 312)
 
 [node name="Inimigo4" parent="." unique_id=291789769 instance=ExtResource("4_nw7js")]
-visible = false
 position = Vector2(1021, 337)
 
 [node name="Inimigo5" parent="." unique_id=66001111 instance=ExtResource("4_nw7js")]
-visible = false
 position = Vector2(104, 57)
 
 [node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("9_aur7v")]
