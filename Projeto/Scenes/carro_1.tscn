@@ -20,19 +20,20 @@ animations = [{
 size = Vector2(244, 49.5)
 
 [node name="Carro1" type="CharacterBody2D" unique_id=372714669]
+position = Vector2(-50, -52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
 z_index = 1
-position = Vector2(689.28345, 377.64203)
+position = Vector2(35.283447, 77.64197)
 shape = SubResource("RectangleShape2D_vi3pc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1779650484]
-position = Vector2(687.65845, 341.64212)
+position = Vector2(33.658447, 41.64209)
 scale = Vector2(0.21347296, 0.21347307)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
-frame_progress = 0.6691715
+frame_progress = 0.60392743
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1130083288]
-position = Vector2(714.65845, 312.39203)
+position = Vector2(60.658447, 12.391968)
 shape = SubResource("RectangleShape2D_3fiaa")
