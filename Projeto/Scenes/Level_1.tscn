@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_oiua3"]
 [ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scripts/esteira.gd" id="2_i63mn"]
+[ext_resource type="Texture2D" uid="uid://cgisxkj0hj00a" path="res://Sprites/cenario/Predio_2.png" id="2_j0k67"]
+[ext_resource type="Texture2D" uid="uid://ck16i1orixdiy" path="res://Sprites/cenario/Predio_1.png" id="2_nh7xm"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="2_vnunq"]
+[ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="4_5r5j8"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
@@ -11,11 +14,44 @@ size = Vector2(99969, 119.25)
 [node name="Node2D" type="Node2D" unique_id=902791670]
 
 [node name="Esteira" type="Node2D" parent="." unique_id=1897819963]
-position = Vector2(5, -186)
+position = Vector2(-4, -204)
 script = ExtResource("2_i63mn")
 
+[node name="Fundo" type="Sprite2D" parent="Esteira" unique_id=548395148]
+
+[node name="Prédio4" type="Sprite2D" parent="Esteira" unique_id=295634081]
+position = Vector2(3117.0002, 328)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("2_j0k67")
+
+[node name="Prédio1" type="Sprite2D" parent="Esteira" unique_id=526859364]
+position = Vector2(310.00003, 256.99997)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("2_nh7xm")
+
+[node name="Prédio3" type="Sprite2D" parent="Esteira" unique_id=307857340]
+position = Vector2(1421, 257.99997)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("2_nh7xm")
+
+[node name="Prédio6" type="Sprite2D" parent="Esteira" unique_id=492846625]
+position = Vector2(2543, 256)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("2_nh7xm")
+
+[node name="Prédio5" type="Sprite2D" parent="Esteira" unique_id=2059044119]
+position = Vector2(2026.9999, 303)
+scale = Vector2(0.6909941, 0.69099414)
+texture = ExtResource("4_5r5j8")
+
+[node name="Prédio2" type="Sprite2D" parent="Esteira" unique_id=407389850]
+position = Vector2(887, 324)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("2_j0k67")
+
 [node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
-position = Vector2(3, 941)
+position = Vector2(3.0002441, 941)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Esteira/Chao" unique_id=1955587517]
 position = Vector2(22154, -123)
@@ -26,16 +62,17 @@ position = Vector2(13289, -123)
 texture = ExtResource("2_vnunq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Esteira/Chao" unique_id=567892282]
-position = Vector2(4424, -123)
+position = Vector2(4432.5313, -75.25)
+scale = Vector2(0.99978137, 0.60677093)
 texture = ExtResource("2_vnunq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
-position = Vector2(49977, -92)
+position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
-position = Vector2(56, 353)
+position = Vector2(460, 494)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
-position = Vector2(969, 106)
+position = Vector2(960, 88)
