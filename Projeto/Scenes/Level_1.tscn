@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ck16i1orixdiy" path="res://Sprites/cenario/Predio_1.png" id="2_nh7xm"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="2_vnunq"]
 [ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="4_5r5j8"]
+[ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_akpl7"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
@@ -30,9 +31,9 @@ scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("2_nh7xm")
 
 [node name="Prédio3" type="Sprite2D" parent="Esteira" unique_id=307857340]
-position = Vector2(1421, 257.99997)
-scale = Vector2(0.69099414, 0.6909942)
-texture = ExtResource("2_nh7xm")
+position = Vector2(1428, 403.99997)
+scale = Vector2(0.61773705, 0.61773705)
+texture = ExtResource("4_akpl7")
 
 [node name="Prédio6" type="Sprite2D" parent="Esteira" unique_id=492846625]
 position = Vector2(2543, 256)
