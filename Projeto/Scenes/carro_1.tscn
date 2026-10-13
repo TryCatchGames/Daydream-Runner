@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://5w71i6xuiiwv" path="res://Sprites/frames/Carro1/Carro_1.png" id="1_htvml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
-size = Vector2(403, 138)
+size = Vector2(406.75, 81)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d3swl"]
 animations = [{
@@ -16,15 +16,23 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fiaa"]
+size = Vector2(244, 49.5)
+
 [node name="Carro1" type="CharacterBody2D" unique_id=372714669]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
 z_index = 1
-position = Vector2(842.5, 605)
+position = Vector2(689.28345, 377.64203)
 shape = SubResource("RectangleShape2D_vi3pc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1779650484]
-position = Vector2(842, 592.00006)
+position = Vector2(687.65845, 341.64212)
 scale = Vector2(0.21347296, 0.21347307)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
+frame_progress = 0.6691715
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1130083288]
+position = Vector2(714.65845, 312.39203)
+shape = SubResource("RectangleShape2D_3fiaa")
