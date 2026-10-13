@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://duaopxmndmy2x"]
+
+[ext_resource type="Texture2D" uid="uid://cvsq63unfndf2" path="res://Sprites/frames/Carro1/Carro_1.png" id="1_htvml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
+size = Vector2(417, 138)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3swl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htvml")
+}],
+"loop": 1,
+"name": &"Andando",
+"speed": 12.0
+}]
+
+[node name="Carro1" type="CharacterBody2D" unique_id=372714669]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
+z_index = 1
+position = Vector2(849.5, 605)
+shape = SubResource("RectangleShape2D_vi3pc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1779650484]
+position = Vector2(849.1354, 594.3483)
+scale = Vector2(0.21777622, 0.21777628)
+sprite_frames = SubResource("SpriteFrames_d3swl")
+animation = &"Andando"
+frame_progress = 0.93014044
