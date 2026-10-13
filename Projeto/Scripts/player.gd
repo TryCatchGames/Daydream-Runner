@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED_RIGHT = 200.0
 const SPEED_LEFT = 450.0
 const DRAG_SPEED = 400.0
-const FRICTION = 6.0
+const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -400.0
 const MAX_HEALTH := 10
 const SWORD_DAMAGE := 1
@@ -315,15 +315,24 @@ func _physics_process(delta: float) -> void:
 	# 4. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
 	
-	# 5. Movimento horizontal. Durante o knockback, ele age sozinho e não
-	# recebe o puxão automático para a esquerda.
+	
+	# 5. Movimento horizontal.
+	# Durante o knockback, ele age independentemente da esteira.
 	if not is_zero_approx(knockback_velocity.x):
 		velocity.x = knockback_velocity.x
-	elif direction:
-		var target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
+
+	elif direction != 0:
+		var target_speed: float = SPEED_RIGHT if direction > 0 else SPEED_LEFT
 		velocity.x = direction * target_speed
+
 	else:
-		velocity.x = move_toward(velocity.x, -DRAG_SPEED, FRICTION * delta * SPEED_RIGHT)
+		# Acompanha a esteira, desacelerando suavemente até -DRAG_SPEED.
+		velocity.x = move_toward(
+			velocity.x,
+			-DRAG_SPEED,
+			DRAG_ACCELERATION * delta
+		)
+
 
 	# 6. Flip do sprite
 	if direction != 0:

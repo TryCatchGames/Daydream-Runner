@@ -58,7 +58,8 @@ position = Vector2(22154, -123)
 texture = ExtResource("2_vnunq")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Esteira/Chao" unique_id=938127628]
-position = Vector2(13289, -123)
+position = Vector2(13296.001, -75.00001)
+scale = Vector2(0.9999437, 0.610577)
 texture = ExtResource("2_vnunq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Esteira/Chao" unique_id=567892282]
@@ -67,6 +68,7 @@ scale = Vector2(0.99978137, 0.60677093)
 texture = ExtResource("2_vnunq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
+visible = false
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
