@@ -7,6 +7,7 @@ const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -450.0
+const DASH_SPEED := 850.0
 const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
 const ATTACK_HIT_FRAME := 3 # Quarto frame da animação (os índices começam em 0).
@@ -34,7 +35,8 @@ const COLLISIONS_OFFSETS = {
 	"Jump": Vector2(3.0, -20.0),
 	"Fall": Vector2(3.0, -20.0),
 	"Attack1Sword": Vector2(0.0, -20.0),
-	"Attack2Sword": Vector2(0.0, -20.0)
+	"Attack2Sword": Vector2(0.0, -20.0),
+	"Dash": Vector2(12.0, -20.0)
 }
 
 var facing_direction = 1
@@ -47,6 +49,8 @@ var sword_hit_targets: Dictionary = {}
 var damage_flash_tween: Tween
 var knockback_velocity := Vector2.ZERO
 var tem_esteira := false
+var dashing := false
+var dash_direction := 1.0
 
 signal health_changed(current_health: int, max_health: int)
 signal died
@@ -126,6 +130,8 @@ func _on_animation_finished() -> void:
 			attacking = false
 			combo_request = false
 			update_sword_hitbox()
+	elif animated_sprite.animation == "Dash":
+		dashing = false
 
 func enable_sword_hitbox() -> void:
 	sword_hitbox.monitoring = true
@@ -304,10 +310,40 @@ func _ready() -> void:
 	update_sword_hitbox_direction()
 	animated_sprite.play("Aparecendo")
 
+func start_dash() -> void:
+	dashing = true
+
+	# Define a direção com base na orientação do sprite.
+	dash_direction = -1.0 if animated_sprite.flip_h else 1.0
+
+	# Inicia o impulso horizontal e interrompe o movimento vertical.
+	velocity = Vector2(dash_direction * DASH_SPEED, 0.0)
+
+	# Garante que a hitbox da espada fique desativada.
+	disable_sword_hitbox()
+
+	# Reproduz a animação do dash.
+	animated_sprite.play("Dash")
 
 func _physics_process(delta: float) -> void:
 	if animated_sprite.animation == "Aparecendo":
 		velocity = Vector2.ZERO
+		return
+	
+		# AQUI É O DASH
+	if (
+		Input.is_action_just_pressed("dash")
+		and not attacking
+		and is_zero_approx(knockback_velocity.x)
+	):
+		start_dash()
+
+	# Enquanto o dash estiver ativo, ignora o movimento normal.
+	if dashing:
+		velocity.x = dash_direction * DASH_SPEED
+		velocity.y = 0.0
+
+		move_and_slide()
 		return
 
 	# 1. Gravidade

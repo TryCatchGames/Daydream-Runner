@@ -30,8 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://ysrhue6af3ji" path="res://Sprites/frames/Attack2-Mode 2/06katana.png" id="24_ftbvf"]
 [ext_resource type="Texture2D" uid="uid://cfx1pypto3e2" path="res://Sprites/frames/Attack3-Mode 2/06katana.png" id="24_ytrx3"]
 [ext_resource type="Texture2D" uid="uid://cfu4jeqrm3jr4" path="res://Sprites/frames/Jump-Mode 2/09katana.png" id="31_6b312"]
+[ext_resource type="Texture2D" uid="uid://be3fndiobkykr" path="res://Sprites/frames/Dash-Mode 2/01dash.png" id="31_bjlch"]
+[ext_resource type="Texture2D" uid="uid://b7dsh6u4per5n" path="res://Sprites/frames/Dash-Mode 2/02dash.png" id="32_ftbvf"]
 [ext_resource type="Texture2D" uid="uid://dh6ql4hnhhkio" path="res://Sprites/frames/Jump-Mode 2/10katana.png" id="32_lisdf"]
 [ext_resource type="Texture2D" uid="uid://bclnkq6346n3f" path="res://Sprites/frames/Jump-Mode 2/11katana.png" id="33_n1x1j"]
+[ext_resource type="Texture2D" uid="uid://wo5hcx66k6mf" path="res://Sprites/frames/Dash-Mode 2/03dash.png" id="33_xu24p"]
+[ext_resource type="Texture2D" uid="uid://di1nj32kv2mcq" path="res://Sprites/frames/Dash-Mode 2/05dash.png" id="34_3d183"]
 [ext_resource type="Texture2D" uid="uid://b1lem0ml3ar0j" path="res://Sprites/frames/Jump-Mode 2/12katana.png" id="34_c8b32"]
 [ext_resource type="Texture2D" uid="uid://b0px64ehrcget" path="res://Sprites/frames/Idle-Mode 2/01katana.png" id="35_nj1g2"]
 [ext_resource type="Texture2D" uid="uid://dbxn3fx4anx0r" path="res://Sprites/frames/Idle-Mode 2/02katana.png" id="36_usbl8"]
@@ -175,6 +179,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("31_bjlch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ftbvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xu24p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3d183")
+}],
+"loop": 0,
+"name": &"Dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("31_6b312")
 }, {
 "duration": 1.0,
@@ -305,7 +326,7 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Attack1Sword"
+animation = &"Dash"
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]
