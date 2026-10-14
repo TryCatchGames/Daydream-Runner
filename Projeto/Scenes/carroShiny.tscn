@@ -1,8 +1,14 @@
-[gd_scene format=3 uid="uid://duaopxmndmy2x"]
+[gd_scene format=3 uid="uid://5sgqq5x8ngmb"]
 
-[ext_resource type="Texture2D" uid="uid://5w71i6xuiiwv" path="res://Sprites/frames/Carro1/Carro_1.png" id="1_htvml"]
-[ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="2_c7r2d"]
-[ext_resource type="Texture2D" uid="uid://bt7mrd2wj7gr0" path="res://Sprites/frames/Carro1/Carro_2.png" id="3_t2by1"]
+[ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="1_ym25f"]
+[ext_resource type="Texture2D" uid="uid://5w71i6xuiiwv" path="res://Sprites/frames/CarroAzul/Carro_1.png" id="2_6n4lr"]
+[ext_resource type="Texture2D" uid="uid://bt7mrd2wj7gr0" path="res://Sprites/frames/CarroAzul/Carro_2.png" id="3_vc1e6"]
+[ext_resource type="Texture2D" uid="uid://dy1x3rv0vjg75" path="res://Sprites/frames/CarroVermelho/CarroVermelho_1.png" id="4_x5p73"]
+[ext_resource type="Texture2D" uid="uid://dh0sxsocvidff" path="res://Sprites/frames/CarroVermelho/CarroVermelho_2.png" id="5_edlxm"]
+[ext_resource type="Texture2D" uid="uid://dytifi5qmfvw0" path="res://Sprites/frames/CarroBranco/CarroBranco_1.png" id="6_s8k66"]
+[ext_resource type="Texture2D" uid="uid://bhbf8ixwceeog" path="res://Sprites/frames/CarroBranco/CarroBranco_2.png" id="7_vg1i0"]
+[ext_resource type="Texture2D" uid="uid://br7nfp0axlcfh" path="res://Sprites/frames/CarroPreto/CarroPreto_1.png" id="8_x2qr2"]
+[ext_resource type="Texture2D" uid="uid://c8yvgvsekri10" path="res://Sprites/frames/CarroPreto/CarroPreto_2.png" id="9_pasko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
 size = Vector2(406.75, 81)
@@ -22,10 +28,28 @@ b = Vector2(103, 4)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_htvml")
+"texture": ExtResource("2_6n4lr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_t2by1")
+"texture": ExtResource("3_vc1e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x5p73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edlxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s8k66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vg1i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2qr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pasko")
 }],
 "loop": 1,
 "name": &"Andando",
@@ -35,8 +59,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_front_damage"]
 size = Vector2(72, 48)
 
-[node name="Carro1" type="AnimatableBody2D" unique_id=372714669]
-script = ExtResource("2_c7r2d")
+[node name="CarroShiny" type="AnimatableBody2D" unique_id=372714669]
+script = ExtResource("1_ym25f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
 z_index = 1
@@ -66,7 +90,7 @@ position = Vector2(33.658447, 41.64209)
 scale = Vector2(0.21347296, 0.21347307)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
-frame_progress = 0.24744678
+frame_progress = 0.34181973
 
 [node name="FrontDamageArea" type="Area2D" parent="." unique_id=1606266483]
 collision_layer = 0
