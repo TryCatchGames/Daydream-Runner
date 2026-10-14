@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dosepgakrclfr" path="res://Sprites/cenario/Predio_5.png" id="3_pdmgb"]
 [ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="4_5r5j8"]
 [ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_akpl7"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
-[ext_resource type="PackedScene" uid="uid://b1ib7tv7u1d1g" path="res://Scenes/carro_azul.tscn" id="9_aur7v"]
+[ext_resource type="Texture2D" uid="uid://bck5fei4cr1k5" path="res://Sprites/cenario/Predios_Sequencia.png" id="7_2jeek"]
+[ext_resource type="Texture2D" uid="uid://bnsly14eswlqk" path="res://Sprites/cenario/Predio_Tributo.png" id="8_yytvd"]
+[ext_resource type="Texture2D" uid="uid://cm5arc8fpmeb5" path="res://Sprites/cenario/Predio_67.png" id="10_neuul"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="10_ptpgp"]
 [ext_resource type="PackedScene" uid="uid://b1ib7tv7u1d1g" path="res://Scenes/carro_azul.tscn" id="12_2jeek"]
 [ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/carro_branco.tscn" id="13_neuul"]

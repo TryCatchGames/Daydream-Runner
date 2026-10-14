@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2j8jrpfjh1fg"
+path="res://.godot/imported/InimigoMorte.mp3-6c1b809ef7c24f3e96fc026e8bbc1f43.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/InimigoMorte.mp3"
+dest_files=["res://.godot/imported/InimigoMorte.mp3-6c1b809ef7c24f3e96fc026e8bbc1f43.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
