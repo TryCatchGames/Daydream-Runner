@@ -7,7 +7,7 @@ const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -400.0
-const MAX_HEALTH := 10
+const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
 const ATTACK_HIT_FRAME := 3 # Quarto frame da animação (os índices começam em 0).
 const DAMAGE_FLASH_DURATION := 0.12
@@ -160,6 +160,9 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 		_explode_body()
 		died.emit()
 		queue_free()
+
+func get_max_health() -> int:
+	return MAX_HEALTH
 
 func _apply_knockback_from(attacker: Node2D) -> void:
 	var direction := signf(global_position.x - attacker.global_position.x)

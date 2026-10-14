@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_akpl7"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
 [ext_resource type="PackedScene" uid="uid://duaopxmndmy2x" path="res://Scenes/carro_1.tscn" id="9_aur7v"]
-[ext_resource type="Texture2D" uid="uid://bq7l6ojp3qcrw" path="res://Sprites/HUD/Porta_do_carro.png" id="10_ptpgp"]
+[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="10_ptpgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
 size = Vector2(99969, 119.25)
@@ -85,24 +85,4 @@ scale = Vector2(2.4, 2.4)
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
 position = Vector2(965, 93)
 
-[node name="Inimigo2" parent="." unique_id=633860018 instance=ExtResource("4_nw7js")]
-position = Vector2(329, 78)
-
-[node name="Inimigo3" parent="." unique_id=1822995797 instance=ExtResource("4_nw7js")]
-position = Vector2(733, 312)
-
-[node name="Inimigo4" parent="." unique_id=291789769 instance=ExtResource("4_nw7js")]
-position = Vector2(1021, 337)
-
-[node name="Inimigo5" parent="." unique_id=66001111 instance=ExtResource("4_nw7js")]
-position = Vector2(104, 57)
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1726039519]
-layer = 10
-
-[node name="PortadoCarro" type="TextureRect" parent="HUD" unique_id=806087779]
-offset_left = -61.0
-offset_top = -13.0
-offset_right = 1713.0
-offset_bottom = 1209.0
-texture = ExtResource("10_ptpgp")
+[node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("10_ptpgp")]

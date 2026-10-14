@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_valij"]
 [ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="5_rk4lc"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="6_irl65"]
+[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="8_ctb8x"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="8_d2lvc"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="9_s5yxs"]
 
@@ -14,7 +15,7 @@ size = Vector2(99969, 119.25)
 [node name="Node2D" type="Node2D" unique_id=558237694]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1491385057]
-position = Vector2(-26, -204)
+position = Vector2(-3, -237)
 
 [node name="Fundo" type="Sprite2D" parent="Node2D" unique_id=559070182]
 
@@ -71,25 +72,27 @@ position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_xns8o")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("8_d2lvc")]
-position = Vector2(49, 646)
+position = Vector2(694, 616)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("9_s5yxs")]
-position = Vector2(783, 387)
+position = Vector2(1167, 475)
 scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo2" parent="." unique_id=658371229 instance=ExtResource("9_s5yxs")]
-position = Vector2(377, 71)
+position = Vector2(180, 495)
 scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo3" parent="." unique_id=310461344 instance=ExtResource("9_s5yxs")]
-position = Vector2(847, 665)
+position = Vector2(1056, 231)
 scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo4" parent="." unique_id=847019082 instance=ExtResource("9_s5yxs")]
-position = Vector2(64.99988, 88)
+position = Vector2(290, 231)
 scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo5" parent="." unique_id=1088684212 instance=ExtResource("9_s5yxs")]
-position = Vector2(880, 89)
+position = Vector2(696, 175)
 scale = Vector2(1.5, 1.5)
+
+[node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("8_ctb8x")]

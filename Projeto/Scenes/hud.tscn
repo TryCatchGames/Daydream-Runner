@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckbgh8s8nv5gi"]
+
+[ext_resource type="Texture2D" uid="uid://bq7l6ojp3qcrw" path="res://Sprites/HUD/Porta_do_carro.png" id="1_fccik"]
+[ext_resource type="Script" uid="uid://bwwaivygjipec" path="res://Scripts/vida.gd" id="2_bjfho"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1131994067]
+
+[node name="PortadoCarro" type="TextureRect" parent="." unique_id=723870440]
+offset_left = -61.0
+offset_top = -13.0
+offset_right = 1602.0
+offset_bottom = 1209.0
+texture = ExtResource("1_fccik")
+expand_mode = 1
+
+[node name="Vida" type="HBoxContainer" parent="." unique_id=1195537700]
+offset_left = 61.0
+offset_top = 53.0
+offset_right = 91.0
+offset_bottom = 83.0
+script = ExtResource("2_bjfho")
+heart_size = Vector2(80, 80)

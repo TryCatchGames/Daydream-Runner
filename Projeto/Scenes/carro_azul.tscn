@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://duaopxmndmy2x"]
+[gd_scene format=3 uid="uid://b1ib7tv7u1d1g"]
 
 [ext_resource type="Texture2D" uid="uid://5w71i6xuiiwv" path="res://Sprites/frames/CarroAzul/Carro_1.png" id="1_htvml"]
 [ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="2_c7r2d"]
