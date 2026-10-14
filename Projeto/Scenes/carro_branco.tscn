@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dwnk6vhhfvbjl"]
+
+[ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="1_lw5yf"]
+[ext_resource type="Texture2D" uid="uid://dytifi5qmfvw0" path="res://Sprites/frames/CarroBranco/CarroBranco_1.png" id="2_lw5yf"]
+[ext_resource type="Texture2D" uid="uid://bhbf8ixwceeog" path="res://Sprites/frames/CarroBranco/CarroBranco_2.png" id="3_5rtme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
+size = Vector2(406.75, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d3swl"]
+a = Vector2(54.26677, -37.096066)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vi3pc"]
+a = Vector2(-27.635208, -35.00423)
+b = Vector2(13.398087, 18.289112)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xh1x7"]
+a = Vector2(-23, 4)
+b = Vector2(103, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3swl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lw5yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5rtme")
+}],
+"loop": 1,
+"name": &"Andando",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_front_damage"]
+size = Vector2(72, 48)
+
+[node name="CarroBranco" type="AnimatableBody2D" unique_id=372714669]
+script = ExtResource("1_lw5yf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
+z_index = 1
+position = Vector2(35.283447, 77.64197)
+shape = SubResource("RectangleShape2D_vi3pc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=833921985]
+z_index = 1
+position = Vector2(-52, 28)
+rotation = 0.050491124
+shape = SubResource("SegmentShape2D_d3swl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1461670938]
+z_index = 1
+position = Vector2(143.99998, 9.000004)
+rotation = -3.313541
+shape = SubResource("SegmentShape2D_vi3pc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1710525733]
+z_index = 1
+position = Vector2(26, -10.000001)
+rotation = -0.002296876
+shape = SubResource("SegmentShape2D_xh1x7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1779650484]
+position = Vector2(33.658447, 41.64209)
+scale = Vector2(0.21347296, 0.21347307)
+sprite_frames = SubResource("SpriteFrames_d3swl")
+animation = &"Andando"
+frame_progress = 0.9092839
+
+[node name="FrontDamageArea" type="Area2D" parent="." unique_id=1606266483]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontDamageArea" unique_id=764968617]
+position = Vector2(-146, 82)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_front_damage")
