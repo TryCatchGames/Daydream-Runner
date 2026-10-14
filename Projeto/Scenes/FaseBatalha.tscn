@@ -1,53 +1,44 @@
 [gd_scene format=3 uid="uid://orkdb4lh43or"]
 
-[ext_resource type="Texture2D" uid="uid://cgisxkj0hj00a" path="res://Sprites/cenario/Predio_2.png" id="2_l0ebr"]
-[ext_resource type="Texture2D" uid="uid://ck16i1orixdiy" path="res://Sprites/cenario/Predio_1.png" id="3_vj0sn"]
-[ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_valij"]
-[ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="5_rk4lc"]
+[ext_resource type="Texture2D" uid="uid://bhvl1iigsjyad" path="res://Sprites/cenario/background.png" id="1_ctb8x"]
+[ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="3_ctb8x"]
+[ext_resource type="Texture2D" uid="uid://3md1lwh7lka5" path="res://Sprites/cenario/Predio_COTADA.png" id="3_ypxbo"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="6_irl65"]
+[ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/carro_preto.tscn" id="7_jwfex"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="8_ctb8x"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="8_d2lvc"]
+[ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/carro_branco.tscn" id="8_muw3t"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="9_s5yxs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns8o"]
 size = Vector2(99969, 119.25)
 
-[node name="Node2D" type="Node2D" unique_id=558237694]
+[node name="FaseBatalha" type="Node2D" unique_id=558237694]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1491385057]
 position = Vector2(-3, -237)
 
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=1973395779]
+z_index = -1
+offset_left = -2455.0
+offset_top = 268.0
+offset_right = 15281.0
+offset_bottom = 1370.0
+texture = ExtResource("1_ctb8x")
+stretch_mode = 1
+
 [node name="Fundo" type="Sprite2D" parent="Node2D" unique_id=559070182]
 
-[node name="Prédio4" type="Sprite2D" parent="Node2D" unique_id=1057918352]
-position = Vector2(3111, 294)
-scale = Vector2(0.69099414, 0.6909942)
-texture = ExtResource("2_l0ebr")
+[node name="Predio3" type="Sprite2D" parent="Node2D" unique_id=863731989]
+position = Vector2(778, 212.99998)
+scale = Vector2(1.2356771, 1.2421876)
+texture = ExtResource("3_ypxbo")
 
-[node name="Prédio1" type="Sprite2D" parent="Node2D" unique_id=2125035912]
-position = Vector2(285, 264)
-scale = Vector2(0.69099414, 0.6909942)
-texture = ExtResource("3_vj0sn")
-
-[node name="Prédio3" type="Sprite2D" parent="Node2D" unique_id=18098326]
-position = Vector2(1422, 369)
-scale = Vector2(0.61773705, 0.61773705)
-texture = ExtResource("4_valij")
-
-[node name="Prédio6" type="Sprite2D" parent="Node2D" unique_id=1878225377]
-position = Vector2(2543, 265)
-scale = Vector2(0.69099414, 0.6909942)
-texture = ExtResource("3_vj0sn")
-
-[node name="Prédio5" type="Sprite2D" parent="Node2D" unique_id=1900756122]
-position = Vector2(2026.9999, 303)
-scale = Vector2(0.6909941, 0.69099414)
-texture = ExtResource("5_rk4lc")
-
-[node name="Prédio2" type="Sprite2D" parent="Node2D" unique_id=1273225800]
-position = Vector2(848, 289.00003)
-scale = Vector2(0.69099414, 0.6909942)
-texture = ExtResource("2_l0ebr")
+[node name="Semáforo" type="Sprite2D" parent="Node2D" unique_id=1300636871]
+z_index = 2
+position = Vector2(24, 558)
+scale = Vector2(0.22070313, 0.21614583)
+texture = ExtResource("3_ctb8x")
 
 [node name="Chao" type="StaticBody2D" parent="Node2D" unique_id=2088537219]
 position = Vector2(3.0002441, 941)
@@ -63,36 +54,67 @@ scale = Vector2(0.9999437, 0.610577)
 texture = ExtResource("6_irl65")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Chao" unique_id=280047442]
-position = Vector2(4432.5313, -75.25)
+position = Vector2(4425, -76)
 scale = Vector2(0.99978137, 0.60677093)
 texture = ExtResource("6_irl65")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Chao" unique_id=87864160]
-position = Vector2(49985.004, -29)
+position = Vector2(49984.004, -19)
 shape = SubResource("RectangleShape2D_xns8o")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("8_d2lvc")]
-position = Vector2(694, 616)
+position = Vector2(350, 498.00003)
 scale = Vector2(2.4, 2.4)
 
-[node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("9_s5yxs")]
-position = Vector2(1167, 475)
-scale = Vector2(1.5, 1.5)
+[node name="CarroPreto" parent="." unique_id=372714669 instance=ExtResource("7_jwfex")]
+position = Vector2(310.00003, 506.00003)
+rotation = -0.0026607008
 
-[node name="Inimigo2" parent="." unique_id=658371229 instance=ExtResource("9_s5yxs")]
-position = Vector2(180, 495)
-scale = Vector2(1.5, 1.5)
+[node name="CarroBranco" parent="." unique_id=131080336 instance=ExtResource("8_muw3t")]
+position = Vector2(782, 506)
 
-[node name="Inimigo3" parent="." unique_id=310461344 instance=ExtResource("9_s5yxs")]
-position = Vector2(1056, 231)
-scale = Vector2(1.5, 1.5)
-
-[node name="Inimigo4" parent="." unique_id=847019082 instance=ExtResource("9_s5yxs")]
-position = Vector2(290, 231)
-scale = Vector2(1.5, 1.5)
-
-[node name="Inimigo5" parent="." unique_id=1088684212 instance=ExtResource("9_s5yxs")]
-position = Vector2(696, 175)
-scale = Vector2(1.5, 1.5)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2131787483]
+position = Vector2(916, 229)
+zoom = Vector2(0.7, 0.7)
 
 [node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("8_ctb8x")]
+
+[node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("9_s5yxs")]
+position = Vector2(-151, -44)
+
+[node name="Inimigo2" parent="." unique_id=147136039 instance=ExtResource("9_s5yxs")]
+position = Vector2(993, 100)
+
+[node name="Inimigo3" parent="." unique_id=1377298769 instance=ExtResource("9_s5yxs")]
+position = Vector2(933, 223)
+
+[node name="Inimigo4" parent="." unique_id=176338340 instance=ExtResource("9_s5yxs")]
+position = Vector2(864, 103)
+
+[node name="Inimigo5" parent="." unique_id=960389284 instance=ExtResource("9_s5yxs")]
+position = Vector2(813, 214)
+
+[node name="Inimigo6" parent="." unique_id=1877055929 instance=ExtResource("9_s5yxs")]
+position = Vector2(1287, 311)
+
+[node name="Inimigo7" parent="." unique_id=1179603278 instance=ExtResource("9_s5yxs")]
+position = Vector2(-246, -19)
+
+[node name="Inimigo8" parent="." unique_id=1082095579 instance=ExtResource("9_s5yxs")]
+position = Vector2(2101, -572)
+
+[node name="Inimigo9" parent="." unique_id=1331515165 instance=ExtResource("9_s5yxs")]
+position = Vector2(-616, -670)
+
+[node name="Inimigo10" parent="." unique_id=730440633 instance=ExtResource("9_s5yxs")]
+position = Vector2(-565, -776)
+
+[node name="Inimigo11" parent="." unique_id=1824307443 instance=ExtResource("9_s5yxs")]
+position = Vector2(-505, -685)
+
+[node name="Inimigo12" parent="." unique_id=777653212 instance=ExtResource("9_s5yxs")]
+position = Vector2(-245, -123)
+
+[node name="Inimigo13" parent="." unique_id=366902764 instance=ExtResource("9_s5yxs")]
+position = Vector2(2346, -919)
+scale = Vector2(4.5, 4.5)
