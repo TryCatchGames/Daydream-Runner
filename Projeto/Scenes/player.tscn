@@ -71,10 +71,10 @@ shader_parameter/flash_amount = 0.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1htnp")
+"texture": ExtResource("3_m376e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_m376e")
+"texture": ExtResource("2_1htnp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_6b312")
@@ -102,7 +102,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Aparecendo",
-"speed": 16.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -188,7 +188,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Fall",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,7 +258,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Jump",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -302,8 +302,9 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Running"
-frame_progress = 0.5996721
+animation = &"Aparecendo"
+frame = 9
+frame_progress = 1.0
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]

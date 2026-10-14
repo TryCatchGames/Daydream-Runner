@@ -75,17 +75,21 @@ position = Vector2(49, 646)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("9_s5yxs")]
-position = Vector2(1878, 80)
+position = Vector2(783, 387)
+scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo2" parent="." unique_id=658371229 instance=ExtResource("9_s5yxs")]
-position = Vector2(1877, 257)
+position = Vector2(377, 71)
+scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo3" parent="." unique_id=310461344 instance=ExtResource("9_s5yxs")]
-position = Vector2(1271, 344)
-scale = Vector2(4, 4)
+position = Vector2(847, 665)
+scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo4" parent="." unique_id=847019082 instance=ExtResource("9_s5yxs")]
-position = Vector2(1883, 176)
+position = Vector2(64.99988, 88)
+scale = Vector2(1.5, 1.5)
 
 [node name="Inimigo5" parent="." unique_id=1088684212 instance=ExtResource("9_s5yxs")]
-position = Vector2(1876, -19)
+position = Vector2(880, 89)
+scale = Vector2(1.5, 1.5)
