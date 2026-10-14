@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5w71i6xuiiwv"
-path="res://.godot/imported/Carro_1.png-086be21c4675900219042514af9a3e16.ctex"
+uid="uid://dy1x3rv0vjg75"
+path="res://.godot/imported/CarroVermelho_1.png-761e9c2444ffcad5e6bb0c6056ed4af3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Carro1/Carro_1.png"
-dest_files=["res://.godot/imported/Carro_1.png-086be21c4675900219042514af9a3e16.ctex"]
+source_file="res://Sprites/frames/CarroVermelho/CarroVermelho_1.png"
+dest_files=["res://.godot/imported/CarroVermelho_1.png-761e9c2444ffcad5e6bb0c6056ed4af3.ctex"]
 
 [params]
 
