@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://2guufp4xutyc" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/DEATH.png" id="4_lmfak"]
 [ext_resource type="Texture2D" uid="uid://de4vxodr2pcev" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/IDLE.png" id="5_hquc0"]
 [ext_resource type="Texture2D" uid="uid://dk117o63gplr" path="res://Sprites/frames/Flying Demon 2D Pixel Art/Sprites/with_outline/FLYING.png" id="6_77tmc"]
-[ext_resource type="Shader" path="res://Shaders/hit_flash.gdshader" id="7_hit_flash"]
+[ext_resource type="Shader" uid="uid://llmwnh3fxds3" path="res://Shaders/hit_flash.gdshader" id="7_hit_flash"]
+[ext_resource type="AudioStream" uid="uid://2j8jrpfjh1fg" path="res://Sound Effects/InimigoMorte.mp3" id="8_r1hrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l2vh"]
 size = Vector2(80, 70)
@@ -293,3 +294,8 @@ material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(14, -2)
 sprite_frames = SubResource("SpriteFrames_v1a2k")
 animation = &"Voando"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1620392932]
+stream = ExtResource("8_r1hrh")
+volume_db = -15.0
+parameters/looping = true
