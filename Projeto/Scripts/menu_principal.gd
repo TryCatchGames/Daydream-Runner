@@ -69,7 +69,7 @@ func _animate_button_scale(button: Button, target_scale: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Level_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Fases/Level_1.tscn")
 
 
 func _on_options_button_pressed() -> void:
@@ -81,4 +81,4 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_créditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/créditos.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/créditos.tscn")
