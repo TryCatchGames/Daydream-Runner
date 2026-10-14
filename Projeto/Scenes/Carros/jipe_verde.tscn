@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bpqs3p04tpfe"]
+
+[ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="1_rak6m"]
+[ext_resource type="Texture2D" uid="uid://d4cc0uaiyk0em" path="res://Sprites/frames/JipeVerde/JipeVerde_1.png" id="2_ku1md"]
+[ext_resource type="Texture2D" uid="uid://m6l2y7iw48hu" path="res://Sprites/frames/JipeVerde/JipeVerde_2.png" id="3_wcwsw"]
+[ext_resource type="Texture2D" uid="uid://cefucailovluq" path="res://Sprites/frames/JipeVerde/JipeVerde_3.png" id="4_1jjl4"]
+[ext_resource type="Texture2D" uid="uid://bbd4cthbv2s2f" path="res://Sprites/frames/JipeVerde/JipeVerde_4.png" id="5_k6rwc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64gcy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ku1md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wcwsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1jjl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k6rwc")
+}],
+"loop": 1,
+"name": &"Andando",
+"speed": 12.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_22aqy"]
+a = Vector2(-22.78059, 5.1033936)
+b = Vector2(183.02838, -3.8219376)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r8xkb"]
+a = Vector2(32.8226, -77.54149)
+b = Vector2(37.927185, -45.66762)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sq2q5"]
+a = Vector2(35.892986, -22.840616)
+b = Vector2(-2.037262, 19.127197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
+size = Vector2(383, 98)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3pics"]
+a = Vector2(-23, 4)
+b = Vector2(5.990799, 4.01377)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pysr8"]
+size = Vector2(97.5, 43)
+
+[node name="JipeVerde" type="AnimatableBody2D" unique_id=673766544]
+script = ExtResource("1_rak6m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=597621433]
+position = Vector2(34.959595, 47.625)
+scale = Vector2(0.22527905, 0.22527906)
+sprite_frames = SubResource("SpriteFrames_64gcy")
+animation = &"Andando"
+frame_progress = 0.2634191
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=340983108]
+z_index = 1
+position = Vector2(18, -25)
+rotation = 0.048194245
+shape = SubResource("SegmentShape2D_22aqy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1840800254]
+z_index = 1
+position = Vector2(234, -72.00003)
+rotation = 3.0178387
+shape = SubResource("SegmentShape2D_r8xkb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1484280673]
+z_index = 1
+position = Vector2(-42, 1)
+rotation = 0.050491124
+shape = SubResource("SegmentShape2D_sq2q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490431555]
+position = Vector2(49.5, 69)
+shape = SubResource("RectangleShape2D_64gcy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=128442914]
+z_index = 1
+position = Vector2(234, 2.000001)
+rotation = -0.002296876
+shape = SubResource("SegmentShape2D_3pics")
+
+[node name="FrontDamageArea" type="Area2D" parent="." unique_id=2140837404]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontDamageArea" unique_id=564510659]
+position = Vector2(-149.5, 70)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_pysr8")
