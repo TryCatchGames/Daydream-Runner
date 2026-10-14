@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bvqfyab5r7lkg"]
 
-[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_fpl6h"]
-[ext_resource type="PackedScene" uid="uid://duaopxmndmy2x" path="res://Scenes/carro_1.tscn" id="2_6f4cw"]
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="1_fpl6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
 size = Vector2(960.5, 74)
@@ -17,6 +16,6 @@ position = Vector2(434, 208)
 position = Vector2(481.75, 367)
 shape = SubResource("RectangleShape2D_d3swl")
 
-[node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("2_6f4cw")]
+[node name="Carro1" parent="." unique_id=372714669]
 position = Vector2(714, 271)
 scale = Vector2(0.5, 0.5)

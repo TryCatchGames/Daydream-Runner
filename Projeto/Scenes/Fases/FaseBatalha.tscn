@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="3_ctb8x"]
 [ext_resource type="Texture2D" uid="uid://3md1lwh7lka5" path="res://Sprites/cenario/Predio_COTADA.png" id="3_ypxbo"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="6_irl65"]
-[ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/carro_preto.tscn" id="7_jwfex"]
-[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="8_ctb8x"]
-[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="8_d2lvc"]
-[ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/carro_branco.tscn" id="8_muw3t"]
-[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="9_s5yxs"]
+[ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/Carros/carro_preto.tscn" id="7_jwfex"]
+[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="8_ctb8x"]
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="8_d2lvc"]
+[ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="8_muw3t"]
+[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/Personagens/inimigo.tscn" id="9_s5yxs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns8o"]
 size = Vector2(99969, 119.25)

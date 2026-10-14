@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Daydream Runner"
-run/main_scene="res://Scenes/menu_principal.tscn"
+run/main_scene="res://Scenes/Menus/menu_principal.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dacm5nw2eovmy"
 
@@ -27,6 +27,16 @@ window/stretch/mode="canvas_items"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "red",
+"res://Scripts/": "yellow",
+"res://Shaders/": "blue",
+"res://Sound Effects/": "purple",
+"res://Sprites/": "orange"
+}
 
 [input]
 

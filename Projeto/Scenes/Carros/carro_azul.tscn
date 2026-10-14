@@ -35,7 +35,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_front_damage"]
 size = Vector2(72, 48)
 
-[node name="Carro1" type="AnimatableBody2D" unique_id=372714669]
+[node name="CarroAzul" type="AnimatableBody2D" unique_id=372714669]
 script = ExtResource("2_c7r2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166814356]
