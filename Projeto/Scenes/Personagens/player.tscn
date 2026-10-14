@@ -336,9 +336,7 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Dash"
-frame = 6
-frame_progress = 1.0
+animation = &"Attack2Sword"
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]
