@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="1_0g612"]
 [ext_resource type="Script" uid="uid://xu1py52km26h" path="res://Scripts/creditos_texto.gd" id="2_credits_text"]
 [ext_resource type="Script" uid="uid://ddo84no40jytt" path="res://Scripts/título.gd" id="2_rytbf"]
+[ext_resource type="Script" uid="uid://ct1cmwdcu3a8q" path="res://Scripts/botao_voltar.gd" id="3_back_button"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3swl"]
 font = ExtResource("1_0g612")
@@ -11,6 +12,16 @@ font_size = 42
 [sub_resource type="LabelSettings" id="LabelSettings_vi3pc"]
 font = ExtResource("1_0g612")
 font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xo2xn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_huwwq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8nk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q73wp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2p0c"]
 
 [node name="Créditos" type="Control" unique_id=890718327]
 layout_mode = 3
@@ -69,5 +80,16 @@ script = ExtResource("2_credits_text")
 
 [node name="Voltar" type="Button" parent="." unique_id=1013388676]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 50.0
+offset_top = 620.0
+offset_right = 194.0
+offset_bottom = 644.0
+theme_override_fonts/font = ExtResource("1_0g612")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xo2xn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_huwwq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h8nk6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q73wp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2p0c")
+text = "Voltar"
+script = ExtResource("3_back_button")

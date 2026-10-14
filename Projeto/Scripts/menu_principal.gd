@@ -1,4 +1,3 @@
-
 extends Control
 
 const HOVER_SCALE := 1.08
