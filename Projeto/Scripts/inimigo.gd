@@ -18,6 +18,7 @@ var attack_targets: Dictionary = {}
 var damage_flash_tween: Tween
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_death: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	add_to_group("inimigo")
@@ -94,6 +95,7 @@ func change_state(new_state: State) -> void:
 			animated_sprite.play("Dano")
 		State.DEAD:
 			animated_sprite.play("Morte")
+			audio_death.play()
 
 func _start_attack() -> void:
 	attack_targets.clear()

@@ -26,6 +26,7 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var sword_hitbox: Area2D = $SwordHitBox
 @onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
+@onready var audio_slash: AudioStreamPlayer = $AudioStreamPlayer
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -84,6 +85,7 @@ func update_sprite_offset() -> void:
 			animated_sprite.offset = ATTACK1_OFFSET_LEFT
 		elif anim == "Attack2Sword":
 			animated_sprite.offset = ATTACK2_OFFSET_LEFT
+			
 		else:
 			animated_sprite.offset = Vector2.ZERO
 	else:
@@ -97,6 +99,7 @@ func attack() -> void:
 		attacking = true
 		combo_request = false
 		animated_sprite.play("Attack1Sword")
+		audio_slash.play()
 
 	elif animated_sprite.animation == "Attack1Sword":
 		combo_request = true
@@ -109,6 +112,7 @@ func _on_animation_finished() -> void:
 		if combo_request:
 			combo_request = false
 			animated_sprite.play("Attack2Sword")
+			audio_slash.play()
 		else:
 			attacking = false
 			update_sword_hitbox()
@@ -117,6 +121,7 @@ func _on_animation_finished() -> void:
 		if attack_held:
 			combo_request = false
 			animated_sprite.play("Attack1Sword")
+			audio_slash.play()
 		else:
 			attacking = false
 			combo_request = false

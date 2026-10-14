@@ -319,3 +319,4 @@ disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=395918680]
 stream = SubResource("AudioStreamMP3_ubkh6")
+volume_db = -15.0
