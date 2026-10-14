@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4il6a1gbg8je"]
 
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_oiua3"]
+[ext_resource type="Texture2D" uid="uid://bhvl1iigsjyad" path="res://Sprites/cenario/background.png" id="2_2uqsa"]
 [ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scripts/esteira.gd" id="2_i63mn"]
 [ext_resource type="Texture2D" uid="uid://cgisxkj0hj00a" path="res://Sprites/cenario/Predio_2.png" id="2_j0k67"]
 [ext_resource type="Texture2D" uid="uid://ck16i1orixdiy" path="res://Sprites/cenario/Predio_1.png" id="2_nh7xm"]
@@ -20,7 +21,13 @@ size = Vector2(99969, 119.25)
 position = Vector2(-3, -237)
 script = ExtResource("2_i63mn")
 
-[node name="Fundo" type="Sprite2D" parent="Esteira" unique_id=548395148]
+[node name="TextureRect" type="TextureRect" parent="Esteira" unique_id=1463729915]
+offset_left = 2.0
+offset_top = 210.0
+offset_right = 17738.0
+offset_bottom = 1312.0
+texture = ExtResource("2_2uqsa")
+stretch_mode = 1
 
 [node name="Prédio4" type="Sprite2D" parent="Esteira" unique_id=295634081]
 position = Vector2(3111, 294)
