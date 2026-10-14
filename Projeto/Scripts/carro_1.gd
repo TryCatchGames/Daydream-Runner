@@ -1,7 +1,7 @@
 extends AnimatableBody2D
 
 const DAMAGE := 1
-const CAR_SPEED := 500.0
+const CAR_SPEED := 300.0
 
 @onready var front_damage_area: Area2D = $FrontDamageArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

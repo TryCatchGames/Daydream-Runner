@@ -3,12 +3,13 @@ extends CharacterBody2D
 # --- VARIÁVEIS DE BALANCEAMENTO ---
 const SPEED_RIGHT = 200.0
 const SPEED_LEFT = 550.0
-const SPEED_NO_CONVEYOR = 200.0
+const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -400.0
 const MAX_HEALTH := 10
 const SWORD_DAMAGE := 1
+const ATTACK_HIT_FRAME := 3 # Quarto frame da animação (os índices começam em 0).
 const DAMAGE_FLASH_DURATION := 0.12
 const PLAYER_KNOCKBACK_STRENGTH := 200.0
 const PLAYER_KNOCKBACK_DECAY := 800.0
@@ -132,7 +133,7 @@ func disable_sword_hitbox() -> void:
 func update_sword_hitbox() -> void:
 	var anim := animated_sprite.animation
 	var attack_animation := anim == "Attack1Sword" or anim == "Attack2Sword" or anim == "Attack3Sword"
-	if attacking and attack_animation:
+	if attacking and attack_animation and animated_sprite.frame == ATTACK_HIT_FRAME:
 		enable_sword_hitbox()
 	else:
 		disable_sword_hitbox()
@@ -254,16 +255,16 @@ func _on_attack_animation_changed() -> void:
 	if anim != "Attack1Sword" and anim != "Attack2Sword":
 		return
 
-	# Cada animação é um golpe separado. Acerte também quem já estava na área.
+	# Cada animação é um golpe separado.
 	sword_hit_targets.clear()
-	for body in sword_hitbox.get_overlapping_bodies():
-		_damage_enemy(body)
 
 func _damage_enemy(body: Node2D) -> void:
 	var anim := animated_sprite.animation
 	if not sword_hitbox.monitoring or not attacking:
 		return
 	if anim != "Attack1Sword" and anim != "Attack2Sword":
+		return
+	if animated_sprite.frame != ATTACK_HIT_FRAME:
 		return
 	if body == self or not body.is_in_group("inimigo"):
 		return
@@ -284,6 +285,7 @@ func _ready() -> void:
 	animated_sprite.animation_changed.connect(update_sprite_offset)
 	animated_sprite.animation_changed.connect(update_sword_hitbox)
 	animated_sprite.animation_changed.connect(_on_attack_animation_changed)
+	animated_sprite.frame_changed.connect(update_sword_hitbox)
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	sword_hitbox.body_entered.connect(_on_sword_hitbox_body_entered)
 	sword_hitbox_shape_origin = sword_hitbox_shape.position

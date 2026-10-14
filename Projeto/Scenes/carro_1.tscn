@@ -66,12 +66,12 @@ position = Vector2(33.658447, 41.64209)
 scale = Vector2(0.21347296, 0.21347307)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
-frame_progress = 0.886336
+frame_progress = 0.24744678
 
 [node name="FrontDamageArea" type="Area2D" parent="." unique_id=1606266483]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrontDamageArea" unique_id=764968617]
-position = Vector2(-144, 82)
+position = Vector2(-146, 82)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_front_damage")

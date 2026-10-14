@@ -53,7 +53,7 @@ texture = ExtResource("2_j0k67")
 
 [node name="Carro1" parent="Esteira" unique_id=372714669 instance=ExtResource("9_aur7v")]
 z_index = 1
-position = Vector2(1349, 731)
+position = Vector2(1353, 734)
 
 [node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
 position = Vector2(3.0002441, 941)
