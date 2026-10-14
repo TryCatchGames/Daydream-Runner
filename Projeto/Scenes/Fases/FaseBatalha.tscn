@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="8_d2lvc"]
 [ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="8_muw3t"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/Personagens/inimigo.tscn" id="9_s5yxs"]
+[ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="10_80trf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns8o"]
 size = Vector2(99969, 119.25)
@@ -118,3 +119,9 @@ position = Vector2(-245, -123)
 [node name="Inimigo13" parent="." unique_id=366902764 instance=ExtResource("9_s5yxs")]
 position = Vector2(2346, -919)
 scale = Vector2(4.5, 4.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1295961457]
+stream = ExtResource("10_80trf")
+volume_db = -25.0
+autoplay = true
+parameters/looping = true
