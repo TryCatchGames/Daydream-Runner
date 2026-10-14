@@ -1,67 +1,70 @@
-[gd_scene format=4 uid="uid://c3a2iju5ghrs6"]
+[gd_scene format=3 uid="uid://c3a2iju5ghrs6"]
 
 [ext_resource type="Script" uid="uid://dhwn6rly2x7ra" path="res://Scripts/player.gd" id="1_83xs0"]
-[ext_resource type="AudioStream" uid="uid://cghobfhck46jb" path="res://Sound Effects/Sword_Slash.mp3" id="sword_slash_new"]
 [ext_resource type="Texture2D" uid="uid://6yi2kulawxsu" path="res://Sprites/frames/Invisibility/14.png" id="2_1htnp"]
-[ext_resource type="Texture2D" uid="uid://dspiqtrounswe" path="res://Sprites/frames/Attack1-Mode 2/01katana.png" id="2_ax3m3"]
-[ext_resource type="Texture2D" uid="uid://cekknwsw37lvv" path="res://Sprites/frames/Attack1-Mode 2/02katana.png" id="3_3vlem"]
+[ext_resource type="Texture2D" uid="uid://dspiqtrounswe" path="res://Sprites/frames/Katana-Attack1/01katana.png" id="2_ax3m3"]
+[ext_resource type="Texture2D" uid="uid://cekknwsw37lvv" path="res://Sprites/frames/Katana-Attack1/02katana.png" id="3_3vlem"]
 [ext_resource type="Texture2D" uid="uid://dxkfsuo50vsyu" path="res://Sprites/frames/Invisibility/13.png" id="3_m376e"]
 [ext_resource type="Texture2D" uid="uid://iibeyiciq20a" path="res://Sprites/frames/Invisibility/12.png" id="4_6b312"]
-[ext_resource type="Texture2D" uid="uid://dn4n111uf6o3k" path="res://Sprites/frames/Attack1-Mode 2/03katana.png" id="4_8eeqe"]
-[ext_resource type="Texture2D" uid="uid://cjvgwra6m4cxu" path="res://Sprites/frames/Attack1-Mode 2/04katana.png" id="5_83xs0"]
+[ext_resource type="Texture2D" uid="uid://dn4n111uf6o3k" path="res://Sprites/frames/Katana-Attack1/03katana.png" id="4_8eeqe"]
+[ext_resource type="Texture2D" uid="uid://cjvgwra6m4cxu" path="res://Sprites/frames/Katana-Attack1/04katana.png" id="5_83xs0"]
 [ext_resource type="Texture2D" uid="uid://csfq1uif6sgnl" path="res://Sprites/frames/Invisibility/11.png" id="5_lisdf"]
 [ext_resource type="Texture2D" uid="uid://c3577ayvyq527" path="res://Sprites/frames/Invisibility/10.png" id="6_n1x1j"]
-[ext_resource type="Texture2D" uid="uid://b2raiosc55uac" path="res://Sprites/frames/Attack1-Mode 2/05katana.png" id="6_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://b2raiosc55uac" path="res://Sprites/frames/Katana-Attack1/05katana.png" id="6_ypfnu"]
 [ext_resource type="Texture2D" uid="uid://4tyg5kif3a12" path="res://Sprites/frames/Invisibility/09.png" id="7_c8b32"]
-[ext_resource type="Texture2D" uid="uid://br3gbuk1uke2g" path="res://Sprites/frames/Attack1-Mode 2/06katana.png" id="7_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://br3gbuk1uke2g" path="res://Sprites/frames/Katana-Attack1/06katana.png" id="7_xuaoq"]
 [ext_resource type="Texture2D" uid="uid://cl5p0wnadgwua" path="res://Sprites/frames/Invisibility/07.png" id="8_nj1g2"]
 [ext_resource type="Texture2D" uid="uid://bw2mi3eiqtvfp" path="res://Sprites/frames/Invisibility/08.png" id="9_usbl8"]
 [ext_resource type="Texture2D" uid="uid://b7df26m7f3e1o" path="res://Sprites/frames/Invisibility/02.png" id="10_dtg1u"]
 [ext_resource type="Texture2D" uid="uid://c8do1t7rq0tfi" path="res://Sprites/frames/Invisibility/01.png" id="11_nuaet"]
-[ext_resource type="Texture2D" uid="uid://dsblwp7f55qu5" path="res://Sprites/frames/Attack3-Mode 2/01katana.png" id="19_cda4l"]
-[ext_resource type="Texture2D" uid="uid://cq0gwas5lgocy" path="res://Sprites/frames/Attack2-Mode 2/01katana.png" id="19_ubkh6"]
-[ext_resource type="Texture2D" uid="uid://blu4646cx465l" path="res://Sprites/frames/Attack3-Mode 2/02katana.png" id="20_0lea0"]
-[ext_resource type="Texture2D" uid="uid://2n2wvv8yqrft" path="res://Sprites/frames/Attack2-Mode 2/02katana.png" id="20_ijqj7"]
-[ext_resource type="Texture2D" uid="uid://bttwcx8k10dp8" path="res://Sprites/frames/Attack3-Mode 2/03katana.png" id="21_0kekg"]
-[ext_resource type="Texture2D" uid="uid://7agb2sbdy6cw" path="res://Sprites/frames/Attack2-Mode 2/03katana.png" id="21_krp5a"]
-[ext_resource type="Texture2D" uid="uid://bgpgc84aov2x4" path="res://Sprites/frames/Attack2-Mode 2/04katana.png" id="22_0t7qc"]
-[ext_resource type="Texture2D" uid="uid://bgod81uj5fmfu" path="res://Sprites/frames/Attack3-Mode 2/04katana.png" id="22_sbood"]
-[ext_resource type="Texture2D" uid="uid://di4o3bdjpu2w2" path="res://Sprites/frames/Attack2-Mode 2/05katana.png" id="23_bjlch"]
-[ext_resource type="Texture2D" uid="uid://bd0srf5g6bc6b" path="res://Sprites/frames/Attack3-Mode 2/05katana.png" id="23_sm0pu"]
-[ext_resource type="Texture2D" uid="uid://ysrhue6af3ji" path="res://Sprites/frames/Attack2-Mode 2/06katana.png" id="24_ftbvf"]
-[ext_resource type="Texture2D" uid="uid://cfx1pypto3e2" path="res://Sprites/frames/Attack3-Mode 2/06katana.png" id="24_ytrx3"]
-[ext_resource type="Texture2D" uid="uid://cfu4jeqrm3jr4" path="res://Sprites/frames/Jump-Mode 2/09katana.png" id="31_6b312"]
-[ext_resource type="Texture2D" uid="uid://be3fndiobkykr" path="res://Sprites/frames/Dash-Mode 2/01dash.png" id="31_bjlch"]
-[ext_resource type="Texture2D" uid="uid://b7dsh6u4per5n" path="res://Sprites/frames/Dash-Mode 2/02dash.png" id="32_ftbvf"]
-[ext_resource type="Texture2D" uid="uid://dh6ql4hnhhkio" path="res://Sprites/frames/Jump-Mode 2/10katana.png" id="32_lisdf"]
-[ext_resource type="Texture2D" uid="uid://bclnkq6346n3f" path="res://Sprites/frames/Jump-Mode 2/11katana.png" id="33_n1x1j"]
-[ext_resource type="Texture2D" uid="uid://wo5hcx66k6mf" path="res://Sprites/frames/Dash-Mode 2/03dash.png" id="33_xu24p"]
-[ext_resource type="Texture2D" uid="uid://di1nj32kv2mcq" path="res://Sprites/frames/Dash-Mode 2/05dash.png" id="34_3d183"]
-[ext_resource type="Texture2D" uid="uid://b1lem0ml3ar0j" path="res://Sprites/frames/Jump-Mode 2/12katana.png" id="34_c8b32"]
-[ext_resource type="Texture2D" uid="uid://b0px64ehrcget" path="res://Sprites/frames/Idle-Mode 2/01katana.png" id="35_nj1g2"]
-[ext_resource type="Texture2D" uid="uid://dbxn3fx4anx0r" path="res://Sprites/frames/Idle-Mode 2/02katana.png" id="36_usbl8"]
-[ext_resource type="Texture2D" uid="uid://bool83a52vme0" path="res://Sprites/frames/Idle-Mode 2/03katana.png" id="37_dtg1u"]
-[ext_resource type="Texture2D" uid="uid://bahckwfs3rr4k" path="res://Sprites/frames/Idle-Mode 2/04katana.png" id="38_nuaet"]
-[ext_resource type="Texture2D" uid="uid://cby4oa8o3bc2k" path="res://Sprites/frames/Idle-Mode 2/05katana.png" id="39_bqbau"]
-[ext_resource type="Texture2D" uid="uid://drk8jli3jgcl2" path="res://Sprites/frames/Idle-Mode 2/06katana.png" id="40_f5f5t"]
+[ext_resource type="Texture2D" uid="uid://dsblwp7f55qu5" path="res://Sprites/frames/Katana-Attack3/01katana.png" id="19_cda4l"]
+[ext_resource type="Texture2D" uid="uid://cq0gwas5lgocy" path="res://Sprites/frames/Katana-Attack2/01katana.png" id="19_ubkh6"]
+[ext_resource type="Texture2D" uid="uid://blu4646cx465l" path="res://Sprites/frames/Katana-Attack3/02katana.png" id="20_0lea0"]
+[ext_resource type="Texture2D" uid="uid://2n2wvv8yqrft" path="res://Sprites/frames/Katana-Attack2/02katana.png" id="20_ijqj7"]
+[ext_resource type="Texture2D" uid="uid://bttwcx8k10dp8" path="res://Sprites/frames/Katana-Attack3/03katana.png" id="21_0kekg"]
+[ext_resource type="Texture2D" uid="uid://7agb2sbdy6cw" path="res://Sprites/frames/Katana-Attack2/03katana.png" id="21_krp5a"]
+[ext_resource type="Texture2D" uid="uid://bgpgc84aov2x4" path="res://Sprites/frames/Katana-Attack2/04katana.png" id="22_0t7qc"]
+[ext_resource type="Texture2D" uid="uid://bgod81uj5fmfu" path="res://Sprites/frames/Katana-Attack3/04katana.png" id="22_sbood"]
+[ext_resource type="Texture2D" uid="uid://di4o3bdjpu2w2" path="res://Sprites/frames/Katana-Attack2/05katana.png" id="23_bjlch"]
+[ext_resource type="Texture2D" uid="uid://bd0srf5g6bc6b" path="res://Sprites/frames/Katana-Attack3/05katana.png" id="23_sm0pu"]
+[ext_resource type="Texture2D" uid="uid://ysrhue6af3ji" path="res://Sprites/frames/Katana-Attack2/06katana.png" id="24_ftbvf"]
+[ext_resource type="Texture2D" uid="uid://cfx1pypto3e2" path="res://Sprites/frames/Katana-Attack3/06katana.png" id="24_ytrx3"]
+[ext_resource type="Texture2D" uid="uid://cfu4jeqrm3jr4" path="res://Sprites/frames/Katana-Jump/09katana.png" id="31_6b312"]
+[ext_resource type="Texture2D" uid="uid://be3fndiobkykr" path="res://Sprites/frames/Katana-Dash/01dash.png" id="31_bjlch"]
+[ext_resource type="Texture2D" uid="uid://b7dsh6u4per5n" path="res://Sprites/frames/Katana-Dash/02dash.png" id="32_ftbvf"]
+[ext_resource type="Texture2D" uid="uid://dh6ql4hnhhkio" path="res://Sprites/frames/Katana-Jump/10katana.png" id="32_lisdf"]
+[ext_resource type="Texture2D" uid="uid://bclnkq6346n3f" path="res://Sprites/frames/Katana-Jump/11katana.png" id="33_n1x1j"]
+[ext_resource type="Texture2D" uid="uid://wo5hcx66k6mf" path="res://Sprites/frames/Katana-Dash/03dash.png" id="33_xu24p"]
+[ext_resource type="Texture2D" uid="uid://di1nj32kv2mcq" path="res://Sprites/frames/Katana-Dash/05dash.png" id="34_3d183"]
+[ext_resource type="Texture2D" uid="uid://b1lem0ml3ar0j" path="res://Sprites/frames/Katana-Jump/12katana.png" id="34_c8b32"]
+[ext_resource type="Texture2D" uid="uid://ciq30052ss1t3" path="res://Sprites/frames/Katana-Dash/04dash.png" id="34_tynml"]
+[ext_resource type="Texture2D" uid="uid://b0px64ehrcget" path="res://Sprites/frames/Katana-Idle/01katana.png" id="35_nj1g2"]
+[ext_resource type="Texture2D" uid="uid://c2vfwsky6nctn" path="res://Sprites/frames/Katana-Dash/06dash.png" id="36_ssaki"]
+[ext_resource type="Texture2D" uid="uid://dbxn3fx4anx0r" path="res://Sprites/frames/Katana-Idle/02katana.png" id="36_usbl8"]
+[ext_resource type="Texture2D" uid="uid://bbiuk08p7ixe5" path="res://Sprites/frames/Katana-Dash/07dash.png" id="37_0aska"]
+[ext_resource type="Texture2D" uid="uid://bool83a52vme0" path="res://Sprites/frames/Katana-Idle/03katana.png" id="37_dtg1u"]
+[ext_resource type="Texture2D" uid="uid://bahckwfs3rr4k" path="res://Sprites/frames/Katana-Idle/04katana.png" id="38_nuaet"]
+[ext_resource type="Texture2D" uid="uid://cby4oa8o3bc2k" path="res://Sprites/frames/Katana-Idle/05katana.png" id="39_bqbau"]
+[ext_resource type="Texture2D" uid="uid://drk8jli3jgcl2" path="res://Sprites/frames/Katana-Idle/06katana.png" id="40_f5f5t"]
 [ext_resource type="Shader" uid="uid://llmwnh3fxds3" path="res://Shaders/hit_flash.gdshader" id="40_hit_flash"]
-[ext_resource type="Texture2D" uid="uid://cjxalyaxgg2yu" path="res://Sprites/frames/Idle-Mode 2/07katana.png" id="41_qvbpb"]
-[ext_resource type="Texture2D" uid="uid://bonx6xy348hla" path="res://Sprites/frames/Idle-Mode 2/08katana.png" id="42_sscpr"]
-[ext_resource type="Texture2D" uid="uid://b1847x1ppwmsl" path="res://Sprites/frames/Jump-Mode 2/01katana.png" id="43_by7i4"]
-[ext_resource type="Texture2D" uid="uid://c8s2a6lj0jq2e" path="res://Sprites/frames/Jump-Mode 2/02katana.png" id="44_3uvy8"]
-[ext_resource type="Texture2D" uid="uid://e0wgh3qqgwwy" path="res://Sprites/frames/Jump-Mode 2/03katana.png" id="45_ss172"]
-[ext_resource type="Texture2D" uid="uid://dwvp7l5crgweu" path="res://Sprites/frames/Jump-Mode 2/04katana.png" id="46_jmelf"]
-[ext_resource type="Texture2D" uid="uid://b41ac4ovdhl66" path="res://Sprites/frames/Jump-Mode 2/05katana.png" id="47_bjdqd"]
-[ext_resource type="Texture2D" uid="uid://b22em584vnf27" path="res://Sprites/frames/Jump-Mode 2/06katana.png" id="48_feq18"]
-[ext_resource type="Texture2D" uid="uid://dk4fdfrp4ao68" path="res://Sprites/frames/Jump-Mode 2/07katana.png" id="49_wcnj3"]
-[ext_resource type="Texture2D" uid="uid://c8ubqomcir5ci" path="res://Sprites/frames/Jump-Mode 2/08katana.png" id="50_jsob3"]
-[ext_resource type="Texture2D" uid="uid://g166fu765860" path="res://Sprites/frames/Move-Mode 2/02katana.png" id="52_qavoy"]
-[ext_resource type="Texture2D" uid="uid://ckdsx2bi8yccn" path="res://Sprites/frames/Move-Mode 2/03katana.png" id="53_w4w4b"]
-[ext_resource type="Texture2D" uid="uid://cb0d101fx2w4e" path="res://Sprites/frames/Move-Mode 2/04katana.png" id="54_h5cax"]
-[ext_resource type="Texture2D" uid="uid://bafb1771ppvp2" path="res://Sprites/frames/Move-Mode 2/05katana.png" id="55_dj0x0"]
-[ext_resource type="Texture2D" uid="uid://ti85wvmgu8r" path="res://Sprites/frames/Move-Mode 2/06katana.png" id="56_f1uaf"]
-[ext_resource type="Texture2D" uid="uid://dkr7ulmoatulo" path="res://Sprites/frames/Move-Mode 2/07katana.png" id="57_6hq81"]
-[ext_resource type="Texture2D" uid="uid://u6ssf62lnagg" path="res://Sprites/frames/Move-Mode 2/08katana.png" id="58_5cld6"]
+[ext_resource type="Texture2D" uid="uid://cjxalyaxgg2yu" path="res://Sprites/frames/Katana-Idle/07katana.png" id="41_qvbpb"]
+[ext_resource type="Texture2D" uid="uid://bonx6xy348hla" path="res://Sprites/frames/Katana-Idle/08katana.png" id="42_sscpr"]
+[ext_resource type="Texture2D" uid="uid://b1847x1ppwmsl" path="res://Sprites/frames/Katana-Jump/01katana.png" id="43_by7i4"]
+[ext_resource type="Texture2D" uid="uid://c8s2a6lj0jq2e" path="res://Sprites/frames/Katana-Jump/02katana.png" id="44_3uvy8"]
+[ext_resource type="Texture2D" uid="uid://e0wgh3qqgwwy" path="res://Sprites/frames/Katana-Jump/03katana.png" id="45_ss172"]
+[ext_resource type="Texture2D" uid="uid://dwvp7l5crgweu" path="res://Sprites/frames/Katana-Jump/04katana.png" id="46_jmelf"]
+[ext_resource type="Texture2D" uid="uid://b41ac4ovdhl66" path="res://Sprites/frames/Katana-Jump/05katana.png" id="47_bjdqd"]
+[ext_resource type="Texture2D" uid="uid://b22em584vnf27" path="res://Sprites/frames/Katana-Jump/06katana.png" id="48_feq18"]
+[ext_resource type="Texture2D" uid="uid://dk4fdfrp4ao68" path="res://Sprites/frames/Katana-Jump/07katana.png" id="49_wcnj3"]
+[ext_resource type="Texture2D" uid="uid://c8ubqomcir5ci" path="res://Sprites/frames/Katana-Jump/08katana.png" id="50_jsob3"]
+[ext_resource type="Texture2D" uid="uid://g166fu765860" path="res://Sprites/frames/Katana-Move/02katana.png" id="52_qavoy"]
+[ext_resource type="Texture2D" uid="uid://ckdsx2bi8yccn" path="res://Sprites/frames/Katana-Move/03katana.png" id="53_w4w4b"]
+[ext_resource type="Texture2D" uid="uid://cb0d101fx2w4e" path="res://Sprites/frames/Katana-Move/04katana.png" id="54_h5cax"]
+[ext_resource type="Texture2D" uid="uid://bafb1771ppvp2" path="res://Sprites/frames/Katana-Move/05katana.png" id="55_dj0x0"]
+[ext_resource type="Texture2D" uid="uid://ti85wvmgu8r" path="res://Sprites/frames/Katana-Move/06katana.png" id="56_f1uaf"]
+[ext_resource type="Texture2D" uid="uid://dkr7ulmoatulo" path="res://Sprites/frames/Katana-Move/07katana.png" id="57_6hq81"]
+[ext_resource type="Texture2D" uid="uid://u6ssf62lnagg" path="res://Sprites/frames/Katana-Move/08katana.png" id="58_5cld6"]
+[ext_resource type="AudioStream" uid="uid://cghobfhck46jb" path="res://Sound Effects/Sword_slash.mp3" id="sword_slash_new"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgwyo"]
 radius = 9.0
@@ -189,11 +192,20 @@ animations = [{
 "texture": ExtResource("33_xu24p")
 }, {
 "duration": 1.0,
+"texture": ExtResource("34_tynml")
+}, {
+"duration": 1.0,
 "texture": ExtResource("34_3d183")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ssaki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0aska")
 }],
 "loop": 0,
 "name": &"Dash",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +324,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
 size = Vector2(48, 27)
 
-
 [node name="Player" type="CharacterBody2D" unique_id=362024797]
 collision_mask = 3
 script = ExtResource("1_83xs0")
@@ -326,6 +337,8 @@ material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
 animation = &"Dash"
+frame = 6
+frame_progress = 1.0
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]

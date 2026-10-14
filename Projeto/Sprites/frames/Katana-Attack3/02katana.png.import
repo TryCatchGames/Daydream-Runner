@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blu4646cx465l"
-path="res://.godot/imported/02katana.png-b59158e87515189f6bb37027cb3d30d6.ctex"
+path="res://.godot/imported/02katana.png-46d649e431d792f59f364b33337a280c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Attack3-Mode 2/02katana.png"
-dest_files=["res://.godot/imported/02katana.png-b59158e87515189f6bb37027cb3d30d6.ctex"]
+source_file="res://Sprites/frames/Katana-Attack3/02katana.png"
+dest_files=["res://.godot/imported/02katana.png-46d649e431d792f59f364b33337a280c.ctex"]
 
 [params]
 

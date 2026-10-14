@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be3fndiobkykr"
-path="res://.godot/imported/01dash.png-41143aa4dc0fa04f288c000f03c06251.ctex"
+path="res://.godot/imported/01dash.png-fc36f5ea3420efb8276862c77bda36f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Dash-Mode 2/01dash.png"
-dest_files=["res://.godot/imported/01dash.png-41143aa4dc0fa04f288c000f03c06251.ctex"]
+source_file="res://Sprites/frames/Katana-Dash/01dash.png"
+dest_files=["res://.godot/imported/01dash.png-fc36f5ea3420efb8276862c77bda36f3.ctex"]
 
 [params]
 

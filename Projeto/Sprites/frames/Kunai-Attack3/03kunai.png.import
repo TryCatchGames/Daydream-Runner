@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgdxa2qonqw3j"
-path="res://.godot/imported/03kunai.png-606c85d9f8b7d3ac7f1b64e0c73b5017.ctex"
+path="res://.godot/imported/03kunai.png-a43336b4ed8fe2dbd48f06a5f8a03153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Attack3-Mode 1/03kunai.png"
-dest_files=["res://.godot/imported/03kunai.png-606c85d9f8b7d3ac7f1b64e0c73b5017.ctex"]
+source_file="res://Sprites/frames/Kunai-Attack3/03kunai.png"
+dest_files=["res://.godot/imported/03kunai.png-a43336b4ed8fe2dbd48f06a5f8a03153.ctex"]
 
 [params]
 

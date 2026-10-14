@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bog4wqqtknp0q"
-path="res://.godot/imported/12katana.png-900cd9bb9930920a6707239e02c31461.ctex"
+path="res://.godot/imported/12katana.png-1e377e90b74c1d285efaf4160f78eb42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Teleport2/12katana.png"
-dest_files=["res://.godot/imported/12katana.png-900cd9bb9930920a6707239e02c31461.ctex"]
+source_file="res://Sprites/frames/Katana-Teleport/12katana.png"
+dest_files=["res://.godot/imported/12katana.png-1e377e90b74c1d285efaf4160f78eb42.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3w8jb66nxmru"
-path="res://.godot/imported/12kunai.png-c8db985a8472a4c9568e5255281a5c91.ctex"
+path="res://.godot/imported/12kunai.png-e030b3bea77d119cb145a9b2a875b5fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Jump-Mode 1/12kunai.png"
-dest_files=["res://.godot/imported/12kunai.png-c8db985a8472a4c9568e5255281a5c91.ctex"]
+source_file="res://Sprites/frames/Kunai-Jump/12kunai.png"
+dest_files=["res://.godot/imported/12kunai.png-e030b3bea77d119cb145a9b2a875b5fa.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dx6g03l08l40m"
-path="res://.godot/imported/04kunai.png-664dadbf9d0263811f9a4771f1d0bc71.ctex"
+path="res://.godot/imported/04kunai.png-4394f88189e89ad72f1f1475695d5df5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/frames/Teleport1/04kunai.png"
-dest_files=["res://.godot/imported/04kunai.png-664dadbf9d0263811f9a4771f1d0bc71.ctex"]
+source_file="res://Sprites/frames/Kunai-Teleport/04kunai.png"
+dest_files=["res://.godot/imported/04kunai.png-4394f88189e89ad72f1f1475695d5df5.ctex"]
 
 [params]
 
