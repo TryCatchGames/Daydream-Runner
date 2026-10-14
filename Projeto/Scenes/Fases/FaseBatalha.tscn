@@ -122,6 +122,6 @@ scale = Vector2(4.5, 4.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1295961457]
 stream = ExtResource("10_80trf")
-volume_db = -25.0
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
