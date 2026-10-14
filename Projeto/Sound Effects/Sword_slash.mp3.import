@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://d2x4asd0id7xo"
-path="res://.godot/imported/Sword_slash.mp3-5754a6441c564f275621e0bae3675ea9.mp3str"
+uid="uid://cghobfhck46jb"
+path="res://.godot/imported/Sword_Slash.mp3-e9476f7e3235c35468b4659eef041468.mp3str"
 
 [deps]
 
-source_file="res://Sound Effects/Sword_slash.mp3"
-dest_files=["res://.godot/imported/Sword_slash.mp3-5754a6441c564f275621e0bae3675ea9.mp3str"]
+source_file="res://Sound Effects/Sword_Slash.mp3"
+dest_files=["res://.godot/imported/Sword_Slash.mp3-e9476f7e3235c35468b4659eef041468.mp3str"]
 
 [params]
 
