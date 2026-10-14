@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # --- VARIÁVEIS DE BALANCEAMENTO ---
 const SPEED_RIGHT = 200.0
-const SPEED_LEFT = 550.0
+const SPEED_LEFT = 600.0
 const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0

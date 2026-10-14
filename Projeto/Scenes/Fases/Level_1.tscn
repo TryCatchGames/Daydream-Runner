@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/Carros/carro_preto.tscn" id="15_ynfiw"]
 [ext_resource type="PackedScene" uid="uid://mwj6j1g0pgv4" path="res://Scenes/Carros/carro_vermelho.tscn" id="16_onv2o"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="17_1gucs"]
+[ext_resource type="PackedScene" uid="uid://bpqs3p04tpfe" path="res://Scenes/Carros/jipe_verde.tscn" id="17_axeyw"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="18_1oqio"]
 [ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="19_g22in"]
 
@@ -143,6 +144,9 @@ position = Vector2(7137, 735)
 
 [node name="CarroVermelho" parent="Carros" unique_id=405074145 instance=ExtResource("16_onv2o")]
 position = Vector2(10565, 736)
+
+[node name="JipeVerde" parent="Carros" unique_id=673766544 instance=ExtResource("17_axeyw")]
+position = Vector2(15057, 735)
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("17_1gucs")]
 position = Vector2(99.00001, 613)
