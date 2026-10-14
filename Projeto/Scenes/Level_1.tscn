@@ -83,6 +83,18 @@ position = Vector2(99.00001, 613)
 scale = Vector2(2.4, 2.4)
 
 [node name="Inimigo" parent="." unique_id=41493064 instance=ExtResource("4_nw7js")]
-position = Vector2(965, 93)
+position = Vector2(1094, 323)
 
 [node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("10_ptpgp")]
+
+[node name="Inimigo2" parent="." unique_id=1530130867 instance=ExtResource("4_nw7js")]
+position = Vector2(1747, 156)
+
+[node name="Inimigo3" parent="." unique_id=517602655 instance=ExtResource("4_nw7js")]
+position = Vector2(1902, 295)
+
+[node name="Inimigo4" parent="." unique_id=2007521354 instance=ExtResource("4_nw7js")]
+position = Vector2(2556, 235)
+
+[node name="Inimigo5" parent="." unique_id=167381584 instance=ExtResource("4_nw7js")]
+position = Vector2(799, 246)

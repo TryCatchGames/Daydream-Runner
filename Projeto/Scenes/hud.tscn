@@ -14,9 +14,9 @@ texture = ExtResource("1_fccik")
 expand_mode = 1
 
 [node name="Vida" type="HBoxContainer" parent="." unique_id=1195537700]
-offset_left = 61.0
-offset_top = 53.0
-offset_right = 91.0
-offset_bottom = 83.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 90.0
+offset_bottom = 90.0
 script = ExtResource("2_bjfho")
 heart_size = Vector2(80, 80)
