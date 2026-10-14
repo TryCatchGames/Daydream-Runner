@@ -54,4 +54,4 @@ func _animate_scale(target_scale: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/menu_principal.tscn")
