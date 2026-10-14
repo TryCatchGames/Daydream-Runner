@@ -126,21 +126,22 @@ texture = ExtResource("11_3l3gr")
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
-[node name="Carros" type="Node2D" parent="Esteira" unique_id=1882728787]
+[node name="Carros" type="Node2D" parent="." unique_id=1882728787]
+position = Vector2(-3, -237)
 
-[node name="CarroAzul" parent="Esteira/Carros" unique_id=372714669 instance=ExtResource("12_t8x22")]
+[node name="CarroAzul" parent="Carros" unique_id=372714669 instance=ExtResource("12_t8x22")]
 position = Vector2(2037, 734)
 
-[node name="CarroBranco" parent="Esteira/Carros" unique_id=1650433379 instance=ExtResource("13_dkxs2")]
+[node name="CarroBranco" parent="Carros" unique_id=1650433379 instance=ExtResource("13_dkxs2")]
 position = Vector2(4624, 737)
 
-[node name="CarroShiny" parent="Esteira/Carros" unique_id=242047400 instance=ExtResource("14_gri1b")]
+[node name="CarroShiny" parent="Carros" unique_id=242047400 instance=ExtResource("14_gri1b")]
 position = Vector2(13400, 736)
 
-[node name="CarroPreto" parent="Esteira/Carros" unique_id=326866628 instance=ExtResource("15_ynfiw")]
+[node name="CarroPreto" parent="Carros" unique_id=326866628 instance=ExtResource("15_ynfiw")]
 position = Vector2(7137, 735)
 
-[node name="CarroVermelho" parent="Esteira/Carros" unique_id=405074145 instance=ExtResource("16_onv2o")]
+[node name="CarroVermelho" parent="Carros" unique_id=405074145 instance=ExtResource("16_onv2o")]
 position = Vector2(10565, 736)
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("17_1gucs")]
