@@ -51,6 +51,10 @@ position = Vector2(848, 289.00003)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("2_j0k67")
 
+[node name="Carro1" parent="Esteira" unique_id=372714669 instance=ExtResource("9_aur7v")]
+z_index = 1
+position = Vector2(1349, 731)
+
 [node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
 position = Vector2(3.0002441, 941)
 scale = Vector2(0.99999994, 0.99999994)
@@ -72,9 +76,6 @@ texture = ExtResource("2_vnunq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
-
-[node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("9_aur7v")]
-position = Vector2(1345, 527)
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
 position = Vector2(59, 649)

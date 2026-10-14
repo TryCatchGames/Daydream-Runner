@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5w71i6xuiiwv" path="res://Sprites/frames/Carro1/Carro_1.png" id="1_htvml"]
 [ext_resource type="Script" uid="uid://byxoon4s3l7fd" path="res://Scripts/carro_1.gd" id="2_c7r2d"]
+[ext_resource type="Texture2D" uid="uid://bt7mrd2wj7gr0" path="res://Sprites/frames/Carro1/Carro_2.png" id="3_t2by1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi3pc"]
 size = Vector2(406.75, 81)
@@ -22,6 +23,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_htvml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2by1")
 }],
 "loop": 1,
 "name": &"Andando",
@@ -62,7 +66,7 @@ position = Vector2(33.658447, 41.64209)
 scale = Vector2(0.21347296, 0.21347307)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
-frame_progress = 0.60392743
+frame_progress = 0.886336
 
 [node name="FrontDamageArea" type="Area2D" parent="." unique_id=1606266483]
 collision_layer = 0
