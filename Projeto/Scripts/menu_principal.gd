@@ -3,7 +3,7 @@ extends Control
 const HOVER_SCALE := 1.08
 const HOVER_ANIMATION_DURATION := 0.14
 const WOBBLE_ANGLE := deg_to_rad(2.0)
-const WOBBLE_SPEED := 1.2
+const WOBBLE_SPEED := 3
 
 var menu_buttons: Array[Button] = []
 var button_hover_tweens: Dictionary = {}
