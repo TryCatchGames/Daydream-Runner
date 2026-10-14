@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bpqs3p04tpfe" path="res://Scenes/Carros/jipe_verde.tscn" id="17_axeyw"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="18_1oqio"]
 [ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="19_g22in"]
+[ext_resource type="PackedScene" uid="uid://crhjbg33mmub5" path="res://Scenes/Carros/Van.tscn" id="21_355gw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
 size = Vector2(99969, 119.25)
@@ -159,3 +160,6 @@ stream = ExtResource("19_g22in")
 volume_db = -31.0
 autoplay = true
 parameters/looping = true
+
+[node name="Van" parent="." unique_id=603505596 instance=ExtResource("21_355gw")]
+position = Vector2(17314, 603)

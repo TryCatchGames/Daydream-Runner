@@ -19,60 +19,62 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
-size = Vector2(187.5, 30)
+size = Vector2(392.375, 51)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_d3swl"]
-a = Vector2(25, -21)
-b = Vector2(-21, 14)
+a = Vector2(41.15683, -37.830093)
+b = Vector2(-22.07425, 17.908852)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vi3pc"]
-b = Vector2(-3.3733444, 24.507553)
+a = Vector2(-0.54190063, -12.0708885)
+b = Vector2(-3.4004364, 46.048203)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xh1x7"]
-a = Vector2(123, 10)
+a = Vector2(182, 9)
+b = Vector2(-79.91522, 10)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xy6dq"]
-b = Vector2(0, 47)
+b = Vector2(9.084778, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnoat"]
-size = Vector2(47.02054, 21.076359)
+size = Vector2(43.56527, 58.726192)
 
 [node name="Van" type="AnimatableBody2D" unique_id=603505596]
 script = ExtResource("1_t2yx8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532830309]
-position = Vector2(183.99994, -33.00009)
-scale = Vector2(0.10014847, 0.10014847)
+position = Vector2(201.6251, -66.12503)
+scale = Vector2(0.19844204, 0.19844206)
 sprite_frames = SubResource("SpriteFrames_d3swl")
 animation = &"Andando"
 frame_progress = 0.041686196
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411412625]
-position = Vector2(183.25, -14)
+position = Vector2(204.1875, -24.5)
 shape = SubResource("RectangleShape2D_d3swl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=883453658]
-position = Vector2(128, -44)
+position = Vector2(89.99999, -95)
 rotation = -0.0041360483
 shape = SubResource("SegmentShape2D_d3swl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1634347413]
-position = Vector2(91, -28)
+position = Vector2(22, -61)
 rotation = -1.9525605
 shape = SubResource("SegmentShape2D_vi3pc")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1120353372]
-position = Vector2(152, -75)
+position = Vector2(210.91522, -142)
 shape = SubResource("SegmentShape2D_xh1x7")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1635394658]
-position = Vector2(275, -65)
+position = Vector2(392.91522, -132)
 shape = SubResource("SegmentShape2D_xy6dq")
 
 [node name="FrontDamageArea" type="Area2D" parent="." unique_id=1759862852]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrontDamageArea" unique_id=1022229181]
-position = Vector2(107.000015, -18)
+position = Vector2(17.226627, -32.589226)
 rotation = -0.006935239
 shape = SubResource("RectangleShape2D_dnoat")
