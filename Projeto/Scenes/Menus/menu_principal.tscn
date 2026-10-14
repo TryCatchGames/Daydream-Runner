@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl6vspfsxlumq" path="res://Scripts/menu_principal.gd" id="1_gjtjt"]
 [ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="2_crked"]
+[ext_resource type="Texture2D" uid="uid://cpsdhsh8vg6s2" path="res://Sprites/HUD/isso é ufpel.png" id="2_rkpcb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pbtwp"]
 font = ExtResource("2_crked")
@@ -46,14 +47,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gjtjt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=299554745]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=709642894]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_rkpcb")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=845051431]
 layout_mode = 0
