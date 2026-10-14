@@ -28,6 +28,7 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 @onready var sword_hitbox: Area2D = $SwordHitBox
 @onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
 @onready var audio_slash: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_hurt: AudioStreamPlayer = $AudioHurt
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -165,6 +166,7 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 		_apply_knockback_from(attacker)
 
 	health = maxi(health - amount, 0)
+	audio_hurt.play()
 	_flash_white()
 	health_changed.emit(health, MAX_HEALTH)
 	if health == 0:

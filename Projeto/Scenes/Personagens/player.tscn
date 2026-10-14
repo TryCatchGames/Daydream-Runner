@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://ti85wvmgu8r" path="res://Sprites/frames/Katana-Move/06katana.png" id="56_f1uaf"]
 [ext_resource type="Texture2D" uid="uid://dkr7ulmoatulo" path="res://Sprites/frames/Katana-Move/07katana.png" id="57_6hq81"]
 [ext_resource type="Texture2D" uid="uid://u6ssf62lnagg" path="res://Sprites/frames/Katana-Move/08katana.png" id="58_5cld6"]
+[ext_resource type="AudioStream" uid="uid://d2qdbwh7sjnta" path="res://Sound Effects/PlayerHurt.wav" id="player_hurt"]
 [ext_resource type="AudioStream" uid="uid://cghobfhck46jb" path="res://Sound Effects/Sword_Slash.mp3" id="sword_slash_new"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgwyo"]
@@ -351,3 +352,7 @@ disabled = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=395918680]
 stream = ExtResource("sword_slash_new")
 volume_db = -15.0
+
+[node name="AudioHurt" type="AudioStreamPlayer" parent="." unique_id=636615047]
+stream = ExtResource("player_hurt")
+volume_db = -10.0
