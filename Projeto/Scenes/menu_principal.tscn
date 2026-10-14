@@ -5,6 +5,37 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_pbtwp"]
 font = ExtResource("2_crked")
+font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4xp8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xe6lt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cabj8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_heqfu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ni8uq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgyls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul5lg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mndp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrnl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a12rv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnwr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ry77q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4tro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gx5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b8ro"]
 
 [node name="MenuPrincipal" type="Control" unique_id=1261070344]
 layout_mode = 3
@@ -22,33 +53,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2231029, 0.2231029, 0.22310287, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=845051431]
 layout_mode = 0
 offset_right = 1281.0
 offset_bottom = 718.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=336295861]
-z_index = 1
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=863755929]
-layout_mode = 2
+[node name="Label" type="Label" parent="." unique_id=2133854603]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -180.0
+offset_right = 990.0
+offset_bottom = -113.5
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
 text = "DayDream Runner"
 label_settings = SubResource("LabelSettings_pbtwp")
 
-[node name="Jogar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1436337240]
-layout_mode = 2
+[node name="Jogar" type="Button" parent="." unique_id=387286997]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -40.0
+offset_right = -462.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_crked")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y4xp8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xe6lt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cabj8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_heqfu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ni8uq")
 text = "Jogar"
 
-[node name="Créditos" type="Button" parent="CenterContainer/VBoxContainer" unique_id=156727160]
-layout_mode = 2
+[node name="Créditos" type="Button" parent="." unique_id=1434285520]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = 10.0
+offset_right = -390.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_crked")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hgyls")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ul5lg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5mndp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mrnl1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a12rv")
 text = "Créditos"
+expand_icon = true
 
-[node name="Sair" type="Button" parent="CenterContainer/VBoxContainer" unique_id=153345650]
-layout_mode = 2
+[node name="Sair" type="Button" parent="." unique_id=1282292080]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = 60.0
+offset_right = -486.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_crked")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnwr4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ry77q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c4tro")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gx5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7b8ro")
 text = "Sair"
+
+[connection signal="pressed" from="Créditos" to="." method="_on_créditos_pressed"]

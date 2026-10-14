@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://byfgcesfjyfkv"]
+
+[ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="1_0g612"]
+[ext_resource type="Script" uid="uid://xu1py52km26h" path="res://Scripts/creditos_texto.gd" id="2_credits_text"]
+[ext_resource type="Script" uid="uid://ddo84no40jytt" path="res://Scripts/título.gd" id="2_rytbf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3swl"]
+font = ExtResource("1_0g612")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_vi3pc"]
+font = ExtResource("1_0g612")
+font_size = 24
+
+[node name="Créditos" type="Control" unique_id=890718327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=137714485]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Título" type="Label" parent="." unique_id=464569849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -180.0
+offset_right = 272.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Desenvolvido por:"
+label_settings = SubResource("LabelSettings_d3swl")
+script = ExtResource("2_rytbf")
+
+[node name="TextoCréditos" type="Label" parent="." unique_id=298984166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = -39.0
+offset_right = 468.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gustavo Domenech de Souza
+Gerson Farias Clara
+Carlos Henrique Furtado"
+label_settings = SubResource("LabelSettings_vi3pc")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_credits_text")
+
+[node name="Voltar" type="Button" parent="." unique_id=1013388676]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
