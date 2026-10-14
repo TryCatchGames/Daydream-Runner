@@ -3,6 +3,7 @@ extends CharacterBody2D
 # --- VARIÁVEIS DE BALANCEAMENTO ---
 const SPEED_RIGHT = 200.0
 const SPEED_LEFT = 550.0
+const SPEED_NO_CONVEYOR = 200.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -400.0
@@ -28,8 +29,8 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
 	"Running": Vector2(12.0, -20.0),
-	"Jump": Vector2(3.0, -22.0),
-	"Fall": Vector2(3.0, -22.0),
+	"Jump": Vector2(3.0, -20.0),
+	"Fall": Vector2(3.0, -20.0),
 	"Attack1Sword": Vector2(0.0, -20.0),
 	"Attack2Sword": Vector2(0.0, -20.0)
 }
@@ -43,6 +44,7 @@ var health := MAX_HEALTH
 var sword_hit_targets: Dictionary = {}
 var damage_flash_tween: Tween
 var knockback_velocity := Vector2.ZERO
+var tem_esteira := false
 
 signal health_changed(current_health: int, max_health: int)
 signal died
@@ -277,6 +279,7 @@ func _damage_enemy(body: Node2D) -> void:
 
 func _ready() -> void:
 	add_to_group("player")
+	tem_esteira = get_tree().get_first_node_in_group("esteira") != null
 	animated_sprite.animation_changed.connect(update_collision)
 	animated_sprite.animation_changed.connect(update_sprite_offset)
 	animated_sprite.animation_changed.connect(update_sword_hitbox)
@@ -320,16 +323,16 @@ func _physics_process(delta: float) -> void:
 	# Durante o knockback, ele age independentemente da esteira.
 	if not is_zero_approx(knockback_velocity.x):
 		velocity.x = knockback_velocity.x
-
 	elif direction != 0:
-		var target_speed: float = SPEED_RIGHT if direction > 0 else SPEED_LEFT
+		var target_speed := SPEED_NO_CONVEYOR
+		if tem_esteira:
+			target_speed = SPEED_RIGHT if direction > 0 else SPEED_LEFT
 		velocity.x = direction * target_speed
-
 	else:
-		# Acompanha a esteira, desacelerando suavemente até -DRAG_SPEED.
+		var target_speed_x := -DRAG_SPEED if tem_esteira else 0.0
 		velocity.x = move_toward(
 			velocity.x,
-			-DRAG_SPEED,
+			target_speed_x,
 			DRAG_ACCELERATION * delta
 		)
 

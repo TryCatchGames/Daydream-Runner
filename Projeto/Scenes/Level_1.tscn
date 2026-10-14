@@ -73,6 +73,9 @@ texture = ExtResource("2_vnunq")
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
+[node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("9_aur7v")]
+position = Vector2(1345, 527)
+
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_oiua3")]
 position = Vector2(59, 649)
 scale = Vector2(2.4, 2.4)
@@ -91,6 +94,3 @@ position = Vector2(1021, 337)
 
 [node name="Inimigo5" parent="." unique_id=66001111 instance=ExtResource("4_nw7js")]
 position = Vector2(104, 57)
-
-[node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("9_aur7v")]
-position = Vector2(313, -10)

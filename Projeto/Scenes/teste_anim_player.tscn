@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvqfyab5r7lkg"]
 
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/player.tscn" id="1_fpl6h"]
+[ext_resource type="PackedScene" uid="uid://duaopxmndmy2x" path="res://Scenes/carro_1.tscn" id="2_6f4cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
 size = Vector2(960.5, 74)
@@ -8,10 +9,14 @@ size = Vector2(960.5, 74)
 [node name="TesteAnimPlayer" type="Node2D" unique_id=84549011]
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("1_fpl6h")]
-position = Vector2(441, 221)
+position = Vector2(434, 208)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=80720557]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=392481407]
 position = Vector2(481.75, 367)
 shape = SubResource("RectangleShape2D_d3swl")
+
+[node name="Carro1" parent="." unique_id=372714669 instance=ExtResource("2_6f4cw")]
+position = Vector2(714, 271)
+scale = Vector2(0.5, 0.5)
