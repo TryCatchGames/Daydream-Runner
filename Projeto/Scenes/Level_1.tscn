@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="4_5r5j8"]
 [ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="4_akpl7"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/inimigo.tscn" id="4_nw7js"]
-[ext_resource type="PackedScene" uid="uid://duaopxmndmy2x" path="res://Scenes/carro_1.tscn" id="9_aur7v"]
+[ext_resource type="PackedScene" uid="uid://b1ib7tv7u1d1g" path="res://Scenes/carro_azul.tscn" id="9_aur7v"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/hud.tscn" id="10_ptpgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
