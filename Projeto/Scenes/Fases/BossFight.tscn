@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://xv3uw5yy8vkp"]
+
+[ext_resource type="Texture2D" uid="uid://bhvl1iigsjyad" path="res://Sprites/cenario/background.png" id="1_4a5j7"]
+[ext_resource type="Texture2D" uid="uid://3md1lwh7lka5" path="res://Sprites/cenario/Predio_COTADA.png" id="2_a2wnx"]
+[ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="3_7uxrx"]
+[ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="4_o2f1w"]
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="5_76lv4"]
+[ext_resource type="PackedScene" uid="uid://misps8gmlqno" path="res://Scenes/Personagens/Boss.tscn" id="8_0lw3g"]
+[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="8_3smpa"]
+[ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="9_1om60"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqan1"]
+size = Vector2(99969, 119.25)
+
+[node name="BossFight" type="Node2D" unique_id=1415101269]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1288640582]
+position = Vector2(-3, -237)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" unique_id=573903991]
+z_index = -1
+offset_left = -2455.0
+offset_top = 268.0
+offset_right = 15281.0
+offset_bottom = 1370.0
+texture = ExtResource("1_4a5j7")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Fundo" type="Sprite2D" parent="Node2D" unique_id=868869279]
+
+[node name="Predio3" type="Sprite2D" parent="Node2D" unique_id=91729017]
+position = Vector2(778, 212.99998)
+scale = Vector2(1.2356771, 1.2421876)
+texture = ExtResource("2_a2wnx")
+
+[node name="Semáforo" type="Sprite2D" parent="Node2D" unique_id=2031436983]
+z_index = 2
+position = Vector2(24, 558)
+scale = Vector2(0.22070313, 0.21614583)
+texture = ExtResource("3_7uxrx")
+
+[node name="Chao" type="StaticBody2D" parent="Node2D" unique_id=334172863]
+position = Vector2(3.0002441, 941)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/Chao" unique_id=1850230004]
+position = Vector2(22154, -123)
+texture = ExtResource("4_o2f1w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Chao" unique_id=772459095]
+position = Vector2(13296.001, -75.00001)
+scale = Vector2(0.9999437, 0.610577)
+texture = ExtResource("4_o2f1w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Chao" unique_id=1845981763]
+position = Vector2(4425, -76)
+scale = Vector2(0.99978137, 0.60677093)
+texture = ExtResource("4_o2f1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Chao" unique_id=1436845105]
+position = Vector2(49984.004, -19)
+shape = SubResource("RectangleShape2D_sqan1")
+
+[node name="Player" parent="." unique_id=362024797 instance=ExtResource("5_76lv4")]
+position = Vector2(96, 617)
+scale = Vector2(2.4, 2.4)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1800718385]
+position = Vector2(916, 229)
+zoom = Vector2(0.7, 0.7)
+
+[node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("8_3smpa")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2112129124]
+stream = ExtResource("9_1om60")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="Boss" parent="." unique_id=547436782 instance=ExtResource("8_0lw3g")]
+position = Vector2(1109, 403)
+scale = Vector2(3, 3)
