@@ -17,12 +17,15 @@ var knockback_velocity := Vector2.ZERO
 var attack_targets: Dictionary = {}
 var damage_flash_tween: Tween
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+# Separado: AnimationPlayer toca animações, AnimatedSprite2D cuida do visual (flip_h e material)
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D 
 @onready var audio_death: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	add_to_group("boss")
-	animated_sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
+	# O sinal do AnimationPlayer passa o argumento (anim_name)
+	animation_player.animation_finished.connect(_on_animation_finished)
 	change_state(State.SPAWN)
 
 func _physics_process(delta: float) -> void:
@@ -74,8 +77,8 @@ func _move_toward_player() -> void:
 	var direction := (player.global_position - global_position).normalized()
 	velocity = direction * speed
 	if direction.x != 0.0:
-		# O sprite original olha para a esquerda; espelha quando vai para a direita.
-		animated_sprite.flip_h = direction.x > 0.0
+		# Aplica a rotação no nó da imagem
+		sprite.flip_h = direction.x > 0.0
 
 func change_state(new_state: State) -> void:
 	if current_state == new_state:
@@ -84,22 +87,22 @@ func change_state(new_state: State) -> void:
 	current_state = new_state
 	match current_state:
 		State.SPAWN:
-			animated_sprite.play("Aparecendo")
+			animation_player.play("Aparecendo")
 		State.IDLE:
-			animated_sprite.play("Idle")
+			animation_player.play("Idle")
 		State.CHASE:
-			animated_sprite.play("Walk")
+			animation_player.play("Walk")
 		State.ATTACK:
 			_start_attack()
 		State.HURT:
-			animated_sprite.play("Dano")
+			animation_player.play("Dano")
 		State.DEAD:
-			animated_sprite.play("Morte")
+			animation_player.play("Morte")
 			audio_death.play()
 
 func _start_attack() -> void:
 	attack_targets.clear()
-	animated_sprite.play("Attack")
+	animation_player.play("Attack")
 
 func _check_player_body_collision() -> void:
 	if current_state != State.CHASE and current_state != State.ATTACK:
@@ -142,7 +145,7 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	elif is_instance_valid(player):
 		source_position = player.global_position
 	else:
-		if animated_sprite.flip_h:
+		if sprite.flip_h:
 			source_position.x += 1.0
 		else:
 			source_position.x -= 1.0
@@ -152,12 +155,12 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 		_flash_white()
 		change_state(State.DEAD)
 	elif current_state == State.HURT:
-		animated_sprite.play("Dano")
+		animation_player.play("Dano")
 	else:
 		change_state(State.HURT)
 
 func _flash_white() -> void:
-	var flash_material := animated_sprite.material as ShaderMaterial
+	var flash_material := sprite.material as ShaderMaterial
 	if flash_material == null:
 		return
 
@@ -169,17 +172,18 @@ func _flash_white() -> void:
 	damage_flash_tween.tween_method(_set_damage_flash, 1.0, 0.0, DAMAGE_FLASH_DURATION)
 
 func _set_damage_flash(amount: float) -> void:
-	var flash_material := animated_sprite.material as ShaderMaterial
+	var flash_material := sprite.material as ShaderMaterial
 	if flash_material != null:
 		flash_material.set_shader_parameter("flash_amount", amount)
 
 func _apply_knockback_away_from(source_position: Vector2) -> void:
 	var direction := global_position - source_position
 	if direction.length_squared() < 0.001:
-		direction = Vector2.RIGHT if animated_sprite.flip_h else Vector2.LEFT
+		direction = Vector2.RIGHT if sprite.flip_h else Vector2.LEFT
 	knockback_velocity = direction.normalized() * KNOCKBACK_STRENGTH
 
-func _on_animated_sprite_2d_animation_finished() -> void:
+# Função ajustada para aceitar a StringName da animação
+func _on_animation_finished(anim_name: StringName) -> void:
 	match current_state:
 		State.SPAWN:
 			change_state(State.IDLE)

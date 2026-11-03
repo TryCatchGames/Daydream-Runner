@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://b3st8uhycn7kp"]
+
+[ext_resource type="Script" uid="uid://d1bh14yqybb5f" path="res://Scripts/tutorial.gd" id="1_uply3"]
+[ext_resource type="Script" uid="uid://dx8rut8lukolj" path="res://Scripts/esteiraTutorial.gd" id="2_q68x7"]
+[ext_resource type="Texture2D" uid="uid://bhvl1iigsjyad" path="res://Sprites/cenario/background.png" id="2_uply3"]
+[ext_resource type="Texture2D" uid="uid://bck5fei4cr1k5" path="res://Sprites/cenario/Predios_Sequencia.png" id="3_q68x7"]
+[ext_resource type="Texture2D" uid="uid://dosepgakrclfr" path="res://Sprites/cenario/Predio_5.png" id="4_6yhbn"]
+[ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="5_hs30v"]
+[ext_resource type="Texture2D" uid="uid://cgisxkj0hj00a" path="res://Sprites/cenario/Predio_2.png" id="6_5eu4r"]
+[ext_resource type="Texture2D" uid="uid://ck16i1orixdiy" path="res://Sprites/cenario/Predio_1.png" id="7_o2k0u"]
+[ext_resource type="Texture2D" uid="uid://bnsly14eswlqk" path="res://Sprites/cenario/Predio_Tributo.png" id="8_wla14"]
+[ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="9_0voeu"]
+[ext_resource type="Texture2D" uid="uid://cm5arc8fpmeb5" path="res://Sprites/cenario/Predio_67.png" id="10_au614"]
+[ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="11_8kynq"]
+[ext_resource type="PackedScene" uid="uid://b1ib7tv7u1d1g" path="res://Scenes/Carros/carro_azul.tscn" id="12_3j8f2"]
+[ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="13_qys4e"]
+[ext_resource type="Script" uid="uid://s4jsau2gttv2" path="res://Scripts/carroTutorial.gd" id="14_6yhbn"]
+[ext_resource type="PackedScene" uid="uid://5sgqq5x8ngmb" path="res://Scenes/Carros/carroShiny.tscn" id="14_71v00"]
+[ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/Carros/carro_preto.tscn" id="15_kdk20"]
+[ext_resource type="PackedScene" uid="uid://mwj6j1g0pgv4" path="res://Scenes/Carros/carro_vermelho.tscn" id="16_6soem"]
+[ext_resource type="PackedScene" uid="uid://bpqs3p04tpfe" path="res://Scenes/Carros/jipe_verde.tscn" id="17_2vfsy"]
+[ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="18_qlij0"]
+[ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="19_yyrf6"]
+[ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="20_f7or6"]
+[ext_resource type="Script" uid="uid://b41lx5ky0xuns" path="res://Scripts/playerTutorial.gd" id="21_hs30v"]
+[ext_resource type="PackedScene" uid="uid://crhjbg33mmub5" path="res://Scenes/Carros/Van.tscn" id="21_srwl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8f704"]
+size = Vector2(99969, 119.25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hs30v"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Tutorial" type="Node2D" unique_id=126600753 node_paths=PackedStringArray("esteira", "player", "label_tutorial")]
+process_mode = 3
+script = ExtResource("1_uply3")
+esteira = NodePath("Esteira")
+player = NodePath("Player")
+label_tutorial = NodePath("CanvasLayer/LabelTutorial")
+
+[node name="Esteira" type="Node2D" parent="." unique_id=361319778]
+position = Vector2(-3, -237)
+script = ExtResource("2_q68x7")
+
+[node name="Background2" type="TextureRect" parent="Esteira" unique_id=1611301443]
+offset_left = 2.0
+offset_top = 210.0
+offset_right = 17738.0
+offset_bottom = 1312.0
+texture = ExtResource("2_uply3")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="Esteira" unique_id=2074479027]
+offset_left = 5333.0
+offset_top = 257.0
+offset_right = 10022.0
+offset_bottom = 1359.0
+texture = ExtResource("2_uply3")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Predios" type="Node2D" parent="Esteira" unique_id=463687119]
+
+[node name="Prédio4" type="Sprite2D" parent="Esteira/Predios" unique_id=480993949]
+position = Vector2(3469, 416)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("3_q68x7")
+
+[node name="Prédio6" type="Sprite2D" parent="Esteira/Predios" unique_id=1274055035]
+position = Vector2(1931, 358.00003)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("4_6yhbn")
+
+[node name="Prédio3" type="Sprite2D" parent="Esteira/Predios" unique_id=1937738772]
+position = Vector2(1400, 383.00003)
+scale = Vector2(0.617737, 0.617737)
+texture = ExtResource("5_hs30v")
+
+[node name="Prédio2" type="Sprite2D" parent="Esteira/Predios" unique_id=1568545996]
+position = Vector2(834, 306)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("6_5eu4r")
+
+[node name="Prédio12" type="Sprite2D" parent="Esteira/Predios" unique_id=211846128]
+position = Vector2(6595, 158)
+texture = ExtResource("4_6yhbn")
+
+[node name="Prédio1" type="Sprite2D" parent="Esteira/Predios" unique_id=2076569879]
+position = Vector2(274, 277)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("7_o2k0u")
+
+[node name="Prédio10" type="Sprite2D" parent="Esteira/Predios" unique_id=634710750]
+position = Vector2(7805, 467)
+texture = ExtResource("8_wla14")
+
+[node name="Prédio5" type="Sprite2D" parent="Esteira/Predios" unique_id=1371335220]
+position = Vector2(5064, 316)
+scale = Vector2(0.6909941, 0.69099414)
+texture = ExtResource("9_0voeu")
+
+[node name="Prédio7" type="Sprite2D" parent="Esteira/Predios" unique_id=673270439]
+position = Vector2(10262.931, 382.65408)
+scale = Vector2(0.617737, 0.617737)
+texture = ExtResource("5_hs30v")
+
+[node name="Prédio8" type="Sprite2D" parent="Esteira/Predios" unique_id=53808738]
+position = Vector2(9696.931, 305.65405)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("6_5eu4r")
+
+[node name="Prédio9" type="Sprite2D" parent="Esteira/Predios" unique_id=755051629]
+position = Vector2(9136.931, 276.65405)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("7_o2k0u")
+
+[node name="Prédio11" type="Sprite2D" parent="Esteira/Predios" unique_id=988911823]
+position = Vector2(5825, 122)
+texture = ExtResource("10_au614")
+
+[node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=284041663]
+position = Vector2(3.0002441, 941)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Esteira/Chao" unique_id=1550380424]
+position = Vector2(22154, -123)
+texture = ExtResource("11_8kynq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Esteira/Chao" unique_id=2038762755]
+position = Vector2(13296.001, -75.00001)
+scale = Vector2(0.9999437, 0.610577)
+texture = ExtResource("11_8kynq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Esteira/Chao" unique_id=582626424]
+position = Vector2(4432.5313, -75.25)
+scale = Vector2(0.99978137, 0.60677093)
+texture = ExtResource("11_8kynq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=2059214915]
+position = Vector2(49985.004, -29)
+shape = SubResource("RectangleShape2D_8f704")
+
+[node name="Carros" type="Node2D" parent="." unique_id=189334364]
+position = Vector2(-3, -237)
+
+[node name="CarroAzul" parent="Carros" unique_id=372714669 instance=ExtResource("12_3j8f2")]
+position = Vector2(2037, 734)
+script = ExtResource("14_6yhbn")
+
+[node name="CarroBranco" parent="Carros" unique_id=1153190233 instance=ExtResource("13_qys4e")]
+position = Vector2(4624, 737)
+script = ExtResource("14_6yhbn")
+
+[node name="CarroShiny" parent="Carros" unique_id=2035123023 instance=ExtResource("14_71v00")]
+position = Vector2(13400, 736)
+script = ExtResource("14_6yhbn")
+
+[node name="CarroPreto" parent="Carros" unique_id=1310841848 instance=ExtResource("15_kdk20")]
+position = Vector2(7137, 735)
+script = ExtResource("14_6yhbn")
+
+[node name="CarroVermelho" parent="Carros" unique_id=1797957933 instance=ExtResource("16_6soem")]
+position = Vector2(10565, 736)
+script = ExtResource("14_6yhbn")
+
+[node name="JipeVerde" parent="Carros" unique_id=673766544 instance=ExtResource("17_2vfsy")]
+position = Vector2(15057, 735)
+script = ExtResource("14_6yhbn")
+
+[node name="Player" parent="." unique_id=362024797 instance=ExtResource("18_qlij0")]
+position = Vector2(99.00001, 613)
+scale = Vector2(2.4, 2.4)
+script = ExtResource("21_hs30v")
+can_move = true
+
+[node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("19_yyrf6")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=773593865]
+
+[node name="LabelTutorial" type="Label" parent="CanvasLayer" unique_id=1851625749]
+offset_left = 85.0
+offset_top = 274.0
+offset_right = 1142.0
+offset_bottom = 432.0
+label_settings = SubResource("LabelSettings_hs30v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=953670631]
+stream = ExtResource("20_f7or6")
+volume_db = -31.0
+autoplay = true
+parameters/looping = true
+
+[node name="Van" parent="." unique_id=603505596 instance=ExtResource("21_srwl6")]
+position = Vector2(17314, 603)
+script = ExtResource("14_6yhbn")

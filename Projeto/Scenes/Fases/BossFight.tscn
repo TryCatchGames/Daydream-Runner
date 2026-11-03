@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="3_7uxrx"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="4_o2f1w"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="5_76lv4"]
-[ext_resource type="PackedScene" uid="uid://misps8gmlqno" path="res://Scenes/Personagens/Boss.tscn" id="8_0lw3g"]
+[ext_resource type="PackedScene" uid="uid://misps8gmlqno" path="res://Scenes/Personagens/boss.tscn" id="8_0lw3g"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="8_3smpa"]
 [ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="9_1om60"]
 
@@ -79,5 +79,5 @@ autoplay = true
 parameters/looping = true
 
 [node name="Boss" parent="." unique_id=547436782 instance=ExtResource("8_0lw3g")]
-position = Vector2(1109, 403)
+position = Vector2(1100, 525)
 scale = Vector2(3, 3)
