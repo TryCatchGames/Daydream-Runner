@@ -10,7 +10,7 @@
 ***
 
 <p align="center">
-<img width="595" height="842" alt="One-Sheet_ Daydream Runner - V2 2" src="https://github.com/user-attachments/assets/172aed51-1690-4d83-9bc5-381348ce1b3a" />
+<img width="595" height="842" alt="One-Sheet_ Daydream Runner - V2 2" src="https://github.com/TryCatchGames/Daydream-Runner/blob/main/GDD/One-Sheet_%20Daydream%20Runner%20-%20V2.3.png" />
 </p>
 
 ***
