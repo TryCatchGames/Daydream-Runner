@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwe2x4p1auddu"
+path="res://.godot/imported/musica_menu.mp3-17ef536330d81c4beba3f8dc5b91ef1d.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/musica_menu.mp3"
+dest_files=["res://.godot/imported/musica_menu.mp3-17ef536330d81c4beba3f8dc5b91ef1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
