@@ -1,79 +1,50 @@
 [gd_scene format=3 uid="uid://cp7e7hadmivud"]
 
-[ext_resource type="Script" uid="uid://cl6vspfsxlumq" path="res://Scripts/menu_principal.gd" id="1_gjtjt"]
-[ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="2_crked"]
-[ext_resource type="Texture2D" uid="uid://btjgwwh3halnk" path="res://Sprites/HUD/Menu Background.png" id="2_rkpcb"]
+[ext_resource type="Script" uid="uid://cl6vspfsxlumq" path="res://Scripts/menu_principal.gd" id="1_menu"]
+[ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="2_font"]
+[ext_resource type="Texture2D" uid="uid://btjgwwh3halnk" path="res://Sprites/HUD/Menu Background.png" id="3_background"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pbtwp"]
-font = ExtResource("2_crked")
+[sub_resource type="LabelSettings" id="TitleSettings"]
+font = ExtResource("2_font")
 font_size = 64
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4xp8"]
+[sub_resource type="StyleBoxEmpty" id="ButtonStyle"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xe6lt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cabj8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_heqfu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ni8uq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgyls"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul5lg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mndp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrnl1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a12rv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnwr4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ry77q"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4tro"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gx5w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b8ro"]
-
-[node name="MenuPrincipal" type="Control" unique_id=1261070344]
+[node name="MenuPrincipal" type="Control" unique_id=57680211]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gjtjt")
+script = ExtResource("1_menu")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=709642894]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1795874766]
 layout_mode = 1
-offset_right = 1672.0
-offset_bottom = 941.0
-texture = ExtResource("2_rkpcb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_background")
+stretch_mode = 5
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=845051431]
-layout_mode = 0
-offset_right = 1281.0
-offset_bottom = 718.0
-
-[node name="Label" type="Label" parent="." unique_id=2133854603]
+[node name="Label" type="Label" parent="." unique_id=180417961]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 30.0
-offset_top = -180.0
+offset_top = -205.0
 offset_right = 990.0
-offset_bottom = -113.5
+offset_bottom = -138.5
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "DayDream Runner"
-label_settings = SubResource("LabelSettings_pbtwp")
+label_settings = SubResource("TitleSettings")
 
-[node name="Jogar" type="Button" parent="." unique_id=387286997]
+[node name="Jogar" type="Button" parent="." unique_id=1233786460]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,21 +52,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -590.0
-offset_top = -40.0
+offset_top = -75.0
 offset_right = -462.0
-offset_bottom = -8.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_crked")
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_y4xp8")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_xe6lt")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cabj8")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_heqfu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ni8uq")
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
 text = "Jogar"
 
-[node name="Créditos" type="Button" parent="." unique_id=1434285520]
+[node name="CarregarJogo" type="Button" parent="." unique_id=1469396522]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,22 +74,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -590.0
-offset_top = 10.0
-offset_right = -390.0
-offset_bottom = 42.0
+offset_top = -25.0
+offset_right = -398.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_crked")
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hgyls")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ul5lg")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5mndp")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mrnl1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_a12rv")
-text = "Créditos"
-expand_icon = true
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Carregar"
 
-[node name="Sair" type="Button" parent="." unique_id=1282292080]
+[node name="Extras" type="Button" parent="." unique_id=401957354]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,18 +96,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -590.0
-offset_top = 60.0
+offset_top = 25.0
+offset_right = -430.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Extras"
+
+[node name="Sair" type="Button" parent="." unique_id=1578299598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = 75.0
 offset_right = -486.0
-offset_bottom = 92.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_crked")
+theme_override_fonts/font = ExtResource("2_font")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gnwr4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_ry77q")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_c4tro")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gx5w")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7b8ro")
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
 text = "Sair"
-
-[connection signal="pressed" from="Créditos" to="." method="_on_créditos_pressed"]

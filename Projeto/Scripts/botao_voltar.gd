@@ -2,14 +2,14 @@ extends Button
 
 const HOVER_SCALE := 1.08
 const HOVER_ANIMATION_DURATION := 0.14
-const WOBBLE_ANGLE := deg_to_rad(4.0)
-const WOBBLE_SPEED := 3
+const WOBBLE_ANGLE := deg_to_rad(3.0)
+const WOBBLE_SPEED := 3.0
 
-var is_hovered := false
 var wobble_time := 0.0
 var hover_tween: Tween
 
 func _ready() -> void:
+	wobble_time = randf_range(0.0, TAU)
 	pivot_offset = size * 0.5
 	resized.connect(_update_pivot)
 	mouse_entered.connect(_on_mouse_entered)
@@ -18,12 +18,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if is_hovered:
-		wobble_time += delta
-		rotation = sin(wobble_time * WOBBLE_SPEED) * WOBBLE_ANGLE
-	else:
-		wobble_time = 0.0
-		rotation = 0.0
+	wobble_time += delta
+	rotation = sin(wobble_time * WOBBLE_SPEED) * WOBBLE_ANGLE
 
 
 func _update_pivot() -> void:
@@ -31,12 +27,10 @@ func _update_pivot() -> void:
 
 
 func _on_mouse_entered() -> void:
-	is_hovered = true
 	_animate_scale(HOVER_SCALE)
 
 
 func _on_mouse_exited() -> void:
-	is_hovered = false
 	_animate_scale(1.0)
 
 
@@ -54,4 +48,4 @@ func _animate_scale(target_scale: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menus/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/extras.tscn")

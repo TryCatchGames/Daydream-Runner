@@ -1,9 +1,11 @@
 extends Control
 
+@export var terminou: bool = false
+
 const HOVER_SCALE := 1.08
 const HOVER_ANIMATION_DURATION := 0.14
-const WOBBLE_ANGLE := deg_to_rad(4.0)
-const WOBBLE_SPEED := 3
+const WOBBLE_ANGLE := deg_to_rad(3.0)
+const WOBBLE_SPEED := 3.0
 const TITLE_LETTER_SCALE := 1.3
 const TITLE_LETTER_ANIMATION_DURATION := 0.05
 const TITLE_LETTER_GAP := 0.025
@@ -15,29 +17,20 @@ var title_letters: Array[Label] = []
 var button_hover_tweens: Dictionary = {}
 var button_wobble_times: Dictionary = {}
 
+
 func _ready() -> void:
 	_setup_title_letters()
 
 	for child in get_children():
 		if child is Button:
 			var button := child as Button
-			button_wobble_times[button] = float(menu_buttons.size()) * 0.8
+			button_wobble_times[button] = randf_range(0.0, TAU)
 			menu_buttons.append(button)
 			_update_button_pivot(button)
 			button.resized.connect(_update_button_pivot.bind(button))
 			button.mouse_entered.connect(_on_button_mouse_entered.bind(button))
 			button.mouse_exited.connect(_on_button_mouse_exited.bind(button))
-			if button.name == "Jogar":
-				button.pressed.connect(_on_play_button_pressed)
-			elif button.name == "Sair":
-				button.pressed.connect(_on_exit_button_pressed)
-
-
-func _process(delta: float) -> void:
-	for button in menu_buttons:
-		if is_instance_valid(button):
-			button_wobble_times[button] += delta
-			button.rotation = sin(button_wobble_times[button] * WOBBLE_SPEED) * WOBBLE_ANGLE
+			button.pressed.connect(_on_menu_button_pressed.bind(button))
 
 
 func _setup_title_letters() -> void:
@@ -106,6 +99,26 @@ func _animate_title_letters() -> void:
 			await get_tree().create_timer(TITLE_LETTER_GAP).timeout
 
 
+func _process(delta: float) -> void:
+	for button in menu_buttons:
+		if is_instance_valid(button):
+			button_wobble_times[button] += delta
+			button.rotation = sin(button_wobble_times[button] * WOBBLE_SPEED) * WOBBLE_ANGLE
+
+
+func _on_menu_button_pressed(button: Button) -> void:
+	match button.name:
+		"Jogar":
+			get_tree().change_scene_to_file("res://Scenes/Fases/Level_1.tscn")
+		"CarregarJogo":
+			get_tree().change_scene_to_file("res://Scenes/Menus/selecionar_save.tscn")
+		"Extras":
+			get_tree().set_meta("terminou", terminou)
+			get_tree().change_scene_to_file("res://Scenes/Menus/extras.tscn")
+		"Sair":
+			get_tree().quit()
+
+
 func _update_button_pivot(button: Button) -> void:
 	button.pivot_offset = button.size * 0.5
 
@@ -132,19 +145,3 @@ func _animate_button_scale(button: Button, target_scale: float) -> void:
 		Vector2.ONE * target_scale,
 		HOVER_ANIMATION_DURATION
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
-
-func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Fases/Level_1.tscn")
-
-
-func _on_options_button_pressed() -> void:
-	print("Abrir opções")
-
-
-func _on_exit_button_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_créditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Menus/créditos.tscn")

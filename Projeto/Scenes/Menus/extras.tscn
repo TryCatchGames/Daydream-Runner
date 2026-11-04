@@ -1,0 +1,180 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/menu_navegacao.gd" id="1_navigation"]
+[ext_resource type="FontFile" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="2_font"]
+[ext_resource type="Texture2D" path="res://Sprites/HUD/Menu Background.png" id="3_background"]
+[ext_resource type="Script" path="res://Scripts/título.gd" id="4_title_animation"]
+
+[sub_resource type="LabelSettings" id="TitleSettings"]
+font = ExtResource("2_font")
+font_size = 42
+
+[sub_resource type="StyleBoxEmpty" id="ButtonStyle"]
+
+[sub_resource type="StyleBoxFlat" id="PopupStyle"]
+bg_color = Color(0.03, 0.03, 0.04, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+content_margin_left = 28.0
+content_margin_top = 24.0
+content_margin_right = 28.0
+content_margin_bottom = 24.0
+
+[node name="Extras" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_navigation")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_background")
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -230.0
+offset_right = 300.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Extras"
+label_settings = SubResource("TitleSettings")
+horizontal_alignment = 1
+script = ExtResource("4_title_animation")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Opcoes" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Creditos" type="Button" parent="CenterContainer/Opcoes"]
+custom_minimum_size = Vector2(500, 54)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Créditos"
+
+[node name="SelecionarFase" type="Button" parent="CenterContainer/Opcoes"]
+custom_minimum_size = Vector2(650, 54)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Selecionar Fase"
+
+[node name="Voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 620.0
+offset_right = 194.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Voltar"
+
+[node name="PopupOverlay" type="Control" parent="."]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Escurecer" type="ColorRect" parent="PopupOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.72)
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Painel" type="PanelContainer" parent="PopupOverlay/CenterContainer"]
+custom_minimum_size = Vector2(900, 220)
+layout_mode = 2
+theme_override_styles/panel = SubResource("PopupStyle")
+
+[node name="Conteudo" type="VBoxContainer" parent="PopupOverlay/CenterContainer/Painel"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Mensagem" type="Label" parent="PopupOverlay/CenterContainer/Painel/Conteudo"]
+custom_minimum_size = Vector2(820, 90)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+text = "A seleção de fases é liberada após a conclusão da aventura"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AlinhamentoBotao" type="HBoxContainer" parent="PopupOverlay/CenterContainer/Painel/Conteudo"]
+layout_mode = 2
+
+[node name="Espacador" type="Control" parent="PopupOverlay/CenterContainer/Painel/Conteudo/AlinhamentoBotao"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OK" type="Button" parent="PopupOverlay/CenterContainer/Painel/Conteudo/AlinhamentoBotao"]
+custom_minimum_size = Vector2(130, 46)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "OK"

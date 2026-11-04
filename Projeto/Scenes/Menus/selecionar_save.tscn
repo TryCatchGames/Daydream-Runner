@@ -1,0 +1,202 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/menu_navegacao.gd" id="1_navigation"]
+[ext_resource type="FontFile" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="2_font"]
+[ext_resource type="Texture2D" path="res://Sprites/HUD/Menu Background.png" id="3_background"]
+[ext_resource type="Script" path="res://Scripts/título.gd" id="4_title_animation"]
+
+[sub_resource type="LabelSettings" id="TitleSettings"]
+font = ExtResource("2_font")
+font_size = 42
+
+[sub_resource type="StyleBoxEmpty" id="ButtonStyle"]
+
+[node name="SelecionarSave" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_navigation")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_background")
+stretch_mode = 5
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -240.0
+offset_right = 350.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carregar jogo"
+label_settings = SubResource("TitleSettings")
+horizontal_alignment = 1
+script = ExtResource("4_title_animation")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slots" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="AutosaveSlot" type="VBoxContainer" parent="CenterContainer/Slots"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Autosave" type="Button" parent="CenterContainer/Slots/AutosaveSlot"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Autosave"
+
+[node name="StatusAutosave" type="Label" parent="CenterContainer/Slots/AutosaveSlot"]
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.76, 0.76, 0.76, 1)
+text = "- Vazio -"
+horizontal_alignment = 1
+
+[node name="Save1Slot" type="VBoxContainer" parent="CenterContainer/Slots"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Save1" type="Button" parent="CenterContainer/Slots/Save1Slot"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Save 1"
+
+[node name="StatusSave1" type="Label" parent="CenterContainer/Slots/Save1Slot"]
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.76, 0.76, 0.76, 1)
+text = "- Vazio -"
+horizontal_alignment = 1
+
+[node name="Save2Slot" type="VBoxContainer" parent="CenterContainer/Slots"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Save2" type="Button" parent="CenterContainer/Slots/Save2Slot"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Save 2"
+
+[node name="StatusSave2" type="Label" parent="CenterContainer/Slots/Save2Slot"]
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.76, 0.76, 0.76, 1)
+text = "- Vazio -"
+horizontal_alignment = 1
+
+[node name="Save3Slot" type="VBoxContainer" parent="CenterContainer/Slots"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Save3" type="Button" parent="CenterContainer/Slots/Save3Slot"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Save 3"
+
+[node name="StatusSave3" type="Label" parent="CenterContainer/Slots/Save3Slot"]
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.76, 0.76, 0.76, 1)
+text = "- Vazio -"
+horizontal_alignment = 1
+
+[node name="Save4Slot" type="VBoxContainer" parent="CenterContainer/Slots"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Save4" type="Button" parent="CenterContainer/Slots/Save4Slot"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Save 4"
+
+[node name="StatusSave4" type="Label" parent="CenterContainer/Slots/Save4Slot"]
+custom_minimum_size = Vector2(400, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.76, 0.76, 0.76, 1)
+text = "- Vazio -"
+horizontal_alignment = 1
+
+[node name="Voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 620.0
+offset_right = 194.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/disabled = SubResource("ButtonStyle")
+theme_override_styles/focus = SubResource("ButtonStyle")
+text = "Voltar"
