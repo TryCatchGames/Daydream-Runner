@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="8_muw3t"]
 [ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/Personagens/diabo.tscn" id="9_s5yxs"]
 [ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="10_80trf"]
+[ext_resource type="PackedScene" uid="uid://dakbn23xlvuak" path="res://Scenes/PowerUps/Invincibility.tscn" id="11_abyke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns8o"]
 size = Vector2(99969, 119.25)
@@ -63,16 +64,16 @@ texture = ExtResource("6_irl65")
 position = Vector2(49984.004, -19)
 shape = SubResource("RectangleShape2D_xns8o")
 
-[node name="Player" parent="." unique_id=362024797 instance=ExtResource("8_d2lvc")]
-position = Vector2(350, 498.00003)
-scale = Vector2(2.4, 2.4)
-
 [node name="CarroPreto" parent="." unique_id=372714669 instance=ExtResource("7_jwfex")]
 position = Vector2(310.00003, 506.00003)
 rotation = -0.0026607008
 
 [node name="CarroBranco" parent="." unique_id=131080336 instance=ExtResource("8_muw3t")]
 position = Vector2(782, 506)
+
+[node name="Player" parent="." unique_id=362024797 instance=ExtResource("8_d2lvc")]
+position = Vector2(350, 498.00003)
+scale = Vector2(2.4, 2.4)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2131787483]
 position = Vector2(916, 229)
@@ -125,3 +126,6 @@ stream = ExtResource("10_80trf")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
+
+[node name="Invincibility" parent="." unique_id=565337905 instance=ExtResource("11_abyke")]
+position = Vector2(510, 422)

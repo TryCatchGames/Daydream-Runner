@@ -9,6 +9,7 @@ const CAR_SPEED := 700.0
 var tem_esteira := false
 
 func _ready() -> void:
+	add_to_group("car_platform")
 	animated_sprite.stop()
 	animated_sprite.frame = 0
 	front_damage_area.monitoring = false

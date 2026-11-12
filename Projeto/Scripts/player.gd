@@ -347,6 +347,7 @@ func _damage_enemy(body: Node2D) -> void:
 	body.call("take_damage", SWORD_DAMAGE, self)
 
 func _ready() -> void:
+	platform_on_leave = PLATFORM_ON_LEAVE_DO_NOTHING
 	add_to_group("player")
 	tem_esteira = get_tree().get_first_node_in_group("esteira") != null
 	animated_sprite.animation_changed.connect(update_collision)
@@ -431,6 +432,9 @@ func _physics_process(delta: float) -> void:
 	# 6. Movimento horizontal (mantém a física da esteira durante o tiro).
 	if not is_zero_approx(knockback_velocity.x):
 		velocity.x = knockback_velocity.x
+	elif _is_on_car():
+		# move_and_slide transporta o jogador; aqui só entra o movimento relativo.
+		velocity.x = direction * SPEED_NO_CONVEYOR
 	elif direction != 0:
 		var target_speed := SPEED_NO_CONVEYOR
 		if tem_esteira:
@@ -468,3 +472,14 @@ func _physics_process(delta: float) -> void:
 
 		else:
 			animated_sprite.play("Idle")
+
+func _is_on_car() -> bool:
+	if not is_on_floor():
+		return false
+	for index in range(get_slide_collision_count()):
+		var contact := get_slide_collision(index)
+		var body := contact.get_collider()
+		if body is Node and body.is_in_group("car_platform"):
+			if contact.get_normal().dot(up_direction) > cos(floor_max_angle):
+				return true
+	return false

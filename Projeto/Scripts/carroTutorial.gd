@@ -14,6 +14,7 @@ var was_tutorial_triggered: bool = false
 @onready var notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 func _ready() -> void:
+	add_to_group("car_platform")
 	animated_sprite.stop()
 	animated_sprite.frame = 0
 	front_damage_area.monitoring = false
