@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://Scenes/PowerUps/PowerUp.tscn" id="1"]
+[ext_resource type="Texture2D" path="res://Sprites/PowerUps/heart.png" id="2"]
+
+[node name="ExtraHeart" instance=ExtResource("1")]
+kind = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")

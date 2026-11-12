@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://clfk50schv3u0"]
+
+[ext_resource type="Script" uid="uid://dbh7dic6llf54" path="res://Scripts/power_up.gd" id="1"]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 18.0
+
+[node name="PowerUp" type="Area2D" unique_id=1502675996]
+scale = Vector2(1.5, 1.5)
+collision_layer = 0
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1156576748]
+scale = Vector2(0.04, 0.04)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=94595491]
+shape = SubResource("Shape")

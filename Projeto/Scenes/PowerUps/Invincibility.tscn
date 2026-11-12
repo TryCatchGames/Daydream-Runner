@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dakbn23xlvuak"]
+
+[ext_resource type="PackedScene" path="res://Scenes/PowerUps/PowerUp.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dn6ud5komn4q4" path="res://Sprites/PowerUps/invincibility.png" id="2"]
+
+[node name="Invincibility" unique_id=565337905 instance=ExtResource("1")]
+kind = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
