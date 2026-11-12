@@ -78,4 +78,4 @@ shape = SubResource("RectangleShape2D_front_damage")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=776528072]
 position = Vector2(113, 0)
-rect = Rect2(54, -10, 186, 131)
+rect = Rect2(54, 120, 0, 1)

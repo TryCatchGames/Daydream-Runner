@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="8_ctb8x"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="8_d2lvc"]
 [ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="8_muw3t"]
-[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/Personagens/inimigo.tscn" id="9_s5yxs"]
+[ext_resource type="PackedScene" uid="uid://4v1jnr5ohckj" path="res://Scenes/Personagens/diabo.tscn" id="9_s5yxs"]
 [ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="10_80trf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xns8o"]

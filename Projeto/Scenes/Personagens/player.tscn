@@ -64,6 +64,8 @@
 [ext_resource type="Texture2D" uid="uid://ti85wvmgu8r" path="res://Sprites/frames/Katana-Move/06katana.png" id="56_f1uaf"]
 [ext_resource type="Texture2D" uid="uid://dkr7ulmoatulo" path="res://Sprites/frames/Katana-Move/07katana.png" id="57_6hq81"]
 [ext_resource type="Texture2D" uid="uid://u6ssf62lnagg" path="res://Sprites/frames/Katana-Move/08katana.png" id="58_5cld6"]
+[ext_resource type="Texture2D" uid="uid://cxbpv342i16eb" path="res://Sprites/frames/Shuriken/01shuriken.png" id="65_sgo6i"]
+[ext_resource type="Texture2D" uid="uid://dddqx2ir6m26o" path="res://Sprites/frames/Shuriken/06shuriken.png" id="66_3v7sk"]
 [ext_resource type="AudioStream" uid="uid://d2qdbwh7sjnta" path="res://Sound Effects/PlayerHurt.wav" id="player_hurt"]
 [ext_resource type="AudioStream" uid="uid://cghobfhck46jb" path="res://Sound Effects/Sword_slash.mp3" id="sword_slash_new"]
 
@@ -320,6 +322,17 @@ animations = [{
 "loop": 1,
 "name": &"Running",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_sgo6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_3v7sk")
+}],
+"loop": 0,
+"name": &"Shuriken",
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3swl"]
@@ -337,7 +350,7 @@ shape = SubResource("CapsuleShape2D_tgwyo")
 material = SubResource("ShaderMaterial_hit_flash")
 position = Vector2(-23, -56)
 sprite_frames = SubResource("SpriteFrames_vi3pc")
-animation = &"Attack1Sword"
+animation = &"Shuriken"
 centered = false
 
 [node name="SwordHitBox" type="Area2D" parent="." unique_id=736865969]
@@ -356,3 +369,6 @@ volume_db = -15.0
 [node name="AudioHurt" type="AudioStreamPlayer" parent="." unique_id=636615047]
 stream = ExtResource("player_hurt")
 volume_db = -10.0
+
+[node name="PontoDisparo" type="Marker2D" parent="." unique_id=1811639333]
+position = Vector2(30, -17)

@@ -78,3 +78,7 @@ collision_layer = 0
 position = Vector2(17.226627, -32.589226)
 rotation = -0.006935239
 shape = SubResource("RectangleShape2D_dnoat")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=167334601]
+position = Vector2(113, 0)
+rect = Rect2(54, 120, 0, 1)

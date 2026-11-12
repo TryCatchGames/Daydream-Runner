@@ -20,7 +20,10 @@ var damage_flash_tween: Tween
 # Separado: AnimationPlayer toca animações, AnimatedSprite2D cuida do visual (flip_h e material)
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D 
+@onready var attack_hitbox: Area2D = $Attack
+@onready var attack_hitbox_shape: CollisionShape2D = $Attack/CollisionShape2D
 @onready var audio_death: AudioStreamPlayer = $AudioStreamPlayer
+@onready var pivot: Node2D = $Pivot
 
 func _ready() -> void:
 	add_to_group("boss")
@@ -76,9 +79,11 @@ func _move_toward_player() -> void:
 
 	var direction := (player.global_position - global_position).normalized()
 	velocity = direction * speed
-	if direction.x != 0.0:
-		# Aplica a rotação no nó da imagem
-		sprite.flip_h = direction.x > 0.0
+
+	var diff_x := player.global_position.x - global_position.x
+
+	if abs(diff_x) > 10.0:
+		pivot.scale.x = 1.0 if diff_x > 0.0 else -1.0
 
 func change_state(new_state: State) -> void:
 	if current_state == new_state:

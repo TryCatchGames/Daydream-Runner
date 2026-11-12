@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="3_7uxrx"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="4_o2f1w"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="5_76lv4"]
+[ext_resource type="AudioStream" uid="uid://bdijn4agy1i0n" path="res://Sound Effects/BossBattle.mp3" id="7_0lw3g"]
 [ext_resource type="PackedScene" uid="uid://misps8gmlqno" path="res://Scenes/Personagens/boss.tscn" id="8_0lw3g"]
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="8_3smpa"]
-[ext_resource type="AudioStream" uid="uid://c4g6qh833prsn" path="res://Sound Effects/Battle.mp3" id="9_1om60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqan1"]
 size = Vector2(99969, 119.25)
@@ -73,7 +73,7 @@ zoom = Vector2(0.7, 0.7)
 [node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("8_3smpa")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2112129124]
-stream = ExtResource("9_1om60")
+stream = ExtResource("7_0lw3g")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true

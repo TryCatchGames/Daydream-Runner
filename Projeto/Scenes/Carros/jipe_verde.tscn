@@ -93,3 +93,7 @@ collision_layer = 0
 position = Vector2(-149.5, 70)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_pysr8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=204272360]
+position = Vector2(113, 0)
+rect = Rect2(54, 120, 0, 1)

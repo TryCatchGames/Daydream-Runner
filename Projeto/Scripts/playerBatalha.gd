@@ -13,6 +13,7 @@ const PLAYER_KNOCKBACK_STRENGTH := 200.0
 const PLAYER_KNOCKBACK_DECAY := 800.0
 const DEATH_FRAGMENT_COLUMNS := 16
 const DEATH_FRAGMENT_ROWS := 32
+const PROJETIL_SCENE := preload("res://Scenes/Personagens/shuriken.tscn")
 
 # --- VARIÁVEIS DE ARRUMAMENTO --- #
 const FLIP_FIX = 17.0
@@ -24,6 +25,9 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var sword_hitbox: Area2D = $SwordHitBox
 @onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
+@onready var ponto_disparo: Marker2D = $PontoDisparo
+
+@export var can_move: bool = true
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -31,11 +35,13 @@ const COLLISIONS_OFFSETS = {
 	"Jump": Vector2(3.0, -22.0),
 	"Fall": Vector2(3.0, -22.0),
 	"Attack1Sword": Vector2(0.0, -20.0),
-	"Attack2Sword": Vector2(0.0, -20.0)
+	"Attack2Sword": Vector2(0.0, -20.0),
+	"Shuriken": Vector2(0.0, -20.0)
 }
 
 var facing_direction = 1
 var attacking := false
+var shooting := false
 var combo_request := false
 var attack_held := false
 var sword_hitbox_shape_origin: Vector2
@@ -88,6 +94,9 @@ func update_sprite_offset() -> void:
 
 
 func attack() -> void:
+	if shooting:
+		return
+		
 	attack_held = true
 
 	if not attacking:
@@ -97,6 +106,23 @@ func attack() -> void:
 
 	elif animated_sprite.animation == "Attack1Sword":
 		combo_request = true
+
+
+func executar_disparo() -> void:
+	print("[DEBUG] 1. Tecla de disparo pressionada!")
+	if attacking or shooting:
+		print("[DEBUG] Disparo bloqueado. attacking: ", attacking, " | shooting: ", shooting)
+		return
+
+	shooting = true
+	velocity.x = 0
+	
+	if animated_sprite.sprite_frames and animated_sprite.sprite_frames.has_animation("Shuriken"):
+		animated_sprite.play("Shuriken")
+	else:
+		print("[ERRO] A animação 'Disparar' não existe no AnimatedSprite2D!")
+
+	atirar()
 
 
 func _on_animation_finished() -> void:
@@ -118,6 +144,10 @@ func _on_animation_finished() -> void:
 			attacking = false
 			combo_request = false
 			update_sword_hitbox()
+			
+	elif animated_sprite.animation == "Shuriken":
+		print("[DEBUG] 3. Animação de disparo concluída. Liberando movimento!")
+		shooting = false
 
 func enable_sword_hitbox() -> void:
 	sword_hitbox.monitoring = true
@@ -142,6 +172,13 @@ func update_sword_hitbox_direction() -> void:
 	else:
 		shape_position.x = abs(shape_position.x)
 	sword_hitbox_shape.position = shape_position
+
+func update_ponto_disparo_direction() -> void:
+	if ponto_disparo:
+		if animated_sprite.flip_h:
+			ponto_disparo.position.x = -abs(ponto_disparo.position.x)
+		else:
+			ponto_disparo.position.x = abs(ponto_disparo.position.x)
 
 func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	if health <= 0 or amount <= 0:
@@ -252,7 +289,6 @@ func _on_attack_animation_changed() -> void:
 	if anim != "Attack1Sword" and anim != "Attack2Sword":
 		return
 
-	# Cada animação é um golpe separado. Acerte também quem já estava na área.
 	sword_hit_targets.clear()
 	for body in sword_hitbox.get_overlapping_bodies():
 		_damage_enemy(body)
@@ -289,6 +325,7 @@ func _ready() -> void:
 	update_sprite_offset()
 	update_sword_hitbox()
 	update_sword_hitbox_direction()
+	update_ponto_disparo_direction()
 	animated_sprite.play("Aparecendo")
 
 
@@ -297,46 +334,64 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 
+	if not can_move:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		move_and_slide()
+		return
+
 	# 1. Gravidade
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# Se estiver realizando o disparo no chão, congela o movimento x
+	if shooting and is_on_floor():
+		velocity.x = 0
+		move_and_slide()
+		return
+
 	# 2. Pulo
-	if Input.is_action_just_pressed("pular") and is_on_floor():
+	if Input.is_action_just_pressed("pular") and is_on_floor() and not shooting:
 		velocity.y = JUMP_VELOCITY
 
-	# 3. Ataque
+	# 3. Ataque Melee
 	if Input.is_action_just_pressed("attack"):
 		attack()
 
 	if Input.is_action_just_released("attack"):
 		attack_held = false
 
-	# 4. Direção do eixo X
+	# 4. Disparo de Projétil (Novo Comando)
+	# Certifique-se de cadastrar a ação "disparar" no Project Settings -> Input Map
+	if Input.is_action_just_pressed("shuriken"):
+		executar_disparo()
+
+	# 5. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
 	
-	
-	# 5. Movimento horizontal.
-	# Durante o knockback, ele age independentemente da esteira.
+	# 6. Movimento horizontal
 	if not is_zero_approx(knockback_velocity.x):
 		velocity.x = knockback_velocity.x
 
-	elif direction != 0:
+	elif direction != 0 and not shooting:
 		var target_speed: float = SPEED_RIGHT if direction > 0 else SPEED_LEFT
 		velocity.x = direction * target_speed
+	elif not shooting:
+		velocity.x = 0
 
-	# 6. Flip do sprite
-	if direction != 0:
+	# 7. Flip do sprite
+	if direction != 0 and not shooting:
 		animated_sprite.flip_h = direction < 0
 		update_collision()
 		update_sprite_offset()
 		update_sword_hitbox_direction()
+		update_ponto_disparo_direction()
 
 	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, PLAYER_KNOCKBACK_DECAY * delta)
 	move_and_slide()
 
-	# 7. Máquina de estados da animação
-	if not attacking:
+	# 8. Máquina de estados da animação
+	if not attacking and not shooting:
 		if not is_on_floor():
 			if velocity.y < 0:
 				animated_sprite.play("Jump")
@@ -348,3 +403,22 @@ func _physics_process(delta: float) -> void:
 
 		else:
 			animated_sprite.play("Idle")
+
+func atirar() -> void:
+	if ponto_disparo == null:
+		print("[ERRO] O nó $PontoDisparo é NULL! Verifique o nome do Marker2D na cena.")
+		return
+	if PROJETIL_SCENE == null:
+		print("[ERRO] A cena do projétil não foi carregada em PROJETIL_SCENE!")
+		return
+
+	var projetil = PROJETIL_SCENE.instantiate()
+	projetil.global_position = ponto_disparo.global_position
+
+	if animated_sprite.flip_h:
+		projetil.direction = Vector2.LEFT
+	else:
+		projetil.direction = Vector2.RIGHT
+
+	get_parent().add_child(projetil)
+	print("[DEBUG] 2. Shuriken criada com sucesso na cena!")

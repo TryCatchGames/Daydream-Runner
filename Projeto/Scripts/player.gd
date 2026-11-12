@@ -10,18 +10,22 @@ const JUMP_VELOCITY = -450.0
 const DASH_SPEED := 850.0
 const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
-const ATTACK_HIT_FRAME := 3 # Quarto frame da animação (os índices começam em 0).
+const ATTACK_HIT_FRAME := 3
+const SHOOT_FRAME := 1
+const SHOOT_COOLDOWN := 0.5
 const DAMAGE_FLASH_DURATION := 0.12
 const PLAYER_KNOCKBACK_STRENGTH := 200.0
 const PLAYER_KNOCKBACK_DECAY := 800.0
 const DEATH_FRAGMENT_COLUMNS := 16
 const DEATH_FRAGMENT_ROWS := 32
+const PROJETIL_SCENE := preload("res://Scenes/Personagens/shuriken.tscn")
 
 # --- VARIÁVEIS DE ARRUMAMENTO --- #
 const FLIP_FIX = 17.0
 const SWORD_FLIP_FIX = 26.0
 const ATTACK1_OFFSET_LEFT = Vector2(-32, 0)
 const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
+const SHOOT_OFFSET_LEFT = Vector2(-32, 0)
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -29,6 +33,7 @@ const ATTACK2_OFFSET_LEFT = Vector2(-32, 0)
 @onready var sword_hitbox_shape: CollisionShape2D = $SwordHitBox/CollisionShape2D
 @onready var audio_slash: AudioStreamPlayer = $AudioStreamPlayer
 @onready var audio_hurt: AudioStreamPlayer = $AudioHurt
+@onready var ponto_disparo: Marker2D = get_node_or_null("PontoDisparo")
 
 const COLLISIONS_OFFSETS = {
 	"Idle": Vector2(0.0, -20.0),
@@ -37,11 +42,13 @@ const COLLISIONS_OFFSETS = {
 	"Fall": Vector2(3.0, -20.0),
 	"Attack1Sword": Vector2(0.0, -20.0),
 	"Attack2Sword": Vector2(0.0, -20.0),
-	"Dash": Vector2(12.0, -20.0)
+	"Dash": Vector2(12.0, -20.0),
+	"Shuriken": Vector2(0.0, -20.0)
 }
 
 var facing_direction = 1
 var attacking := false
+var shooting := false
 var combo_request := false
 var attack_held := false
 var sword_hitbox_shape_origin: Vector2
@@ -52,6 +59,8 @@ var knockback_velocity := Vector2.ZERO
 var tem_esteira := false
 var dashing := false
 var dash_direction := 1.0
+var shuriken_spawned := false
+var shoot_cooldown_timer := 0.0
 
 signal health_changed(current_health: int, max_health: int)
 signal died
@@ -64,20 +73,8 @@ func update_collision() -> void:
 
 	var offset: Vector2 = COLLISIONS_OFFSETS[anim]
 
-	if animated_sprite.flip_h and anim == "Idle":
+	if animated_sprite.flip_h and anim in ["Idle", "Jump", "Fall", "Attack1Sword", "Attack2Sword", "Shuriken"]:
 		offset.x = -offset.x + FLIP_FIX
-
-	if animated_sprite.flip_h and anim == "Jump":
-		offset.x = -offset.x + FLIP_FIX
-
-	if animated_sprite.flip_h and anim == "Fall":
-		offset.x = -offset.x + FLIP_FIX
-		
-	if animated_sprite.flip_h and anim == "Attack1Sword":
-		offset.x = -offset.x + FLIP_FIX	
-		
-	if animated_sprite.flip_h and anim == "Attack2Sword":
-		offset.x = -offset.x + FLIP_FIX	
 
 	collision.position = offset
 
@@ -90,7 +87,8 @@ func update_sprite_offset() -> void:
 			animated_sprite.offset = ATTACK1_OFFSET_LEFT
 		elif anim == "Attack2Sword":
 			animated_sprite.offset = ATTACK2_OFFSET_LEFT
-			
+		elif anim == "Shuriken":
+			animated_sprite.offset = SHOOT_OFFSET_LEFT
 		else:
 			animated_sprite.offset = Vector2.ZERO
 	else:
@@ -98,6 +96,9 @@ func update_sprite_offset() -> void:
 
 
 func attack() -> void:
+	if shooting or dashing:
+		return
+
 	attack_held = true
 
 	if not attacking:
@@ -108,6 +109,48 @@ func attack() -> void:
 
 	elif animated_sprite.animation == "Attack1Sword":
 		combo_request = true
+
+
+func executar_disparo() -> void:
+	if attacking or shooting or dashing or shoot_cooldown_timer > 0.0:
+		return
+
+	shoot_cooldown_timer = SHOOT_COOLDOWN
+
+	var mouse_pos := get_global_mouse_position()
+	animated_sprite.flip_h = mouse_pos.x < global_position.x
+	update_collision()
+	update_sprite_offset()
+	update_sword_hitbox_direction()
+	update_ponto_disparo_direction()
+
+	shooting = true
+	shuriken_spawned = false
+	disable_sword_hitbox()
+	animated_sprite.play("Shuriken")
+
+	if SHOOT_FRAME == 0:
+		shuriken_spawned = true
+		atirar()
+
+func _on_frame_changed() -> void:
+	if shooting and animated_sprite.animation == "Shuriken":
+		if animated_sprite.frame == SHOOT_FRAME and not shuriken_spawned:
+			shuriken_spawned = true
+			atirar()
+
+func atirar() -> void:
+	if PROJETIL_SCENE == null:
+		return
+
+	var projetil := PROJETIL_SCENE.instantiate()
+	var spawn_pos := ponto_disparo.global_position if ponto_disparo else global_position
+	projetil.global_position = spawn_pos
+
+	# Calcula o vetor normalizado (360°) do ponto de disparo até o cursor
+	projetil.direction = spawn_pos.direction_to(get_global_mouse_position())
+
+	get_parent().add_child(projetil)
 
 
 func _on_animation_finished() -> void:
@@ -133,6 +176,8 @@ func _on_animation_finished() -> void:
 			update_sword_hitbox()
 	elif animated_sprite.animation == "Dash":
 		dashing = false
+	elif animated_sprite.animation == "Shuriken":
+		shooting = false
 
 func enable_sword_hitbox() -> void:
 	sword_hitbox.monitoring = true
@@ -157,6 +202,13 @@ func update_sword_hitbox_direction() -> void:
 	else:
 		shape_position.x = abs(shape_position.x)
 	sword_hitbox_shape.position = shape_position
+
+func update_ponto_disparo_direction() -> void:
+	if ponto_disparo:
+		if animated_sprite.flip_h:
+			ponto_disparo.position.x = -abs(ponto_disparo.position.x)
+		else:
+			ponto_disparo.position.x = abs(ponto_disparo.position.x)
 
 func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	if health <= 0 or amount <= 0:
@@ -302,6 +354,7 @@ func _ready() -> void:
 	animated_sprite.animation_changed.connect(update_sword_hitbox)
 	animated_sprite.animation_changed.connect(_on_attack_animation_changed)
 	animated_sprite.frame_changed.connect(update_sword_hitbox)
+	animated_sprite.frame_changed.connect(_on_frame_changed)
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	sword_hitbox.body_entered.connect(_on_sword_hitbox_body_entered)
 	sword_hitbox_shape_origin = sword_hitbox_shape.position
@@ -310,6 +363,7 @@ func _ready() -> void:
 	update_sprite_offset()
 	update_sword_hitbox()
 	update_sword_hitbox_direction()
+	update_ponto_disparo_direction()
 	animated_sprite.play("Aparecendo")
 
 func start_dash() -> void:
@@ -328,14 +382,18 @@ func start_dash() -> void:
 	animated_sprite.play("Dash")
 
 func _physics_process(delta: float) -> void:
+	if shoot_cooldown_timer > 0.0:
+		shoot_cooldown_timer = maxf(shoot_cooldown_timer - delta, 0.0)
+
 	if animated_sprite.animation == "Aparecendo":
 		velocity = Vector2.ZERO
 		return
 	
-		# AQUI É O DASH
+	# AQUI É O DASH
 	if (
 		Input.is_action_just_pressed("dash")
 		and not attacking
+		and not shooting
 		and is_zero_approx(knockback_velocity.x)
 	):
 		start_dash()
@@ -356,19 +414,21 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pular") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# 3. Ataque
+	# 3. Ataque Melee
 	if Input.is_action_just_pressed("attack"):
 		attack()
 
 	if Input.is_action_just_released("attack"):
 		attack_held = false
 
-	# 4. Direção do eixo X
+	# 4. Disparo de Projétil
+	if Input.is_action_just_pressed("shuriken"):
+		executar_disparo()
+
+	# 5. Direção do eixo X
 	var direction := Input.get_axis("mover_frente", "mover_tras")
 	
-	
-	# 5. Movimento horizontal.
-	# Durante o knockback, ele age independentemente da esteira.
+	# 6. Movimento horizontal (mantém a física da esteira durante o tiro).
 	if not is_zero_approx(knockback_velocity.x):
 		velocity.x = knockback_velocity.x
 	elif direction != 0:
@@ -384,19 +444,19 @@ func _physics_process(delta: float) -> void:
 			DRAG_ACCELERATION * delta
 		)
 
-
-	# 6. Flip do sprite
-	if direction != 0:
+	# 7. Flip do sprite (trava a direção enquanto estiver atirando)
+	if direction != 0 and not shooting:
 		animated_sprite.flip_h = direction < 0
 		update_collision()
 		update_sprite_offset()
 		update_sword_hitbox_direction()
+		update_ponto_disparo_direction()
 
 	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, PLAYER_KNOCKBACK_DECAY * delta)
 	move_and_slide()
 
-	# 7. Máquina de estados da animação
-	if not attacking:
+	# 8. Máquina de estados da animação
+	if not attacking and not shooting:
 		if not is_on_floor():
 			if velocity.y < 0:
 				animated_sprite.play("Jump")
