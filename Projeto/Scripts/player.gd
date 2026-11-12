@@ -7,7 +7,7 @@ const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -450.0
-const DASH_SPEED := 850.0
+const DASH_SPEED := 550.0
 const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
 const ATTACK_HIT_FRAME := 3
@@ -211,7 +211,7 @@ func update_ponto_disparo_direction() -> void:
 			ponto_disparo.position.x = abs(ponto_disparo.position.x)
 
 func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
-	if health <= 0 or amount <= 0:
+	if health <= 0 or amount <= 0 or ($PowerUps as PlayerPowerUps).is_invincible():
 		return
 
 	if is_instance_valid(attacker):
@@ -220,14 +220,14 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	health = maxi(health - amount, 0)
 	audio_hurt.play()
 	_flash_white()
-	health_changed.emit(health, MAX_HEALTH)
+	health_changed.emit(health, get_max_health())
 	if health == 0:
 		_explode_body()
 		died.emit()
 		queue_free()
 
 func get_max_health() -> int:
-	return MAX_HEALTH
+	return ($PowerUps as PlayerPowerUps).get_health_capacity(MAX_HEALTH)
 
 func _apply_knockback_from(attacker: Node2D) -> void:
 	var direction := signf(global_position.x - attacker.global_position.x)

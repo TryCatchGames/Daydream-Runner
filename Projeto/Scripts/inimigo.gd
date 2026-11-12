@@ -16,6 +16,7 @@ var player: Node2D = null
 var knockback_velocity := Vector2.ZERO
 var attack_targets: Dictionary = {}
 var damage_flash_tween: Tween
+var _score_awarded := false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_death: AudioStreamPlayer = $AudioStreamPlayer
@@ -94,8 +95,18 @@ func change_state(new_state: State) -> void:
 		State.HURT:
 			animated_sprite.play("Dano")
 		State.DEAD:
+			_award_score()
 			animated_sprite.play("Morte")
 			audio_death.play()
+
+func _award_score() -> void:
+	if _score_awarded:
+		return
+	_score_awarded = true
+	var score := get_tree().get_first_node_in_group("score_system") as ScoreSystem
+	if score != null:
+		score.award(&"enemy_defeated")
+
 
 func _start_attack() -> void:
 	attack_targets.clear()

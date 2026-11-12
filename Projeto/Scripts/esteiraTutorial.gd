@@ -8,6 +8,9 @@ const LARGURA_ESTEIRA = 8865.0
 func _ready() -> void:
 	add_to_group("esteira")
 
+func get_scroll_speed() -> float:
+	return speed
+
 func _physics_process(delta: float) -> void:
 	# Move o mundo usando a velocidade dinâmica controlada pelo tutorial
 	position.x -= speed * delta

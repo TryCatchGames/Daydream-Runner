@@ -276,7 +276,7 @@ func update_sword_hitbox_direction() -> void:
 	sword_hitbox_shape.position = shape_position
 
 func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
-	if health <= 0 or amount <= 0:
+	if health <= 0 or amount <= 0 or ($PowerUps as PlayerPowerUps).is_invincible():
 		return
 
 	if is_instance_valid(attacker):
@@ -285,14 +285,14 @@ func take_damage(amount: int = 1, attacker: Node2D = null) -> void:
 	health = maxi(health - amount, 0)
 	audio_hurt.play()
 	_flash_white()
-	health_changed.emit(health, MAX_HEALTH)
+	health_changed.emit(health, get_max_health())
 	if health == 0:
 		_explode_body()
 		died.emit()
 		queue_free()
 
 func get_max_health() -> int:
-	return MAX_HEALTH
+	return ($PowerUps as PlayerPowerUps).get_health_capacity(MAX_HEALTH)
 
 func _apply_knockback_from(attacker: Node2D) -> void:
 	var direction := signf(global_position.x - attacker.global_position.x)

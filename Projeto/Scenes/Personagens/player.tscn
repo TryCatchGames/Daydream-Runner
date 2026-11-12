@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbpv342i16eb" path="res://Sprites/frames/Shuriken/01shuriken.png" id="65_sgo6i"]
 [ext_resource type="Texture2D" uid="uid://dddqx2ir6m26o" path="res://Sprites/frames/Shuriken/06shuriken.png" id="66_3v7sk"]
 [ext_resource type="AudioStream" uid="uid://d2qdbwh7sjnta" path="res://Sound Effects/PlayerHurt.wav" id="player_hurt"]
+[ext_resource type="Script" uid="uid://b1jrekxayd5yj" path="res://Scripts/player_power_ups.gd" id="power_effects"]
 [ext_resource type="AudioStream" uid="uid://cghobfhck46jb" path="res://Sound Effects/Sword_slash.mp3" id="sword_slash_new"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgwyo"]
@@ -372,3 +373,7 @@ volume_db = -10.0
 
 [node name="PontoDisparo" type="Marker2D" parent="." unique_id=1811639333]
 position = Vector2(30, -17)
+
+[node name="PowerUps" type="Node2D" parent="." unique_id=1072137473]
+show_behind_parent = true
+script = ExtResource("power_effects")

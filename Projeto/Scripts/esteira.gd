@@ -7,6 +7,9 @@ const LARGURA_ESTEIRA = 8865.0
 func _ready() -> void:
 	add_to_group("esteira")
 
+func get_scroll_speed() -> float:
+	return CAR_SPEED
+
 func _physics_process(delta: float) -> void:
 	# Move o mundo na mesma etapa de física do personagem.
 	position.x -= CAR_SPEED * delta

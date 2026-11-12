@@ -2,6 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bq7l6ojp3qcrw" path="res://Sprites/HUD/Porta_do_carro.png" id="1_fccik"]
 [ext_resource type="Script" uid="uid://bwwaivygjipec" path="res://Scripts/vida.gd" id="2_bjfho"]
+[ext_resource type="Script" uid="uid://dthgpcqpcd70g" path="res://Scripts/score_system.gd" id="3_score"]
+[ext_resource type="Script" uid="uid://cldaqp744vdpx" path="res://Scripts/score_source.gd" id="4_source"]
+[ext_resource type="Script" uid="uid://bbukqeceeikso" path="res://Scripts/score_hud.gd" id="5_display"]
+[ext_resource type="Texture2D" uid="uid://vukebchv02p5" path="res://Sprites/HUD/score_panel.png" id="6_panel"]
+[ext_resource type="FontFile" uid="uid://bh81ypfv1afl6" path="res://Sprites/Fonts/PressStart2P-Regular.ttf" id="7_font"]
+
+[ext_resource type="Script" path="res://Scripts/power_up_hud.gd" id="power_status"]
+
+[sub_resource type="Resource" id="Resource_enemy"]
+script = ExtResource("4_source")
+id = &"enemy_defeated"
 
 [node name="HUD" type="CanvasLayer" unique_id=1131994067]
 
@@ -20,3 +31,48 @@ offset_right = 90.0
 offset_bottom = 90.0
 script = ExtResource("2_bjfho")
 heart_size = Vector2(80, 80)
+
+[node name="ScoreSystem" type="Node" parent="." unique_id=637185571]
+script = ExtResource("3_score")
+sources = Array[ExtResource("4_source")]([SubResource("Resource_enemy")])
+
+[node name="Score" type="TextureRect" parent="." unique_id=38333826]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -515.0
+offset_top = 77.0
+offset_right = -343.0
+offset_bottom = 120.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("6_panel")
+expand_mode = 1
+script = ExtResource("5_display")
+
+[node name="Value" type="Label" parent="Score" unique_id=1375184279]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 11.0
+offset_right = 419.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.9843137, 0.92941177, 0, 1)
+theme_override_fonts/font = ExtResource("7_font")
+theme_override_font_sizes/font_size = 37
+text = "000000"
+horizontal_alignment = 2
+
+[node name="PowerUpStatus" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 138.0
+offset_right = 460.0
+offset_bottom = 195.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.65, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_font")
+theme_override_font_sizes/font_size = 16
+script = ExtResource("power_status")

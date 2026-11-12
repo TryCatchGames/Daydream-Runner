@@ -21,6 +21,7 @@ var previous_health: int = -1
 
 # Identifica animações antigas para que possam ser canceladas.
 var blink_versions: Dictionary = {}
+var blink_generation := 0
 
 
 func _ready() -> void:
@@ -76,6 +77,9 @@ func _on_health_changed(current_health: int, max_health: int) -> void:
 		remove_child(last_heart)
 		last_heart.queue_free()
 
+	# Cura e remoção de extras também invalidam animações de dano antigas.
+	blink_generation += 1
+	blink_versions.clear()
 	# Atualiza o estado normal de todos os corações.
 	for i in range(heart_count):
 		var heart := get_child(i) as TextureRect
@@ -134,7 +138,7 @@ func _blink_heart(index: int, current_health: int) -> void:
 	var heart_id: int = heart.get_instance_id()
 
 	# Invalida uma animação anterior deste mesmo coração.
-	var version := int(blink_versions.get(heart_id, 0)) + 1
+	var version := blink_generation
 	blink_versions[heart_id] = version
 
 	var blink_texture := _get_blink_texture(index, current_health)
@@ -161,7 +165,7 @@ func _blink_heart(index: int, current_health: int) -> void:
 
 
 func _blink_is_current(
-	heart: TextureRect,
+	heart,
 	heart_id: int,
 	version: int
 ) -> bool:

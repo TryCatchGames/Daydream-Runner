@@ -68,14 +68,16 @@ Power-ups aparecem **aleatoriamente durante as fases de corrida** e concedem ben
 
 | Item | Regra confirmada |
 | --- | --- |
-| **+1 coração** | Recuperar um coração cheio, equivalente a **2 pontos de vida** na representação existente, sem ultrapassar a capacidade atual. Se a vida estiver cheia, conceder um coração cheio extra e aumentar a capacidade em 2 pontos durante a partida, desde que o limite configurado permita. Preservar os limites existentes e manter a capacidade configurável. |
-| **Invencibilidade** | Impedir dano durante um período configurável. Tocar em inimigos comuns durante o efeito os derrota e concede pontuação normalmente, incluindo Double Points quando ativo. Exibir uma indicação visual perceptível, diferenciada do feedback de dano, e restaurar o comportamento e o visual normais ao terminar. |
-| **Double Points** | Dobrar os pontos concedidos por derrotar inimigos durante um período configurável, aplicando o multiplicador no cálculo do ganho sem alterar o valor base do inimigo. Mostrar no HUD o efeito ativo e o tempo restante. Ao expirar, retomar o ganho normal. |
+| **+1 coração** | Recuperar um coração cheio, equivalente a **2 pontos de vida** na representação existente, sem ultrapassar a capacidade atual. Se a vida estiver cheia, conceder um coração extra temporário, consumido pelo dano, sem duração por tempo nem alteração da vida máxima padrão. Permitir até **3 corações extras** inicialmente, com limite configurável no Inspetor (revisão da equipe em **12/11/2026**). |
+| **Invencibilidade** | Impedir dano por **10 segundos**, com duração configurável no Inspetor (revisão de **12/11/2026**). Tocar em inimigos comuns durante o efeito os derrota e concede pontuação normalmente, incluindo Double Points quando ativo. Exibir uma leve aura vermelha, diferenciada do feedback de dano, e restaurar o comportamento e o visual normais ao terminar. |
+| **Double Points** | Dobrar os pontos concedidos por derrotar inimigos por **10 segundos**, com duração configurável no Inspetor (revisão de **12/11/2026**), aplicando o multiplicador no cálculo do ganho sem alterar o valor base do inimigo. Mostrar no HUD o efeito ativo e o tempo restante. Ao expirar, retomar o ganho normal. |
 | **+10 segundos** | Acrescentar **10 segundos** ao tempo restante da parada no semáforo, uma única vez por coleta, atualizando imediatamente o HUD do tempo. A coleta ou ativação desse item fica restrita à parada ativa. |
 
-Recoletar **Invencibilidade** ou **Double Points** enquanto o respectivo efeito está ativo **renova sua duração, sem somar tempo**. Os dois efeitos podem atuar simultaneamente. As durações e os demais ajustes de balanceamento devem ficar configuráveis; seus valores finais ainda não foram aprovados.
+Recoletar **Invencibilidade** ou **Double Points** enquanto o respectivo efeito está ativo **renova sua duração, sem somar tempo**. Os dois efeitos podem atuar simultaneamente. As durações iniciais de 10 segundos foram aprovadas em **12/11/2026** e permanecem configuráveis. Outros ajustes de balanceamento continuam em aberto.
 
-A equivalência de 2 pontos por coração já é usada por [vida.gd](../Projeto/Scripts/vida.gd). A implementação existente em [player.gd](../Projeto/Scripts/player.gd) parte de 6 pontos de vida; preservar esse limite por padrão não estabelece o balanceamento definitivo da campanha. A regra de coração extra depende de configurar um limite maior.
+A equivalência de 2 pontos por coração já é usada por [vida.gd](../Projeto/Scripts/vida.gd). A implementação existente em [player.gd](../Projeto/Scripts/player.gd) parte de 6 pontos de vida; preservar esse limite por padrão não estabelece o balanceamento definitivo da campanha. Os corações extras usam um limite separado, inicialmente 3; a capacidade exibida diminui quando eles são consumidos. Um extra pela metade permanece no HUD até perder o ponto restante.
+
+**Revisão de 12/11/2026 — cenas reutilizáveis (pedido da equipe):** Double Points, +1 Vida e Invencibilidade compartilham uma cena-base com coleta única, sprites existentes e flutuação vertical contínua (amplitude e velocidade ajustáveis). Na corrida, deslocam-se para a esquerda com velocidade configurável; na batalha, mantêm a posição horizontal. Os efeitos são independentes e devem ser encerrados na morte, no reinício e no fim da fase. A vida extra usa os mesmos estados cheio, pela metade e vazio do HUD. Consulte [Power-ups](POWER_UPS.md) para cenas, parâmetros e integração.
 
 ### Pontuação durante a partida — escopo inicial confirmado
 
@@ -87,6 +89,10 @@ Decisão da equipe em **10/11/2026**:
 - Manter o score somente durante a partida atual. Esta entrega não inclui persistência, recordes, leaderboard, entrada de identificação nem tela de resultados ou fim de fase.
 
 ### Cenas da implementação inicial — confirmado
+
+**Revisão de 11/11/2026 — HUD e API de score (pedido da equipe):** mostrar o score no canto superior direito do HUD, com sprite de inspiração 16 bits, início em zero e teto padrão de **99999**, modificável. Permitir adicionar e desativar fontes de pontos de forma centralizada e disponibilizar o total para outros sistemas. A apresentação inicial usa `00000`.
+
+**Ajuste provisório de implementação, a validar:** a fonte `enemy_defeated` começa com 100 pontos por inimigo comum, editáveis no Inspector. Esse valor não define o balanceamento final. O estado pertence ao HUD da fase e reinicia ao recriar a cena; `reset()` permite reinício explícito. A API e as instruções estão em [Sistema de score](SCORE.md). A entrega de 11/11 forneceu o painel e a API. Em **12/11/2026**, Double Points passou a integrar esta API; pop-ups de derrota continuam fora desta implementação.
 
 Esclarecimento da equipe em **10/11/2026**: a única cena de fase atualmente destinada ao produto final é [Level_1.tscn](../Projeto/Scenes/Fases/Level_1.tscn). A integração inicial de score, power-ups e semáforo deve ocorrer nela. [FaseBatalha.tscn](../Projeto/Scenes/Fases/FaseBatalha.tscn) é exclusivamente uma cena de teste de combate para os chefes das fases 3 e 5; não integra o produto final nem funciona como a parada da corrida. Essa delimitação das cenas atuais preserva o planejamento de cinco fases da seção 4.
 
