@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="18_1oqio"]
 [ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="19_g22in"]
 [ext_resource type="PackedScene" uid="uid://dakbn23xlvuak" path="res://Scenes/PowerUps/Invincibility.tscn" id="21_355gw"]
+[ext_resource type="Script" uid="uid://crh00acg5i36e" path="res://Scripts/scenery_loop_layer.gd" id="22_loop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
 size = Vector2(99969, 119.25)
@@ -33,7 +34,13 @@ size = Vector2(99969, 119.25)
 position = Vector2(-3, -237)
 script = ExtResource("1_emoit")
 
-[node name="Background2" type="TextureRect" parent="Esteira" unique_id=1352282756]
+[node name="Ceu" type="Node2D" parent="Esteira" unique_id=957186601]
+script = ExtResource("22_loop")
+warn_overlaps = false
+
+[node name="Painel" type="Node2D" parent="Esteira/Ceu" unique_id=195058673]
+
+[node name="Background2" type="TextureRect" parent="Esteira/Ceu/Painel" unique_id=1352282756]
 offset_left = 10.0
 offset_top = 267.0
 offset_right = 17746.0
@@ -41,7 +48,7 @@ offset_bottom = 1369.0
 texture = ExtResource("2_g22in")
 stretch_mode = 1
 
-[node name="Background" type="TextureRect" parent="Esteira" unique_id=1463729915]
+[node name="Background" type="TextureRect" parent="Esteira/Ceu/Painel" unique_id=1463729915]
 offset_left = 1527.0
 offset_top = 275.0
 offset_right = 17791.0
@@ -50,34 +57,35 @@ texture = ExtResource("2_g22in")
 stretch_mode = 1
 
 [node name="Predios" type="Node2D" parent="Esteira" unique_id=1279198933]
+script = ExtResource("22_loop")
 
 [node name="Prédio4" type="Sprite2D" parent="Esteira/Predios" unique_id=295634081]
-position = Vector2(3469, 416)
+position = Vector2(3468.9998, 426)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("3_axeyw")
 
 [node name="Prédio6" type="Sprite2D" parent="Esteira/Predios" unique_id=492846625]
-position = Vector2(1931, 358.00003)
+position = Vector2(1930, 371)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("4_355gw")
 
 [node name="Prédio15" type="Sprite2D" parent="Esteira/Predios" unique_id=1111617747]
-position = Vector2(7876, 414)
+position = Vector2(11554.001, 431.00003)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("3_axeyw")
 
 [node name="Prédio3" type="Sprite2D" parent="Esteira/Predios" unique_id=307857340]
-position = Vector2(1400, 383.00003)
+position = Vector2(1383, 377.00003)
 scale = Vector2(0.617737, 0.617737)
 texture = ExtResource("5_cmf74")
 
 [node name="Prédio2" type="Sprite2D" parent="Esteira/Predios" unique_id=407389850]
-position = Vector2(834, 306)
+position = Vector2(824, 303)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("6_h7au3")
 
 [node name="Prédio12" type="Sprite2D" parent="Esteira/Predios" unique_id=1637167031]
-position = Vector2(6595, 158)
+position = Vector2(5660, 163)
 texture = ExtResource("4_355gw")
 
 [node name="Prédio1" type="Sprite2D" parent="Esteira/Predios" unique_id=526859364]
@@ -85,84 +93,94 @@ position = Vector2(274, 277)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("7_7agxf")
 
-[node name="Prédio10" type="Sprite2D" parent="Esteira/Predios" unique_id=976668681]
-position = Vector2(8842, 429)
-texture = ExtResource("8_mlovp")
-
 [node name="Prédio5" type="Sprite2D" parent="Esteira/Predios" unique_id=2059044119]
-position = Vector2(5064, 316)
+position = Vector2(5069, 355)
 scale = Vector2(0.6909941, 0.69099414)
 texture = ExtResource("9_mxa1e")
 
 [node name="Prédio7" type="Sprite2D" parent="Esteira/Predios" unique_id=1334203300]
-position = Vector2(36854.93, 382.65408)
+position = Vector2(15194.257, 382.65408)
 scale = Vector2(0.617737, 0.617737)
 texture = ExtResource("5_cmf74")
 
 [node name="Prédio8" type="Sprite2D" parent="Esteira/Predios" unique_id=623365926]
-position = Vector2(36288.93, 305.65405)
+position = Vector2(14528.102, 305.65405)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("6_h7au3")
 
 [node name="Prédio9" type="Sprite2D" parent="Esteira/Predios" unique_id=338428882]
-position = Vector2(35728.93, 276.65405)
+position = Vector2(13865.093, 276.65405)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("7_7agxf")
 
 [node name="Prédio11" type="Sprite2D" parent="Esteira/Predios" unique_id=1209343767]
-position = Vector2(5825, 122)
+position = Vector2(6425, 123)
 texture = ExtResource("10_fd16j")
 
 [node name="Prédio13" type="Sprite2D" parent="Esteira/Predios" unique_id=379579615]
-position = Vector2(7239.0005, 387)
+position = Vector2(7115.0005, 391)
 scale = Vector2(0.617737, 0.617737)
 texture = ExtResource("5_cmf74")
 
+[node name="Prédio10" type="Sprite2D" parent="Esteira/Predios" unique_id=976668681]
+position = Vector2(8838, 440)
+texture = ExtResource("8_mlovp")
+
 [node name="Prédio14" type="Sprite2D" parent="Esteira/Predios" unique_id=545022328]
-position = Vector2(5064, 316)
+position = Vector2(7704.0005, 317)
 scale = Vector2(0.6909941, 0.69099414)
 texture = ExtResource("9_mxa1e")
 
-[node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
+[node name="Estrada" type="Node2D" parent="Esteira" unique_id=518107670]
 position = Vector2(3.0002441, 941)
 scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("22_loop")
+warn_vertical_seams = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="Esteira/Chao" unique_id=938127628]
-position = Vector2(39888.004, -75.00001)
-scale = Vector2(0.9999437, 0.610577)
+[node name="Sprite2D2" type="Sprite2D" parent="Esteira/Estrada" unique_id=938127628]
+position = Vector2(39889.813, -75.25)
+scale = Vector2(0.9999437, 0.60677093)
 texture = ExtResource("11_3l3gr")
 
-[node name="Sprite2D" type="Sprite2D" parent="Esteira/Chao" unique_id=567892282]
+[node name="Sprite2D" type="Sprite2D" parent="Esteira/Estrada" unique_id=567892282]
 position = Vector2(4432.5313, -75.25)
 scale = Vector2(0.99978137, 0.60677093)
 texture = ExtResource("11_3l3gr")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Esteira/Chao" unique_id=678689370]
-position = Vector2(22160.002, -74.99999)
-scale = Vector2(0.99994355, 0.61057687)
+[node name="Sprite2D3" type="Sprite2D" parent="Esteira/Estrada" unique_id=678689370]
+position = Vector2(22160.81, -75.25)
+scale = Vector2(0.99994355, 0.60677093)
 texture = ExtResource("11_3l3gr")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Esteira/Chao" unique_id=1525309431]
-position = Vector2(31024.004, -75)
-scale = Vector2(0.9999436, 0.6105769)
+[node name="Sprite2D4" type="Sprite2D" parent="Esteira/Estrada" unique_id=1525309431]
+position = Vector2(31025.31, -75.25)
+scale = Vector2(0.9999436, 0.60677093)
 texture = ExtResource("11_3l3gr")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Esteira/Chao" unique_id=2029275878]
-position = Vector2(15462.001, -75)
-scale = Vector2(0.9999435, 0.6105768)
+[node name="Sprite2D5" type="Sprite2D" parent="Esteira/Estrada" unique_id=2029275878]
+position = Vector2(13296.312, -75.25)
+scale = Vector2(0.9999435, 0.60677093)
 texture = ExtResource("11_3l3gr")
+
+[node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
+position = Vector2(3.0002441, 941)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
 visible = false
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
 
-[node name="Esquina" type="Sprite2D" parent="Esteira/Chao" unique_id=1459620012]
+[node name="EventosVisuais" type="Node2D" parent="Esteira" unique_id=1692603968]
+position = Vector2(3.0002441, 941)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Esquina" type="Sprite2D" parent="Esteira/EventosVisuais" unique_id=1459620012]
 position = Vector2(9949.001, -117.794495)
 scale = Vector2(0.99994355, 0.46377957)
 texture = ExtResource("12_cmf74")
 
-[node name="Semáforo" type="Sprite2D" parent="Esteira/Chao" unique_id=1460623741]
+[node name="Semáforo" type="Sprite2D" parent="Esteira/EventosVisuais" unique_id=1460623741]
 z_index = 2
 position = Vector2(10168.001, -314.00006)
 scale = Vector2(0.27321985, 0.26757813)

@@ -96,6 +96,10 @@ Decisão da equipe em **10/11/2026**:
 
 Esclarecimento da equipe em **10/11/2026**: a única cena de fase atualmente destinada ao produto final é [Level_1.tscn](../Projeto/Scenes/Fases/Level_1.tscn). A integração inicial de score, power-ups e semáforo deve ocorrer nela. [FaseBatalha.tscn](../Projeto/Scenes/Fases/FaseBatalha.tscn) é exclusivamente uma cena de teste de combate para os chefes das fases 3 e 5; não integra o produto final nem funciona como a parada da corrida. Essa delimitação das cenas atuais preserva o planejamento de cinco fases da seção 4.
 
+**Escopo técnico confirmado pelo pedido da equipe em 13/11/2026:** substituir o comprimento fixo do looping da `Level_1` por camadas visuais reutilizáveis com limites automáticos, incluindo estrada, prédios e fundo, preservando a relação de velocidades existente. A repetição visual deve permanecer independente de cruzamentos e eventos de progressão, com objetos de gameplay fora das faixas repetíveis. A organização e o fluxo de edição estão em [Loop visual dos cenários](SCENERY_LOOP.md).
+
+**Diferença de implementação, verificada em 13/11/2026:** `Level_1` contém os sprites de cruzamento e semáforo, mas não possui controlador de batalha ou gatilho de parada conectado. A refatoração fornece parada e retomada do cenário sem implementar esse fluxo ausente. A regra confirmada de 20 segundos de corrida e 60 segundos de combate permanece como requisito, sem ser apresentada como comportamento já validado.
+
 ### Pontuação e ranking — planejamento da campanha
 
 - Ao final de **cada fase**, exibir a pontuação obtida e um ranking dos maiores resultados daquela fase específica.
@@ -180,5 +184,6 @@ Estas lacunas indicam decisões necessárias para detalhar a implementação, se
 ## 10. Documentos relacionados
 
 - [README do projeto](../README.md): apresentação, equipe e materiais visuais.
+- [Loop visual dos cenários](SCENERY_LOOP.md): camadas, limites automáticos, edição na Godot, reutilização e validação técnica.
 - [GDD no Figma — Ten-Pager](https://www.figma.com/design/spt98GfmGCnoWJVtwND3mM/GDD?node-id=0-1): rascunho consultado como referência complementar.
 - [One-Sheet local](../GDD/One-Sheet_%20Daydream%20Runner%20-%20V2.3.png) e [pitch local](../GDD/DayDream%20Runner%20Pitch.pdf): materiais de apresentação existentes. Não foram usados para estabelecer novas regras nesta consolidação.
