@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bh4igwp66n0l2" path="res://Sprites/cenario/Predio_3.png" id="9_mxa1e"]
 [ext_resource type="Texture2D" uid="uid://cm5arc8fpmeb5" path="res://Sprites/cenario/Predio_67.png" id="10_fd16j"]
 [ext_resource type="Texture2D" uid="uid://p170aw4288th" path="res://Sprites/cenario/estrada.png" id="11_3l3gr"]
+[ext_resource type="Texture2D" uid="uid://clfire1vroncd" path="res://Sprites/cenario/esquina.png" id="12_cmf74"]
 [ext_resource type="PackedScene" uid="uid://b1ib7tv7u1d1g" path="res://Scenes/Carros/carro_azul.tscn" id="12_t8x22"]
 [ext_resource type="PackedScene" uid="uid://dwnk6vhhfvbjl" path="res://Scenes/Carros/carro_branco.tscn" id="13_dkxs2"]
+[ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="13_h7au3"]
 [ext_resource type="PackedScene" uid="uid://5sgqq5x8ngmb" path="res://Scenes/Carros/carroShiny.tscn" id="14_gri1b"]
 [ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/Carros/carro_preto.tscn" id="15_ynfiw"]
 [ext_resource type="PackedScene" uid="uid://mwj6j1g0pgv4" path="res://Scenes/Carros/carro_vermelho.tscn" id="16_onv2o"]
@@ -32,18 +34,18 @@ position = Vector2(-3, -237)
 script = ExtResource("1_emoit")
 
 [node name="Background2" type="TextureRect" parent="Esteira" unique_id=1352282756]
-offset_left = 2.0
-offset_top = 210.0
-offset_right = 17738.0
-offset_bottom = 1312.0
+offset_left = 10.0
+offset_top = 267.0
+offset_right = 17746.0
+offset_bottom = 1369.0
 texture = ExtResource("2_g22in")
 stretch_mode = 1
 
 [node name="Background" type="TextureRect" parent="Esteira" unique_id=1463729915]
-offset_left = 5333.0
-offset_top = 257.0
-offset_right = 10022.0
-offset_bottom = 1359.0
+offset_left = 1527.0
+offset_top = 275.0
+offset_right = 17791.0
+offset_bottom = 1377.0
 texture = ExtResource("2_g22in")
 stretch_mode = 1
 
@@ -58,6 +60,11 @@ texture = ExtResource("3_axeyw")
 position = Vector2(1931, 358.00003)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("4_355gw")
+
+[node name="Prédio15" type="Sprite2D" parent="Esteira/Predios" unique_id=1111617747]
+position = Vector2(7876, 414)
+scale = Vector2(0.69099414, 0.6909942)
+texture = ExtResource("3_axeyw")
 
 [node name="Prédio3" type="Sprite2D" parent="Esteira/Predios" unique_id=307857340]
 position = Vector2(1400, 383.00003)
@@ -79,7 +86,7 @@ scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("7_7agxf")
 
 [node name="Prédio10" type="Sprite2D" parent="Esteira/Predios" unique_id=976668681]
-position = Vector2(7805, 467)
+position = Vector2(8842, 429)
 texture = ExtResource("8_mlovp")
 
 [node name="Prédio5" type="Sprite2D" parent="Esteira/Predios" unique_id=2059044119]
@@ -88,17 +95,17 @@ scale = Vector2(0.6909941, 0.69099414)
 texture = ExtResource("9_mxa1e")
 
 [node name="Prédio7" type="Sprite2D" parent="Esteira/Predios" unique_id=1334203300]
-position = Vector2(10262.931, 382.65408)
+position = Vector2(36854.93, 382.65408)
 scale = Vector2(0.617737, 0.617737)
 texture = ExtResource("5_cmf74")
 
 [node name="Prédio8" type="Sprite2D" parent="Esteira/Predios" unique_id=623365926]
-position = Vector2(9696.931, 305.65405)
+position = Vector2(36288.93, 305.65405)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("6_h7au3")
 
 [node name="Prédio9" type="Sprite2D" parent="Esteira/Predios" unique_id=338428882]
-position = Vector2(9136.931, 276.65405)
+position = Vector2(35728.93, 276.65405)
 scale = Vector2(0.69099414, 0.6909942)
 texture = ExtResource("7_7agxf")
 
@@ -106,16 +113,22 @@ texture = ExtResource("7_7agxf")
 position = Vector2(5825, 122)
 texture = ExtResource("10_fd16j")
 
+[node name="Prédio13" type="Sprite2D" parent="Esteira/Predios" unique_id=379579615]
+position = Vector2(7239.0005, 387)
+scale = Vector2(0.617737, 0.617737)
+texture = ExtResource("5_cmf74")
+
+[node name="Prédio14" type="Sprite2D" parent="Esteira/Predios" unique_id=545022328]
+position = Vector2(5064, 316)
+scale = Vector2(0.6909941, 0.69099414)
+texture = ExtResource("9_mxa1e")
+
 [node name="Chao" type="StaticBody2D" parent="Esteira" unique_id=1378430729]
 position = Vector2(3.0002441, 941)
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Esteira/Chao" unique_id=1955587517]
-position = Vector2(22154, -123)
-texture = ExtResource("11_3l3gr")
-
 [node name="Sprite2D2" type="Sprite2D" parent="Esteira/Chao" unique_id=938127628]
-position = Vector2(13296.001, -75.00001)
+position = Vector2(39888.004, -75.00001)
 scale = Vector2(0.9999437, 0.610577)
 texture = ExtResource("11_3l3gr")
 
@@ -124,9 +137,37 @@ position = Vector2(4432.5313, -75.25)
 scale = Vector2(0.99978137, 0.60677093)
 texture = ExtResource("11_3l3gr")
 
+[node name="Sprite2D3" type="Sprite2D" parent="Esteira/Chao" unique_id=678689370]
+position = Vector2(22160.002, -74.99999)
+scale = Vector2(0.99994355, 0.61057687)
+texture = ExtResource("11_3l3gr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Esteira/Chao" unique_id=1525309431]
+position = Vector2(31024.004, -75)
+scale = Vector2(0.9999436, 0.6105769)
+texture = ExtResource("11_3l3gr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Esteira/Chao" unique_id=2029275878]
+position = Vector2(15462.001, -75)
+scale = Vector2(0.9999435, 0.6105768)
+texture = ExtResource("11_3l3gr")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esteira/Chao" unique_id=1007322386]
+visible = false
 position = Vector2(49985.004, -29)
 shape = SubResource("RectangleShape2D_64gcy")
+
+[node name="Esquina" type="Sprite2D" parent="Esteira/Chao" unique_id=1459620012]
+position = Vector2(9949.001, -117.794495)
+scale = Vector2(0.99994355, 0.46377957)
+texture = ExtResource("12_cmf74")
+
+[node name="Semáforo" type="Sprite2D" parent="Esteira/Chao" unique_id=1460623741]
+z_index = 2
+position = Vector2(10168.001, -314.00006)
+scale = Vector2(0.27321985, 0.26757813)
+texture = ExtResource("13_h7au3")
+flip_h = true
 
 [node name="Carros" type="Node2D" parent="." unique_id=1882728787]
 position = Vector2(-3, -237)

@@ -1,8 +1,8 @@
 
 extends Node2D
 
-const CAR_SPEED = 400.0
-const LARGURA_ESTEIRA = 8865.0
+@export_range(0.0, 1000.0, 0.1, "or_greater") var CAR_SPEED = 400.0
+@export_range(0.1, 99999.0, 0.1, "or_greater") var LARGURA_ESTEIRA = 8865.0
 
 func _ready() -> void:
 	add_to_group("esteira")
