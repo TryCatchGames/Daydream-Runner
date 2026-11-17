@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b3st8uhycn7kp"]
+﻿[gd_scene format=3 uid="uid://b3st8uhycn7kp"]
 
 [ext_resource type="Script" uid="uid://d1bh14yqybb5f" path="res://Scripts/tutorial.gd" id="1_uply3"]
 [ext_resource type="Script" uid="uid://dx8rut8lukolj" path="res://Scripts/esteiraTutorial.gd" id="2_q68x7"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://ckbgh8s8nv5gi" path="res://Scenes/Menus/hud.tscn" id="19_yyrf6"]
 [ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="20_f7or6"]
 [ext_resource type="Script" uid="uid://b41lx5ky0xuns" path="res://Scripts/playerTutorial.gd" id="21_hs30v"]
-[ext_resource type="PackedScene" uid="uid://crhjbg33mmub5" path="res://Scenes/Carros/Van.tscn" id="21_srwl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8f704"]
 size = Vector2(99969, 119.25)
@@ -194,7 +193,3 @@ stream = ExtResource("20_f7or6")
 volume_db = -31.0
 autoplay = true
 parameters/looping = true
-
-[node name="Van" parent="." unique_id=603505596 instance=ExtResource("21_srwl6")]
-position = Vector2(17314, 603)
-script = ExtResource("14_6yhbn")
