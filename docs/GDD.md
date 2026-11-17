@@ -64,6 +64,12 @@ A referência a **80 km/h** no resumo descreve a fantasia de velocidade. Ela nã
 
 Além do encontro descrito na fase 2 da campanha, a equipe confirmou em **10/11/2026** uma parada de **60 segundos dentro da cena `Level_1`**, após **20 segundos de corrida**, retomando a corrida na mesma cena ao terminar. O tempo de corrida até a parada e a duração da parada devem ser configuráveis. Essa decisão se refere à cena atual; a duração dos semáforos do tutorial e da volta para casa na campanha ainda precisa ser validada. O Figma apresenta uma regra mais abrangente, registrada na seção 8.
 
+### Transições entre fases
+
+Ao concluir uma fase que tenha uma próxima fase, exibir uma cena de transição com o mapa e o Ninjinha correndo do ponto da fase concluída até o ponto da próxima. Ao terminar a animação, iniciar a fase seguinte. A quinta fase continua encerrando o jogo.
+
+**Detalhes provisórios da implementação:** os quatro trajetos entre fases são curvas `Path2D` editáveis no viewport 2D da cena `transicao_fase.tscn`; os pontos iniciais são apenas uma prévia visual e precisam ser revisados pela equipe. A duração da corrida permanece ajustável no Inspetor.
+
 ### Power-ups
 
 Power-ups aparecem **aleatoriamente durante as fases de corrida** e concedem benefícios variados. Os quatro efeitos abaixo foram confirmados para a implementação inicial pelo pedido e pelos esclarecimentos da equipe em **10/11/2026**.
@@ -178,7 +184,7 @@ Estas lacunas indicam decisões necessárias para detalhar a implementação, se
 - **Controles e movimento:** teclas ou botões, funcionamento da corrida, velocidades, altura dos saltos, duração e recarga do dash.
 - **Vida e falha:** balanceamento definitivo da vida inicial e máxima da campanha, dano dos carros e inimigos, efeitos do dano, condições de derrota, reinício e continuidade entre fases. A representação e a regra do coração da entrega inicial estão na seção 3.
 - **Combate:** valores e limites das armas, ataques concretos dos inimigos e chefes, intervalos e quantidades de aparecimento.
-- **Fases:** duração total dos percursos, posicionamento de obstáculos, transições entre fases e critérios precisos de conclusão. Para a cena atual `Level_1`, já estão confirmados 20 segundos de corrida até a parada e 60 segundos de parada, ambos configuráveis.
+- **Fases:** duração total dos percursos, posicionamento de obstáculos, critérios precisos de conclusão e posições definitivas no mapa de transição. Para a cena atual `Level_1`, já estão confirmados 20 segundos de corrida até a parada e 60 segundos de parada, ambos configuráveis. A exibição da transição após uma fase concluída foi confirmada em 17/11/2026.
 - **Pontuação e ranking:** valores, desempates, tamanho da lista, persistência, registro sem identificação e eventual pontuação de moedas.
 - **Progressão:** outros poderes além dos descritos, regras de troca de armas e eventual salvamento do progresso.
 - **Áudio:** relação final de faixas, fontes e créditos correspondentes.

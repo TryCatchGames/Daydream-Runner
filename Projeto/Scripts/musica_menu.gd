@@ -14,10 +14,15 @@ func _ready() -> void:
 	music.loop = true
 	_player = AudioStreamPlayer.new()
 	_player.stream = music
+	_player.volume_db = -18.0
 	add_child(_player)
 
 	get_tree().scene_changed.connect(_on_scene_changed)
 	call_deferred("_sync_with_current_scene")
+
+
+func _process(_delta: float) -> void:
+	_update_playback(get_tree().current_scene)
 
 
 func _sync_with_current_scene() -> void:
