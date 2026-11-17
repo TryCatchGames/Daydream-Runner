@@ -47,6 +47,8 @@ A campanha tem **cinco fases**, acompanhando o tutorial, a ida à escola, um con
 
 - O jogador pode se deslocar para frente e para trás, pular, executar pulo duplo e usar dash.
 - Pulo duplo e dash estão disponíveis desde o início; o tutorial ensina essas ações.
+- As velocidades do dash para a direita e para a esquerda devem ser ajustáveis individualmente no início dos scripts do player, como as velocidades de corrida (pedido da equipe em **16/11/2026**). Os valores de balanceamento continuam a validar.
+- O dash deve ter recarga para impedir usos consecutivos que permitam planar pela fase (pedido da equipe em **16/11/2026**). **Ajuste provisório de implementação, a validar:** espera de 0,5 segundo após o fim do dash, configurável por `DASH_COOLDOWN` nos scripts do player e do tutorial; um dash em andamento não pode ser reiniciado.
 - Nas fases de corrida, os carros são obstáculos a superar com saltos para evitar dano.
 - O movimento deve transmitir agilidade e liberdade, mesmo acompanhando um carro em alta velocidade.
 

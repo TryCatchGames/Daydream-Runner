@@ -7,7 +7,9 @@ const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -450.0
-const DASH_SPEED := 550.0
+const DASH_SPEED_RIGHT := 550.0
+const DASH_SPEED_LEFT := 950.0
+const DASH_COOLDOWN := 0.5 # Segundos de espera após o fim do dash.
 const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
 const ATTACK_HIT_FRAME := 3
@@ -59,6 +61,7 @@ var knockback_velocity := Vector2.ZERO
 var tem_esteira := false
 var dashing := false
 var dash_direction := 1.0
+var dash_cooldown_timer := 0.0
 var shuriken_spawned := false
 var shoot_cooldown_timer := 0.0
 
@@ -368,13 +371,18 @@ func _ready() -> void:
 	animated_sprite.play("Aparecendo")
 
 func start_dash() -> void:
+	if dashing or dash_cooldown_timer > 0.0:
+		return
+
+	dash_cooldown_timer = DASH_COOLDOWN
 	dashing = true
 
 	# Define a direção com base na orientação do sprite.
 	dash_direction = -1.0 if animated_sprite.flip_h else 1.0
 
 	# Inicia o impulso horizontal e interrompe o movimento vertical.
-	velocity = Vector2(dash_direction * DASH_SPEED, 0.0)
+	var dash_speed := DASH_SPEED_RIGHT if dash_direction > 0 else DASH_SPEED_LEFT
+	velocity = Vector2(dash_direction * dash_speed, 0.0)
 
 	# Garante que a hitbox da espada fique desativada.
 	disable_sword_hitbox()
@@ -383,6 +391,9 @@ func start_dash() -> void:
 	animated_sprite.play("Dash")
 
 func _physics_process(delta: float) -> void:
+	if not dashing:
+		dash_cooldown_timer = maxf(dash_cooldown_timer - delta, 0.0)
+
 	if shoot_cooldown_timer > 0.0:
 		shoot_cooldown_timer = maxf(shoot_cooldown_timer - delta, 0.0)
 
@@ -401,7 +412,8 @@ func _physics_process(delta: float) -> void:
 
 	# Enquanto o dash estiver ativo, ignora o movimento normal.
 	if dashing:
-		velocity.x = dash_direction * DASH_SPEED
+		var dash_speed := DASH_SPEED_RIGHT if dash_direction > 0 else DASH_SPEED_LEFT
+		velocity.x = dash_direction * dash_speed
 		velocity.y = 0.0
 
 		move_and_slide()

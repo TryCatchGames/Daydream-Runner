@@ -7,7 +7,10 @@ const SPEED_NO_CONVEYOR = 400.0
 const DRAG_SPEED = 400.0
 const DRAG_ACCELERATION = 8000.0
 const JUMP_VELOCITY = -450.0
-const DASH_SPEED := 850.0
+# Velocidades do dash em px/s; use valores positivos para ambas as direções.
+const DASH_SPEED_RIGHT := 850.0
+const DASH_SPEED_LEFT := 850.0
+const DASH_COOLDOWN := 0.5 # Segundos de espera após o fim do dash.
 const MAX_HEALTH := 6
 const SWORD_DAMAGE := 1
 const ATTACK_HIT_FRAME := 3
@@ -54,6 +57,7 @@ var tem_esteira := false
 var esteira_node: Node2D = null
 var dashing := false
 var dash_direction := 1.0
+var dash_cooldown_timer := 0.0
 
 signal health_changed(current_health: int, max_health: int)
 signal died
@@ -80,6 +84,9 @@ func _ready() -> void:
 	animated_sprite.play("Aparecendo")
 
 func _physics_process(delta: float) -> void:
+	if not dashing:
+		dash_cooldown_timer = maxf(dash_cooldown_timer - delta, 0.0)
+
 	if animated_sprite.animation == "Aparecendo":
 		velocity = Vector2.ZERO
 		return
@@ -105,7 +112,8 @@ func _physics_process(delta: float) -> void:
 		start_dash()
 
 	if dashing:
-		velocity.x = dash_direction * DASH_SPEED
+		var dash_speed := DASH_SPEED_RIGHT if dash_direction > 0 else DASH_SPEED_LEFT
+		velocity.x = dash_direction * dash_speed
 		velocity.y = 0.0
 		move_and_slide()
 		return
@@ -249,9 +257,14 @@ func _on_animation_finished() -> void:
 		dashing = false
 
 func start_dash() -> void:
+	if dashing or dash_cooldown_timer > 0.0:
+		return
+
+	dash_cooldown_timer = DASH_COOLDOWN
 	dashing = true
 	dash_direction = -1.0 if animated_sprite.flip_h else 1.0
-	velocity = Vector2(dash_direction * DASH_SPEED, 0.0)
+	var dash_speed := DASH_SPEED_RIGHT if dash_direction > 0 else DASH_SPEED_LEFT
+	velocity = Vector2(dash_direction * dash_speed, 0.0)
 	disable_sword_hitbox()
 	animated_sprite.play("Dash")
 
