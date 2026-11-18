@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c4il6a1gbg8je"]
 
-[ext_resource type="Script" uid="uid://b6h46fqs4a7b" path="res://Scripts/esteira.gd" id="1_emoit"]
+[ext_resource type="Script" uid="uid://d1bh14yqybb5f" path="res://Scripts/tutorial.gd" id="1_mxa1e"]
 [ext_resource type="Texture2D" uid="uid://bhvl1iigsjyad" path="res://Sprites/cenario/background.png" id="2_g22in"]
+[ext_resource type="Script" uid="uid://dx8rut8lukolj" path="res://Scripts/esteiraTutorial.gd" id="2_mxa1e"]
 [ext_resource type="Texture2D" uid="uid://bck5fei4cr1k5" path="res://Sprites/cenario/Predios_Sequencia.png" id="3_axeyw"]
 [ext_resource type="Texture2D" uid="uid://dosepgakrclfr" path="res://Sprites/cenario/Predio_5.png" id="4_355gw"]
 [ext_resource type="Texture2D" uid="uid://c2ekn0h6a2fcp" path="res://Sprites/cenario/Predio_4.png" id="5_cmf74"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c0dqmkrhvak4p" path="res://Sprites/cenario/Semaforo.png" id="13_h7au3"]
 [ext_resource type="PackedScene" uid="uid://5sgqq5x8ngmb" path="res://Scenes/Carros/carroShiny.tscn" id="14_gri1b"]
 [ext_resource type="PackedScene" uid="uid://dxoj6oae71kbr" path="res://Scenes/Carros/carro_preto.tscn" id="15_ynfiw"]
+[ext_resource type="Script" uid="uid://s4jsau2gttv2" path="res://Scripts/carroTutorial.gd" id="16_fd16j"]
 [ext_resource type="PackedScene" uid="uid://mwj6j1g0pgv4" path="res://Scenes/Carros/carro_vermelho.tscn" id="16_onv2o"]
 [ext_resource type="PackedScene" uid="uid://c3a2iju5ghrs6" path="res://Scenes/Personagens/player.tscn" id="17_1gucs"]
 [ext_resource type="PackedScene" uid="uid://bpqs3p04tpfe" path="res://Scenes/Carros/jipe_verde.tscn" id="17_axeyw"]
@@ -24,15 +26,25 @@
 [ext_resource type="AudioStream" uid="uid://wso3p6aods6i" path="res://Sound Effects/darren_hirst-gamer-music-140-bpm-355954.mp3" id="19_g22in"]
 [ext_resource type="PackedScene" uid="uid://dakbn23xlvuak" path="res://Scenes/PowerUps/Invincibility.tscn" id="21_355gw"]
 [ext_resource type="Script" uid="uid://crh00acg5i36e" path="res://Scripts/scenery_loop_layer.gd" id="22_loop"]
+[ext_resource type="Script" uid="uid://b41lx5ky0xuns" path="res://Scripts/playerTutorial.gd" id="23_fd16j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64gcy"]
 size = Vector2(99969, 119.25)
 
-[node name="Level_1" type="Node2D" unique_id=902791670]
+[sub_resource type="LabelSettings" id="LabelSettings_mxa1e"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Level_1" type="Node2D" unique_id=902791670 node_paths=PackedStringArray("esteira", "player", "label_tutorial")]
+script = ExtResource("1_mxa1e")
+esteira = NodePath("Esteira")
+player = NodePath("Player")
+label_tutorial = NodePath("CanvasLayer/LabelTutorial")
 
 [node name="Esteira" type="Node2D" parent="." unique_id=1897819963]
 position = Vector2(-3, -237)
-script = ExtResource("1_emoit")
+script = ExtResource("2_mxa1e")
 
 [node name="Ceu" type="Node2D" parent="Esteira" unique_id=957186601]
 script = ExtResource("22_loop")
@@ -192,25 +204,33 @@ position = Vector2(-3, -237)
 
 [node name="CarroAzul" parent="Carros" unique_id=372714669 instance=ExtResource("12_t8x22")]
 position = Vector2(2037, 734)
+script = ExtResource("16_fd16j")
 
 [node name="CarroBranco" parent="Carros" unique_id=1650433379 instance=ExtResource("13_dkxs2")]
 position = Vector2(4624, 737)
+script = ExtResource("16_fd16j")
 
 [node name="CarroShiny" parent="Carros" unique_id=242047400 instance=ExtResource("14_gri1b")]
 position = Vector2(13400, 736)
+script = ExtResource("16_fd16j")
 
 [node name="CarroPreto" parent="Carros" unique_id=326866628 instance=ExtResource("15_ynfiw")]
 position = Vector2(7137, 735)
+script = ExtResource("16_fd16j")
 
 [node name="CarroVermelho" parent="Carros" unique_id=405074145 instance=ExtResource("16_onv2o")]
 position = Vector2(10565, 736)
+script = ExtResource("16_fd16j")
 
 [node name="JipeVerde" parent="Carros" unique_id=673766544 instance=ExtResource("17_axeyw")]
 position = Vector2(15057, 735)
+script = ExtResource("16_fd16j")
 
 [node name="Player" parent="." unique_id=362024797 instance=ExtResource("17_1gucs")]
 position = Vector2(99.00001, 613)
 scale = Vector2(2.4, 2.4)
+script = ExtResource("23_fd16j")
+can_move = true
 
 [node name="HUD" parent="." unique_id=1131994067 instance=ExtResource("18_1oqio")]
 
@@ -222,3 +242,15 @@ parameters/looping = true
 
 [node name="Invincibility" parent="." unique_id=412661681 instance=ExtResource("21_355gw")]
 position = Vector2(1503, 513)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1340759713]
+
+[node name="LabelTutorial" type="Label" parent="CanvasLayer" unique_id=1029012776]
+offset_left = 85.0
+offset_top = 274.0
+offset_right = 1142.0
+offset_bottom = 432.0
+label_settings = SubResource("LabelSettings_mxa1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

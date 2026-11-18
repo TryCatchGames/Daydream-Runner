@@ -20,7 +20,7 @@ const PLAYER_KNOCKBACK_STRENGTH := 200.0
 const PLAYER_KNOCKBACK_DECAY := 800.0
 const DEATH_FRAGMENT_COLUMNS := 16
 const DEATH_FRAGMENT_ROWS := 32
-const PROJETIL_SCENE := preload("res://Scenes/Personagens/shuriken.tscn")
+const PROJETIL_SCENE := preload("res://Scenes/Outros/shuriken.tscn")
 
 # --- VARIÁVEIS DE ARRUMAMENTO --- #
 const FLIP_FIX = 17.0
