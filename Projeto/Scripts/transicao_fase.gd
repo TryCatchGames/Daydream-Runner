@@ -6,9 +6,9 @@ const TRANSITION_DATA_META: StringName = &"phase_transition_data"
 const PHASE_NAMES := [
 	"Tutorial",
 	"Ida à escola",
-	"Janela da escola",
-	"Volta para casa",
-	"Janela de casa",
+	"Sala de aula",
+	"A volta para casa",
+	"Batalha Final",
 ]
 #TODO: trocar o mapa para o verdadeiro
 
